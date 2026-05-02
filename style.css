@@ -310,7 +310,7 @@ a {
 }
 
 .nutrition-image[src*="pen_ash"] {
-    object-position: center 73%;
+    object-position: center 78%;
 }
 
 .nutrition-image[src*="joannawielgosz"] {
@@ -357,8 +357,13 @@ a {
    PROGRAMS
 ========================= */
 
+.programs-section {
+    justify-content: center;
+}
+
 .programs-wrapper {
     position: relative;
+    width: 100%;
 }
 
 .programs-grid {
@@ -418,88 +423,100 @@ a {
 }
 
 /* =========================
-   PROGRAM METRICS
+   PROGRAM METRICS - VERSION MAQUETTE
 ========================= */
 
 #program-metrics {
     display: block;
+    width: 100%;
 }
 
+/* Bloc global des métriques */
 .program-metrics {
     position: relative;
-    width: 360px;
-    margin-top: 18px;
-    padding-left: 54px;
+    width: 760px;
+    min-height: 310px;
+    margin-top: 24px;
+    padding-left: 116px;
+    padding-top: 46px;
     color: #000000;
 }
 
+/* Placement sous le bloc actif */
 .program-metrics.metric-under-left {
-    margin-left: 60px;
+    margin-left: 58px;
 }
 
 .program-metrics.metric-under-center {
-    margin-left: calc(33.333% + 60px);
+    margin-left: calc(33.333% + 58px);
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 60px);
+    margin-left: calc(66.666% + 58px);
 }
 
+/* Ligne verticale noire */
 .metric-line {
     position: absolute;
-    left: 0;
-    top: -18px;
-    width: 3px;
-    height: 230px;
+    left: 18px;
+    top: 0;
+    width: 4px;
+    height: 300px;
     background: #000000;
 }
 
+/* Rond noir connecté au bloc */
 .metric-pin {
     position: absolute;
-    top: -29px;
-    left: -8px;
-    width: 19px;
-    height: 19px;
+    left: 5px;
+    top: -12px;
+    width: 30px;
+    height: 30px;
     background: #000000;
     border-radius: 50%;
 }
 
+/* Ligne de chaque métrique */
 .metric-item {
     display: grid;
-    grid-template-columns: 230px 86px;
-    column-gap: 20px;
+    grid-template-columns: 1fr 180px;
+    column-gap: 42px;
     align-items: start;
-    margin-bottom: 34px;
+    margin-bottom: 54px;
 }
 
 .metric-item:last-child {
     margin-bottom: 0;
 }
 
+/* Texte des métriques */
 .metric-text h4 {
-    font-size: 18px;
-    line-height: 1;
+    font-size: 28px;
+    line-height: 0.95;
     font-weight: 900;
-    margin-bottom: 8px;
+    letter-spacing: -0.6px;
+    margin-bottom: 14px;
 }
 
 .metric-text p {
-    width: 230px;
-    font-size: 8px;
-    line-height: 1.15;
+    width: 560px;
+    font-size: 15.4px;
+    line-height: 1.12;
     font-weight: 400;
 }
 
+/* Dots */
 .metric-dots {
     display: flex;
-    gap: 5px;
-    padding-top: 2px;
+    justify-content: flex-start;
+    gap: 11px;
+    padding-top: 4px;
 }
 
 .metric-dot {
-    width: 11px;
-    height: 11px;
-    border: 1.6px solid #000000;
+    width: 28px;
+    height: 28px;
+    border: 3px solid #000000;
     border-radius: 50%;
     background: #ffffff;
 }
@@ -747,7 +764,8 @@ a {
     .start-layout,
     .coach-strip,
     .coach-bio-section,
-    .footer {
+    .footer,
+    .programs-grid {
         grid-template-columns: 1fr;
     }
 
@@ -790,7 +808,16 @@ a {
     .program-metrics.metric-under-right {
         width: 100%;
         margin-left: 0;
-        margin-top: 18px;
+        padding-left: 48px;
+    }
+
+    .metric-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .metric-text p {
+        width: 100%;
     }
 
     .button-primary,

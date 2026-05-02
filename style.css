@@ -423,104 +423,101 @@ a {
 }
 
 /* =========================
-   PROGRAM METRICS - VERSION MAQUETTE
+   PROGRAM METRICS - VERSION EXACTE MAQUETTE
 ========================= */
 
 #program-metrics {
     display: block;
-    width: 100%;
 }
 
-/* Bloc global des métriques */
 .program-metrics {
     position: relative;
-    width: 760px;
-    min-height: 310px;
-    margin-top: 24px;
-    padding-left: 116px;
-    padding-top: 46px;
+    width: 360px;
+    margin-top: 6px;
+    padding-left: 52px;
+    padding-top: 16px;
     color: #000000;
 }
 
-/* Placement sous le bloc actif */
+/* ALIGNEMENT SOUS CHAQUE CARD */
 .program-metrics.metric-under-left {
-    margin-left: 58px;
+    margin-left: 72px;
 }
 
 .program-metrics.metric-under-center {
-    margin-left: calc(33.333% + 58px);
+    margin-left: calc(33.333% + 72px);
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 58px);
+    margin-left: calc(66.666% + 72px);
 }
 
-/* Ligne verticale noire */
+/* LIGNE */
 .metric-line {
     position: absolute;
-    left: 18px;
+    left: 0;
     top: 0;
-    width: 4px;
-    height: 300px;
+    width: 2px;
+    height: 210px;
     background: #000000;
 }
 
-/* Rond noir connecté au bloc */
+/* DOT NOIR (plus petit comme ta maquette) */
 .metric-pin {
     position: absolute;
-    left: 5px;
-    top: -12px;
-    width: 30px;
-    height: 30px;
+    top: -6px;
+    left: -4px;
+    width: 12px;
+    height: 12px;
     background: #000000;
     border-radius: 50%;
 }
 
-/* Ligne de chaque métrique */
+/* ITEMS */
 .metric-item {
     display: grid;
-    grid-template-columns: 1fr 180px;
-    column-gap: 42px;
+    grid-template-columns: 1fr auto;
+    column-gap: 18px;
     align-items: start;
-    margin-bottom: 54px;
+    margin-bottom: 22px;
 }
 
 .metric-item:last-child {
     margin-bottom: 0;
 }
 
-/* Texte des métriques */
+/* TITRES */
 .metric-text h4 {
-    font-size: 28px;
-    line-height: 0.95;
+    font-size: 14px;
+    line-height: 1;
     font-weight: 900;
-    letter-spacing: -0.6px;
-    margin-bottom: 14px;
+    margin-bottom: 5px;
 }
 
+/* TEXTE */
 .metric-text p {
-    width: 560px;
-    font-size: 15.4px;
-    line-height: 1.12;
+    width: 210px;
+    font-size: 7px;
+    line-height: 1.15;
     font-weight: 400;
 }
 
-/* Dots */
+/* DOTS */
 .metric-dots {
     display: flex;
-    justify-content: flex-start;
-    gap: 11px;
-    padding-top: 4px;
+    gap: 4px;
+    padding-top: 2px;
 }
 
 .metric-dot {
-    width: 28px;
-    height: 28px;
-    border: 3px solid #000000;
+    width: 9px;
+    height: 9px;
+    border: 1.4px solid #000000;
     border-radius: 50%;
     background: #ffffff;
 }
 
+/* COULEURS */
 .program-metrics.green .metric-dot.active {
     background: #198b08;
 }

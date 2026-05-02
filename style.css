@@ -256,7 +256,6 @@ a {
 
 /* =========================
    NUTRITION
-   Corrigé pour coller à la maquette
 ========================= */
 
 .nutrition-section {
@@ -312,12 +311,12 @@ a {
     object-position: center 62%;
 }
 
-/* Recadrage image Vegetarian : plus bas, sans casser la grille */
+/* Recadrage image Vegetarian */
 .nutrition-image[src*="pen_ash"] {
     object-position: center 73%;
 }
 
-/* Recadrage image Vegan : proche de la maquette */
+/* Recadrage image Vegan */
 .nutrition-image[src*="joannawielgosz"] {
     object-position: center 54%;
 }
@@ -346,7 +345,9 @@ a {
 .nutrition-copy strong {
     display: block;
     margin-top: 18px;
-    font-size: 14.6px;
+
+    /* Même taille que les titres des blocs fitness */
+    font-size: 18px;
     line-height: 1.08;
     font-weight: 900;
 }

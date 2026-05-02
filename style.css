@@ -1,87 +1,206 @@
 /* =========================
-   FONTS
+   FONT - ZALANDO SANS SEMIEXPANDED
 ========================= */
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-Regular.ttf') format('truetype');
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-Medium.ttf') format('truetype');
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Medium.ttf") format("truetype");
     font-weight: 500;
 }
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-SemiBold.ttf') format('truetype');
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-SemiBold.ttf") format("truetype");
     font-weight: 600;
 }
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-Bold.ttf') format('truetype');
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Bold.ttf") format("truetype");
     font-weight: 700;
 }
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-Black.ttf') format('truetype');
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Black.ttf") format("truetype");
     font-weight: 900;
 }
 
+
 /* =========================
-   GLOBAL
+   RESET GLOBAL
 ========================= */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: 'Zalando', sans-serif;
-    color: black;
-    background: white;
+    font-family: "Zalando SemiExpanded", Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.05;
 }
 
-h1 {
-    font-size: 96px;
-    line-height: 0.95;
-    font-weight: 900;
-    margin: 0;
+button,
+a {
+    font-family: inherit;
+    cursor: pointer;
 }
 
-h2 {
-    font-size: 72px;
-    font-weight: 900;
-    margin: 0;
-}
-
-.subtitle {
-    font-size: 24px;
-    margin-top: 14px;
-}
 
 /* =========================
-   SECTIONS
+   HEADER VIDÉO
+========================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 720px;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-filter {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.34);
+    z-index: 2;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    display: flex;
+    gap: 13px;
+    z-index: 4;
+}
+
+.language-switcher a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 24px;
+    border: 1.6px solid #ffffff;
+    border-radius: 999px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 35vh;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 5vw, 78px);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 26px;
+}
+
+.hero h1 span {
+    display: block;
+    white-space: nowrap;
+}
+
+.hero p {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 145px;
+}
+
+.hero-nav {
+    width: 86%;
+    max-width: 1060px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 96px;
+}
+
+.hero-nav button {
+    height: 31px;
+    border: 1.8px solid #ffffff;
+    border-radius: 999px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   STRUCTURE GLOBALE
 ========================= */
 
 .screen-section {
-    width: 96%;
-    max-width: 1600px;
-    margin: 0 auto;
+    width: 94.5%;
+    max-width: 1500px;
     min-height: 100vh;
-    padding: 40px 0;
+    margin: 0 auto;
+    padding-top: 54px;
+    padding-bottom: 54px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .section-heading {
-    margin-bottom: 48px;
+    margin-bottom: 46px;
+}
+
+.section-heading h2,
+.coach-strip h2 {
+    font-size: clamp(46px, 4.5vw, 76px);
+    line-height: 0.82;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.section-heading p {
+    margin-top: 10px;
+    font-size: clamp(18px, 1.35vw, 24px);
+    font-weight: 500;
+    line-height: 1;
 }
 
 .section-content-offset {
-    width: 92%;
+    width: 91%;
     margin-left: auto;
 }
 
@@ -89,174 +208,504 @@ h2 {
     margin-bottom: 56px;
 }
 
+.content-block:last-child {
+    margin-bottom: 0;
+}
+
 .block-label {
-    margin-bottom: 22px;
-    font-size: 22px;
+    margin-bottom: 24px;
+    font-size: 19px;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
-/* =========================
-   GRID
-========================= */
-
 .three-columns {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    grid-template-columns: repeat(3, minmax(0, 420px));
+    justify-content: space-between;
+    gap: 54px;
 }
+
 
 /* =========================
-   HEADER
-========================= */
-
-.header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.header video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.header-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 90%;
-    margin: auto;
-}
-
-.header h1 {
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.btn-outline,
-.btn-solid {
-    padding: 18px 40px;
-    border-radius: 40px;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-}
-
-.btn-outline {
-    border: 2px solid black;
-    background: white;
-}
-
-.btn-solid {
-    background: black;
-    color: white;
-    border: none;
-}
-
-/* =========================
-   FITNESS CARDS
+   FITNESS
 ========================= */
 
 .fitness-card {
+    min-height: 188px;
+    padding: 28px 32px 24px;
     background: #eeeeee;
-    border-radius: 32px; /* plus arrondi */
-    padding: 28px 34px;
-    min-height: 210px;
+    border-radius: 30px;
 }
 
 .fitness-card h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 
 .fitness-card p {
-    font-size: 18px;
-    line-height: 1.1;
-    margin-bottom: 22px;
+    font-size: 17px;
+    line-height: 1.08;
+    font-weight: 400;
+    margin-bottom: 24px;
 }
 
 .fitness-card strong {
+    display: block;
+    font-size: 17px;
+    line-height: 1.08;
     font-weight: 900;
 }
+
 
 /* =========================
    NUTRITION
 ========================= */
 
-.nutrition-buttons {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 28px;
+.nutrition-tabs {
+    width: 560px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin-bottom: 16px;
+}
+
+.nutrition-tab {
+    height: 27px;
+    border: 1.8px solid #000000;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nutrition-tab.active {
+    background: #000000;
+    color: #ffffff;
+}
+
+.nutrition-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
 .nutrition-image {
     width: 100%;
-    max-width: 520px;
-    height: 420px; /* plus carré */
+    aspect-ratio: 1.35 / 1;
     object-fit: cover;
-    border-radius: 16px;
+    display: block;
 }
+
+.nutrition-copy {
+    max-width: 620px;
+}
+
+.nutrition-copy h3 {
+    font-size: 32px;
+    line-height: 0.82;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    margin-bottom: 15px;
+}
+
+.nutrition-copy p {
+    font-size: 12.1px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.nutrition-copy strong {
+    display: block;
+    margin-top: 9px;
+    font-size: 12.1px;
+    font-weight: 900;
+}
+
+.nutrition-footer-text {
+    margin-top: 20px;
+    font-size: 11.8px;
+    font-weight: 400;
+}
+
 
 /* =========================
    PROGRAMS
 ========================= */
 
+.programs-wrapper {
+    position: relative;
+}
+
 .program-card {
+    min-height: 276px;
+    padding: 22px 24px;
     background: #eeeeee;
-    border-radius: 32px;
-    padding: 30px;
-    min-height: 260px;
+    border-radius: 12px;
+    color: #000000;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.program-card h3 {
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 14px;
+}
+
+.program-card p {
+    font-size: 11px;
+    line-height: 1.15;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.program-card strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.1;
+    font-weight: 900;
 }
 
 .program-card.active {
-    background: #e6005c;
-    color: white;
+    color: #ffffff;
 }
 
-.metrics {
-    margin-top: 40px;
-    font-size: 18px;
-    line-height: 2;
+.program-card.green {
+    background: #198b08;
 }
+
+.program-card.pink {
+    background: #e7005a;
+}
+
+.program-card.blue {
+    background: #003bd8;
+}
+
+.program-metrics {
+    width: 430px;
+    margin-top: 18px;
+    padding-left: 28px;
+    border-left: 2px solid #000000;
+}
+
+.program-metrics.recomposition {
+    margin-left: 82px;
+}
+
+.program-metrics.weightloss {
+    margin-left: calc(33.333% + 112px);
+}
+
+.program-metrics.mass {
+    margin-left: calc(66.666% + 132px);
+}
+
+.metric-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 24px;
+    margin-bottom: 10px;
+    font-size: 11.5px;
+    line-height: 1.08;
+}
+
+.metric-row strong {
+    font-weight: 900;
+}
+
+.metric-dots {
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
 
 /* =========================
-   CTA IMAGE
+   LET'S GET STARTED
 ========================= */
 
-.cta-image {
-    width: 100%;
-    max-width: 700px;
-    height: auto; /* IMPORTANT : pas de crop */
+.start-section .section-heading {
+    margin-bottom: 32px;
 }
+
+.start-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 0.9fr;
+    gap: 76px;
+    align-items: center;
+}
+
+.start-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.start-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 19px;
+}
+
+.button-primary,
+.button-secondary {
+    width: 352px;
+    height: 35px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.button-primary {
+    background: #000000;
+    color: #ffffff;
+    border: 1.7px solid #000000;
+}
+
+.button-secondary {
+    background: #ffffff;
+    color: #000000;
+    border: 1.7px solid #000000;
+}
+
+.start-content p {
+    margin-top: 22px;
+    width: 430px;
+    font-size: 13px;
+    line-height: 1.08;
+    font-weight: 400;
+}
+
 
 /* =========================
    MEET YOUR COACH
 ========================= */
 
-.coach-section {
-    background: #f2f2f2;
-    border-radius: 32px;
-    padding: 60px;
-    display: flex;
-    justify-content: space-between;
+.coach-strip {
+    width: 84%;
+    max-width: 1220px;
+    margin: 0 auto 42px;
+    padding: 26px 70px 24px;
+    background: #eeeeee;
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 48px;
     align-items: center;
 }
 
+.coach-strip h2 {
+    font-size: clamp(40px, 3.4vw, 58px);
+}
+
+.coach-strip p {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.08;
+    font-weight: 500;
+}
+
+.coach-button {
+    justify-self: end;
+}
+
+
 /* =========================
-   SPACING FIX GLOBAL
+   FOOTER
 ========================= */
 
-.screen-section + .screen-section {
-    margin-top: -40px; /* réduit espace entre blocs */
+.footer {
+    border-top: 1px solid #000000;
+    min-height: 42px;
+    padding: 14px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 8.5px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: flex;
+    gap: 52px;
+}
+
+.footer a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   PAGE COACH
+========================= */
+
+.coach-page {
+    min-height: 100vh;
+}
+
+.coach-page-header {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 34px 0;
+}
+
+.back-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.coach-hero-page {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 70px 0 40px;
+}
+
+.coach-hero-page h1 {
+    font-size: clamp(56px, 6vw, 92px);
+    line-height: 0.85;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.coach-hero-page p {
+    max-width: 720px;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+.coach-bio-section {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.coach-bio-image {
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    object-fit: cover;
+}
+
+.coach-bio-text h2 {
+    font-size: clamp(44px, 4vw, 70px);
+    line-height: 0.85;
+    font-weight: 900;
+    margin-bottom: 22px;
+}
+
+.coach-bio-text p {
+    font-size: 16px;
+    line-height: 1.18;
+    margin-bottom: 14px;
+}
+
+.coach-bio-text strong {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-content {
+        padding: 30vh 24px 0;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h1 span {
+        white-space: normal;
+    }
+
+    .hero p {
+        margin-bottom: 80px;
+    }
+
+    .hero-nav,
+    .three-columns,
+    .nutrition-layout,
+    .start-layout,
+    .coach-strip,
+    .coach-bio-section,
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-nav {
+        gap: 14px;
+    }
+
+    .screen-section,
+    .coach-strip {
+        width: 90%;
+        min-height: auto;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .section-content-offset {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .nutrition-tabs {
+        width: 100%;
+    }
+
+    .program-metrics,
+    .program-metrics.recomposition,
+    .program-metrics.weightloss,
+    .program-metrics.mass {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 18px;
+    }
+
+    .button-primary,
+    .button-secondary,
+    .start-content p {
+        width: 100%;
+    }
+
+    .coach-button {
+        justify-self: start;
+    }
+
+    .footer-links {
+        gap: 18px;
+    }
 }

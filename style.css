@@ -303,10 +303,16 @@ a {
     height: 450px;
     object-fit: cover;
 
-    /* Recadrage plus bas pour retrouver la composition de la maquette */
-    object-position: center 70%;
+    /* Zoom + recadrage plus bas pour matcher la maquette */
+    object-position: center 82%;
+    transform: scale(1.08);
+    transform-origin: center 82%;
 
     display: block;
+}
+
+.nutrition-layout {
+    overflow: hidden;
 }
 
 .nutrition-copy {

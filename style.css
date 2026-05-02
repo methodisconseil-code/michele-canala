@@ -377,11 +377,11 @@ a {
 }
 
 .program-card h3 {
-    font-size: 27px;
-    line-height: 1;
+    font-size: 18px;          /* aligné avec nutrition */
+    line-height: 1.05;
     font-weight: 900;
     font-style: italic;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
 .program-card p {

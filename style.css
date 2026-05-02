@@ -170,18 +170,18 @@ a {
 
 .screen-section {
     width: 96%;
-    max-width: 1500px;
+    max-width: 1540px;
     min-height: 100vh;
     margin: 0 auto;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 52px;
+    padding-bottom: 52px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .section-heading {
-    margin-bottom: 58px;
+    margin-bottom: 52px;
 }
 
 .section-heading h2,
@@ -200,12 +200,12 @@ a {
 }
 
 .section-content-offset {
-    width: 90%;
-    margin-left: auto;
+    width: calc(100% - 120px);
+    margin-left: 60px;
 }
 
 .content-block {
-    margin-bottom: 64px;
+    margin-bottom: 72px;
 }
 
 .content-block:last-child {
@@ -221,44 +221,44 @@ a {
 
 .three-columns {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 400px));
+    grid-template-columns: repeat(3, minmax(0, 435px));
     justify-content: space-between;
-    gap: 56px;
+    gap: 52px;
 }
 
 
 /* =========================
    FITNESS
-   Ajusté selon la capture 2 :
-   - cartes moins hautes
-   - plus arrondies
-   - texte plus petit
-   - espaces plus proches de la maquette
+   Ajusté pour matcher la capture de référence :
+   - cartes plus larges
+   - moins hautes
+   - marges gauche/droite proches maquette
+   - typo plus petite et mieux aérée
 ========================= */
 
 .fitness-card {
-    min-height: 174px;
-    padding: 24px 30px 22px;
+    min-height: 204px;
+    padding: 26px 30px 24px;
     background: #eeeeee;
     border-radius: 30px;
 }
 
 .fitness-card h3 {
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 900;
-    margin-bottom: 22px;
+    margin-bottom: 28px;
 }
 
 .fitness-card p {
-    font-size: 15.5px;
-    line-height: 1.09;
+    font-size: 17px;
+    line-height: 1.08;
     font-weight: 400;
-    margin-bottom: 22px;
+    margin-bottom: 28px;
 }
 
 .fitness-card strong {
     display: block;
-    font-size: 15.5px;
+    font-size: 17px;
     line-height: 1.08;
     font-weight: 900;
 }

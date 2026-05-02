@@ -1,29 +1,29 @@
 /* =========================
    FONT - ZALANDO SANS SEMIEXPANDED
-   Les fichiers doivent être dans /static
+   Les fichiers sont à la racine du repo GitHub
 ========================= */
 
 @font-face {
     font-family: "Zalando SemiExpanded";
-    src: url("static/ZalandoSansSemiExpanded-Regular.ttf") format("truetype");
+    src: url("ZalandoSansSemiExpanded-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Zalando SemiExpanded";
-    src: url("static/ZalandoSansSemiExpanded-Medium.ttf") format("truetype");
+    src: url("ZalandoSansSemiExpanded-Medium.ttf") format("truetype");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Zalando SemiExpanded";
-    src: url("static/ZalandoSansSemiExpanded-Bold.ttf") format("truetype");
+    src: url("ZalandoSansSemiExpanded-Bold.ttf") format("truetype");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "Zalando SemiExpanded";
-    src: url("static/ZalandoSansSemiExpanded-Black.ttf") format("truetype");
+    src: url("ZalandoSansSemiExpanded-Black.ttf") format("truetype");
     font-weight: 900;
 }
 

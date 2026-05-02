@@ -123,7 +123,7 @@ function showProgram(programType) {
         <div class="metric-pin"></div>
 
         <div class="metric-item">
-            <div class="metric-top">
+            <div class="metric-header">
                 <h4>Difficulty level</h4>
                 <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
             </div>
@@ -131,7 +131,7 @@ function showProgram(programType) {
         </div>
 
         <div class="metric-item">
-            <div class="metric-top">
+            <div class="metric-header">
                 <h4>Program duration</h4>
                 <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
             </div>
@@ -139,7 +139,7 @@ function showProgram(programType) {
         </div>
 
         <div class="metric-item">
-            <div class="metric-top">
+            <div class="metric-header">
                 <h4>Session frequency</h4>
                 <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
             </div>

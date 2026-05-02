@@ -303,7 +303,6 @@ a {
     height: 450px;
     object-fit: cover;
     display: block;
-    transform: none;
 }
 
 .nutrition-image[src*="takedahrs"] {
@@ -356,7 +355,6 @@ a {
 
 /* =========================
    PROGRAMS
-   Ajusté selon la maquette
 ========================= */
 
 .programs-wrapper {
@@ -364,6 +362,10 @@ a {
 }
 
 .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 430px));
+    justify-content: space-between;
+    gap: 52px;
     align-items: start;
 }
 
@@ -377,7 +379,7 @@ a {
 }
 
 .program-card h3 {
-    font-size: 18px;          /* aligné avec nutrition */
+    font-size: 18px;
     line-height: 1.05;
     font-weight: 900;
     font-style: italic;
@@ -416,83 +418,102 @@ a {
 }
 
 /* =========================
-   PROGRAM METRICS — FIX MAQUETTE
+   PROGRAM METRICS
 ========================= */
+
+#program-metrics {
+    display: block;
+}
 
 .program-metrics {
     position: relative;
-    width: 520px;
-    margin-top: 40px;
-    padding-left: 36px;
+    width: 360px;
+    margin-top: -1px;
+    padding-left: 38px;
+    color: #000000;
 }
 
-/* ligne verticale */
-.program-metrics::before {
-    content: "";
+.program-metrics.metric-under-left {
+    margin-left: 58px;
+}
+
+.program-metrics.metric-under-center {
+    margin-left: calc(33.333% + 72px);
+}
+
+.program-metrics.metric-under-right {
+    margin-left: calc(66.666% + 72px);
+}
+
+.metric-line {
     position: absolute;
-    left: 6px;
-    top: 8px;
-    bottom: 8px;
-    width: 2px;
-    background: #000;
+    left: 0;
+    top: 0;
+    width: 2.5px;
+    height: 230px;
+    background: #000000;
 }
 
-/* chaque bloc */
-.metric-row {
-    position: relative;
+.metric-pin {
+    position: absolute;
+    top: -8px;
+    left: -6px;
+    width: 14px;
+    height: 14px;
+    background: #000000;
+    border-radius: 50%;
+}
+
+.metric-item {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 40px;
-    margin-bottom: 28px;
+    column-gap: 24px;
+    align-items: start;
+    margin-bottom: 26px;
 }
 
-/* point de départ (le rond noir en haut) */
-.metric-row:first-child::before {
-    content: "";
-    position: absolute;
-    left: -36px;
-    top: 2px;
-    width: 10px;
-    height: 10px;
-    background: #000;
-    border-radius: 50%;
+.metric-item:last-child {
+    margin-bottom: 0;
 }
 
-/* TITRE */
-.metric-row strong {
-    display: block;
-    font-size: 16px;
+.metric-text h4 {
+    font-size: 18px;
+    line-height: 1;
     font-weight: 900;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
-/* TEXTE */
-.metric-row span {
-    display: block;
-    font-size: 11.5px;
-    line-height: 1.2;
+.metric-text p {
+    width: 230px;
+    font-size: 7.6px;
+    line-height: 1.15;
     font-weight: 400;
-    max-width: 280px;
 }
 
-/* DOTS */
 .metric-dots {
     display: flex;
-    align-items: flex-start;
-    gap: 6px;
-    margin-top: 4px;
+    gap: 5px;
+    padding-top: 2px;
 }
 
-.metric-dots span {
-    width: 8px;
-    height: 8px;
+.metric-dot {
+    width: 11px;
+    height: 11px;
+    border: 1.6px solid #000000;
     border-radius: 50%;
-    border: 1.5px solid #000;
+    background: #ffffff;
 }
 
-/* DOT ACTIF (couleur dynamique déjà gérée côté JS normalement) */
-.metric-dots .active {
-    background: currentColor;
+.program-metrics.green .metric-dot.active {
+    background: #198b08;
+}
+
+.program-metrics.pink .metric-dot.active {
+    background: #e7005a;
+}
+
+.program-metrics.blue .metric-dot.active {
+    background: #003bd8;
 }
 
 /* =========================
@@ -764,9 +785,9 @@ a {
     }
 
     .program-metrics,
-    .program-metrics.recomposition,
-    .program-metrics.weightloss,
-    .program-metrics.mass {
+    .program-metrics.metric-under-left,
+    .program-metrics.metric-under-center,
+    .program-metrics.metric-under-right {
         width: 100%;
         margin-left: 0;
         margin-top: 18px;

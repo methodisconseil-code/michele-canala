@@ -1,91 +1,87 @@
 <!-- =========================
-     PAGE COACH
-     Page de présentation personnelle
+     PAGE MEET YOUR COACH
+     Page secondaire reliée depuis le bouton Learn More About Me
 ========================= -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- =========================
+         PARAMÈTRES DE BASE
+    ========================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Your Coach - Michele Canala</title>
 
-    <title>Meet Your Coach</title>
-
-    <!-- Lien CSS -->
+    <!-- CSS principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="coach-page">
 
     <!-- =========================
-         HEADER SIMPLE + RETOUR
+         HEADER SIMPLE
     ========================= -->
-    <section class="section">
-
-        <!-- Bouton retour vers homepage -->
-        <a href="index.html" style="text-decoration:none; font-size:12px;">
-            ← Back to home
-        </a>
-
-    </section>
+    <header class="coach-page-header">
+        <a class="back-link" href="index.html">← BACK TO HOME</a>
+    </header>
 
 
     <!-- =========================
-         HERO COACH
+         INTRO PAGE COACH
     ========================= -->
-    <section class="section">
+    <section class="coach-hero-page">
 
-        <h1 style="font-size:48px; margin-bottom:20px;">
+        <h1>
+            Meet<br>
             Michele Canala
         </h1>
 
-        <p style="max-width:600px; font-size:18px;">
+        <p>
             Personal Trainer & Wellness Coach based in Paris.
-            I help you transform your body and your lifestyle through
-            fitness and plant-based nutrition.
+            A structured, human and sustainable approach to fitness,
+            plant-based nutrition and lifestyle transformation.
         </p>
 
     </section>
 
 
     <!-- =========================
-         IMAGE + BIO
+         BIO COACH
     ========================= -->
-    <section class="section">
+    <section class="coach-bio-section">
 
-        <div class="nutrition-layout">
+        <img
+            class="coach-bio-image"
+            src="https://images.unsplash.com/photo-1594381898411-846e7d193883"
+            alt="Personal training session"
+        >
 
-            <!-- Image coach -->
-            <img class="nutrition-image"
-                src="https://images.unsplash.com/photo-1550345332-09e3ac987658">
+        <div class="coach-bio-text">
 
-            <!-- Texte -->
-            <div>
+            <h2>My approach</h2>
 
-                <h2>My approach</h2>
+            <p>
+                Coaching is not just about programs. It is about connection,
+                trust, and understanding what you need to move forward.
+            </p>
 
-                <p>
-                    Coaching is not just about training programs.
-                    It’s about understanding your goals, your habits,
-                    and your lifestyle.
-                </p>
+            <p>
+                I help you define a clear direction, build consistent habits,
+                and follow a training and nutrition structure adapted to your level,
+                your lifestyle and your goals.
+            </p>
 
-                <p>
-                    I build structured, realistic and sustainable plans
-                    adapted to your level and your rhythm.
-                </p>
+            <p>
+                Whether you want to lose fat, build muscle, improve your energy
+                or feel more confident in your body, the goal is to create a path
+                you can actually maintain.
+            </p>
 
-                <p>
-                    Whether your goal is fat loss, muscle gain or simply
-                    feeling better, I guide you step by step.
-                </p>
-
-                <strong>
-                    Structure. Consistency. Results.
-                </strong>
-
-            </div>
+            <strong>
+                Structure, consistency, confidence.
+            </strong>
 
         </div>
 
@@ -93,17 +89,19 @@
 
 
     <!-- =========================
-         CTA CONTACT
+         FOOTER
     ========================= -->
-    <section class="cta">
+    <footer class="footer">
 
-        <h2>Work with me</h2>
+        <p>2026 - MICHELE CANALA: PERSONNAL TRAINER & WELLNESS COACH</p>
 
-        <button>START MY EVALUATION</button>
-        <button>CONTACT ME</button>
+        <div class="footer-links">
+            <a href="#">LEGAL MENTIONS</a>
+            <a href="#">PRIVACY POLICY</a>
+        </div>
 
-    </section>
-
+    </footer>
 
 </body>
+
 </html>

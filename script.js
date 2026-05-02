@@ -1,6 +1,5 @@
 // =========================
 // SCROLL DOUX VERS LES SECTIONS
-// Utilisé par les boutons du header
 // =========================
 
 function scrollToSection(sectionId) {
@@ -12,8 +11,6 @@ function scrollToSection(sectionId) {
 
 // =========================
 // DONNÉES NUTRITION
-// Textes issus de la maquette :
-// Flexitarian / Vegetarian / Vegan
 // =========================
 
 const nutritionData = {
@@ -29,7 +26,7 @@ const nutritionData = {
     },
 
     vegetarian: {
-        image: "pen_ash-smashed-avocado-on-toast-4488463.jpg",
+        image: "pen_ash-smashed-avocado-on-toast-4488463.png",
         title: "Vegetarian Nutrition",
         paragraphs: [
             "You follow a vegetarian diet, excluding meat and fish while still including eggs and/or dairy. With the right structure, this approach can fully support strength development, recovery, and overall performance.",
@@ -54,10 +51,6 @@ const nutritionData = {
 
 // =========================
 // AFFICHAGE NUTRITION
-// Au clic :
-// - le bouton sélectionné devient noir
-// - les autres redeviennent blancs
-// - l’image et le texte changent
 // =========================
 
 function showNutrition(type) {
@@ -95,8 +88,6 @@ function showNutrition(type) {
 
 // =========================
 // DONNÉES PROGRAMS
-// Les métriques reprennent uniquement les libellés visibles dans la maquette.
-// Les niveaux sont indiqués par pastilles, sans inventer de durée en semaines.
 // =========================
 
 const programData = {
@@ -128,11 +119,6 @@ const programData = {
 
 // =========================
 // AFFICHAGE PROGRAMS AU SURVOL
-// Par défaut : Body Recomposition est actif.
-// Au survol d’un autre bloc :
-// - le bloc survolé prend sa couleur
-// - les autres redeviennent gris
-// - les métriques se déplacent sous le bloc actif
 // =========================
 
 function showProgram(programType) {
@@ -175,7 +161,6 @@ function showProgram(programType) {
 
 // =========================
 // INITIALISATION
-// Lance l’état par défaut du site au chargement
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {

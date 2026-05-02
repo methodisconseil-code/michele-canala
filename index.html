@@ -1,12 +1,5 @@
 <!-- =========================
      PAGE PRINCIPALE - MICHELE CANALA
-     Structure complète fidèle à la maquette :
-     - Header vidéo plein écran
-     - Fitness
-     - Nutrition interactive
-     - Programs interactif au survol
-     - Let's Get Started
-     - Meet Your Coach
 ========================= -->
 
 <!DOCTYPE html>
@@ -33,20 +26,20 @@
 
         <!-- Vidéo de fond -->
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="static/Video-header-michele-canala.mp4" type="video/mp4">
+            <source src="Video-header-michele-canala.mp4" type="video/mp4">
         </video>
 
         <!-- Filtre sombre sur la vidéo -->
         <div class="hero-filter"></div>
 
-        <!-- Sélecteur de langues -->
+        <!-- Sélecteur langues -->
         <div class="language-switcher">
             <a href="#">FR</a>
             <a href="#">EN</a>
             <a href="#">IT</a>
         </div>
 
-        <!-- Contenu central du header -->
+        <!-- Contenu central -->
         <div class="hero-content">
 
             <h1>
@@ -59,7 +52,6 @@
                 built around your lifestyle
             </p>
 
-            <!-- Navigation interne -->
             <nav class="hero-nav">
                 <button onclick="scrollToSection('fitness')">FITNESS</button>
                 <button onclick="scrollToSection('nutrition')">PLANT-BASED NUTRITION</button>
@@ -72,12 +64,12 @@
 
 
     <!-- =========================
-         CONTENU PRINCIPAL DU SITE
+         CONTENU PRINCIPAL
     ========================= -->
     <main>
 
         <!-- =========================
-             SECTION FITNESS
+             FITNESS
         ========================= -->
         <section id="fitness" class="site-section fitness-section">
 
@@ -86,7 +78,6 @@
                 <p>Choose your perfect set up!</p>
             </div>
 
-            <!-- Bloc 1 : composition des cours -->
             <div class="content-block">
 
                 <p class="block-label">CLASS COMPOSITION</p>
@@ -127,7 +118,6 @@
 
             </div>
 
-            <!-- Bloc 2 : lieux d'entraînement -->
             <div class="content-block">
 
                 <p class="block-label">SPOT SITUATION</p>
@@ -171,7 +161,7 @@
 
 
         <!-- =========================
-             SECTION NUTRITION
+             PLANT-BASED NUTRITION
         ========================= -->
         <section id="nutrition" class="site-section nutrition-section">
 
@@ -180,14 +170,12 @@
                 <p>Flexitarian, vegetarian or vegan: your nutrition, aligned with your training</p>
             </div>
 
-            <!-- Boutons interactifs -->
             <div class="nutrition-tabs">
                 <button class="nutrition-tab active" data-nutrition="flexitarian">FLEXITARIAN</button>
                 <button class="nutrition-tab" data-nutrition="vegetarian">VEGETARIAN</button>
                 <button class="nutrition-tab" data-nutrition="vegan">VEGAN</button>
             </div>
 
-            <!-- Contenu dynamique injecté par JS -->
             <div id="nutrition-content"></div>
 
             <p class="nutrition-footer-text">
@@ -199,7 +187,7 @@
 
 
         <!-- =========================
-             SECTION PROGRAMS
+             PROGRAMS
         ========================= -->
         <section id="programs" class="site-section programs-section">
 
@@ -208,7 +196,6 @@
                 <p>Choose your goal. Follow a structured path. Get real results.</p>
             </div>
 
-            <!-- Cartes programmes interactives -->
             <div class="programs-wrapper">
 
                 <div class="three-columns programs-grid">
@@ -266,7 +253,6 @@
 
                 </div>
 
-                <!-- Métriques visibles selon le programme actif -->
                 <div id="program-metrics"></div>
 
             </div>
@@ -275,7 +261,7 @@
 
 
         <!-- =========================
-             SECTION LET'S GET STARTED
+             LET'S GET STARTED
         ========================= -->
         <section class="site-section start-section">
 
@@ -289,8 +275,7 @@
 
             <div class="start-layout">
 
-                <!-- Image déjà typographiée -->
-                <img class="start-image" src="static/the-first-step.png" alt="Take the first step">
+                <img class="start-image" src="the-first-step.png" alt="Take the first step">
 
                 <div class="start-content">
 
@@ -315,7 +300,7 @@
 
 
         <!-- =========================
-             SECTION MEET YOUR COACH
+             MEET YOUR COACH
         ========================= -->
         <section class="coach-strip">
 
@@ -350,8 +335,6 @@
 
     </footer>
 
-
-    <!-- JS principal -->
     <script src="script.js"></script>
 
 </body>

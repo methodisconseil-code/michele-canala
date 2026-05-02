@@ -423,96 +423,108 @@ a {
 }
 
 /* =========================
-   PROGRAM METRICS
+   PROGRAM METRICS — CLEAN GRID VERSION
 ========================= */
 
 #program-metrics {
     display: block;
 }
 
+/* bloc sous chaque card */
 .program-metrics {
     position: relative;
-    width: 430px !important;
-    margin-top: 8px !important;
-    padding-top: 22px !important;
-    padding-left: 58px !important;
+    width: 430px; /* EXACTEMENT la largeur de ta card */
+    margin-top: 12px;
+    padding-left: 46px; /* espace ligne → contenu */
+    padding-top: 18px;
     color: #000000;
 }
 
+/* POSITION sous chaque colonne */
 .program-metrics.metric-under-left {
-    margin-left: 0 !important;
+    margin-left: 0;
 }
 
 .program-metrics.metric-under-center {
-    margin-left: calc(33.333% + 17px) !important;
+    margin-left: calc(33.333% + 17px);
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 34px) !important;
+    margin-left: calc(66.666% + 34px);
 }
 
+/* ligne verticale */
 .metric-line {
     position: absolute;
-    left: 22px;
-    top: -8px;
+    left: 20px;
+    top: -6px;
     width: 2px;
     height: 250px;
     background: #000000;
 }
 
+/* point */
 .metric-pin {
     position: absolute;
     top: -14px;
-    left: 17px;
+    left: 14px;
     width: 12px;
     height: 12px;
     background: #000000;
     border-radius: 50%;
 }
 
+/* =========================
+   ITEM METRIC (LA CLÉ)
+========================= */
+
 .metric-item {
-    position: relative;
-    display: block !important;
-    width: 330px !important;
-    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 6px;
+    margin-bottom: 26px;
 }
 
+/* TITRE */
 .metric-text h4 {
-    position: relative;
+    grid-column: 1;
+    grid-row: 1;
     font-size: 18px;
-    line-height: 1;
     font-weight: 900;
-    margin-bottom: 8px;
-    padding-right: 90px;
+    line-height: 1;
 }
 
-.metric-text p {
-    width: 330px;
-    font-size: 9.6px;
-    line-height: 1.15;
-    font-weight: 400;
-}
-
+/* DOTS → ALIGNÉS AVEC LE TITRE */
 .metric-dots {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    display: flex !important;
-    gap: 5px !important;
-    width: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    display: flex;
+    gap: 6px;
 }
 
+/* DESCRIPTION → PASSE SOUS TOUT */
+.metric-text p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 11px; /* augmenté → lisible */
+    line-height: 1.2;
+    font-weight: 400;
+    max-width: 330px;
+}
+
+/* DOT STYLE */
 .metric-dot {
     width: 11px;
     height: 11px;
-    min-width: 11px;
     border: 1.6px solid #000000;
     border-radius: 50%;
     background: #ffffff;
 }
 
+/* COLORS */
 .program-metrics.green .metric-dot.active {
     background: #198b08;
 }

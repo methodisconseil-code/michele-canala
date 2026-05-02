@@ -427,15 +427,15 @@ a {
 
 .program-metrics {
     position: relative;
-    width: 360px;
-    margin-top: 12px;
-    padding-left: 38px;
+    width: 390px;
+    margin-top: 10px;
+    padding-left: 42px;
+    padding-top: 28px;
     color: #000000;
 }
 
-/* Position sous chaque bloc */
 .program-metrics.metric-under-left {
-    margin-left: 58px;
+    margin-left: 60px;
 }
 
 .program-metrics.metric-under-center {
@@ -443,7 +443,7 @@ a {
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 72px);
+    margin-left: calc(66.666% +
 }
 
 /* Ligne verticale */

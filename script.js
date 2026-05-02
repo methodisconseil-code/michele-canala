@@ -16,7 +16,7 @@ function scrollToSection(sectionId) {
 const nutritionData = {
     flexitarian: {
         image: "takedahrs-japanese-food-7187313.jpg",
-        title: "Flexitarian Nutrition",
+        title: "Flexitarian<br>Nutrition",
         paragraphs: [
             "You mainly follow a plant-based diet while still including animal products occasionally. This flexible approach allows you to enjoy a wide variety of foods while building a nutrition strategy that supports your training and long-term progress.",
             "We help you structure your meals with a balanced mix of plant-based proteins, complex carbohydrates, and healthy fats, adapted to your workout intensity and recovery needs. Small adjustments can make a real difference in how you perform and recover.",
@@ -27,7 +27,7 @@ const nutritionData = {
 
     vegetarian: {
         image: "pen_ash-smashed-avocado-on-toast-4488463.png",
-        title: "Vegetarian Nutrition",
+        title: "Vegetarian<br>Nutrition",
         paragraphs: [
             "You follow a vegetarian diet, excluding meat and fish while still including eggs and/or dairy. With the right structure, this approach can fully support strength development, recovery, and overall performance.",
             "We guide you in building balanced meals that provide enough protein, essential nutrients, and energy to match your training routine. Understanding how to combine different food sources is key to maintaining consistency and progress.",
@@ -64,23 +64,12 @@ function showNutrition(type) {
 
     nutritionContent.innerHTML = `
         <div class="nutrition-layout">
-
-            <img
-                class="nutrition-image"
-                src="${selectedNutrition.image}"
-                alt="${selectedNutrition.title}"
-            >
-
+            <img class="nutrition-image" src="${selectedNutrition.image}" alt="${selectedNutrition.title}">
             <div class="nutrition-copy">
-
                 <h3>${selectedNutrition.title}</h3>
-
                 ${selectedNutrition.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
-
                 <strong>${selectedNutrition.tagline}</strong>
-
             </div>
-
         </div>
     `;
 }
@@ -94,31 +83,46 @@ const programData = {
     recomposition: {
         colorClass: "green",
         metricsClass: "recomposition",
-        difficulty: "●●●○○",
-        duration: "●●●○○",
-        frequency: "●●●○○"
+        difficulty: 3,
+        duration: 4,
+        frequency: 4
     },
 
     weightloss: {
         colorClass: "pink",
         metricsClass: "weightloss",
-        difficulty: "●●●●○",
-        duration: "●●●○○",
-        frequency: "●●●●○"
+        difficulty: 3,
+        duration: 4,
+        frequency: 4
     },
 
     mass: {
         colorClass: "blue",
         metricsClass: "mass",
-        difficulty: "●●●●○",
-        duration: "●●●●○",
-        frequency: "●●●○○"
+        difficulty: 2,
+        duration: 5,
+        frequency: 4
     }
 };
 
 
 // =========================
-// AFFICHAGE PROGRAMS AU SURVOL
+// CRÉATION DES DOTS
+// =========================
+
+function createDots(activeDots) {
+    let dots = "";
+
+    for (let i = 1; i <= 5; i++) {
+        dots += `<span class="metric-dot ${i <= activeDots ? "active" : ""}"></span>`;
+    }
+
+    return dots;
+}
+
+
+// =========================
+// AFFICHAGE PROGRAMS
 // =========================
 
 function showProgram(programType) {
@@ -138,22 +142,29 @@ function showProgram(programType) {
 
     metricsContainer.innerHTML = `
         <div class="program-metrics ${selectedProgram.metricsClass}">
-
-            <div class="metric-row">
-                <strong>Difficulty level</strong>
-                <span class="metric-dots">${selectedProgram.difficulty}</span>
+            <div class="metric-item">
+                <div class="metric-title-row">
+                    <h4>Difficulty level</h4>
+                    <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
+                </div>
+                <p>Indicates how demanding the program is in terms of intensity, consistency, and overall effort required to achieve results.</p>
             </div>
 
-            <div class="metric-row">
-                <strong>Program duration</strong>
-                <span class="metric-dots">${selectedProgram.duration}</span>
+            <div class="metric-item">
+                <div class="metric-title-row">
+                    <h4>Program duration</h4>
+                    <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
+                </div>
+                <p>Represents the typical time needed to see meaningful results, depending on your starting point and level of commitment.</p>
             </div>
 
-            <div class="metric-row">
-                <strong>Session frequency</strong>
-                <span class="metric-dots">${selectedProgram.frequency}</span>
+            <div class="metric-item">
+                <div class="metric-title-row">
+                    <h4>Session frequency</h4>
+                    <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
+                </div>
+                <p>Shows how many training sessions per week are recommended to follow the program effectively and maximize progress.</p>
             </div>
-
         </div>
     `;
 }

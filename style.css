@@ -369,16 +369,16 @@ a {
 }
 
 .programs-wrapper {
-    position: relative;
     width: 100%;
-}
-
-.programs-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 430px));
     justify-content: space-between;
     gap: 52px;
     align-items: start;
+}
+
+.programs-grid {
+    display: contents;
 }
 
 .program-card {
@@ -430,95 +430,89 @@ a {
 }
 
 /* =========================
-   PROGRAM METRICS — VERSION STABLE
+   PROGRAM METRICS
 ========================= */
 
 #program-metrics {
-    display: block;
+    grid-row: 2;
+    width: 430px;
+    margin-top: 8px;
+}
+
+.program-metrics.metric-under-left {
+    grid-column: 1;
+}
+
+.program-metrics.metric-under-center {
+    grid-column: 2;
+}
+
+.program-metrics.metric-under-right {
+    grid-column: 3;
 }
 
 .program-metrics {
     position: relative;
-    width: 430px;
-    margin-top: 18px;
-    padding-left: 58px;
+    padding-left: 48px;
     padding-top: 16px;
     color: #000000;
 }
 
-.program-metrics.metric-under-left {
-    margin-left: 0;
-}
-
-.program-metrics.metric-under-center {
-    margin-left: calc(50% - 215px);
-}
-
-.program-metrics.metric-under-right {
-    margin-left: calc(100% - 430px);
-}
-
 .metric-line {
     position: absolute;
-    left: 22px;
+    left: 18px;
     top: -8px;
     width: 2px;
-    height: 250px;
+    height: 230px;
     background: #000000;
 }
 
 .metric-pin {
     position: absolute;
-    top: -15px;
-    left: 16px;
-    width: 13px;
-    height: 13px;
+    top: -14px;
+    left: 13px;
+    width: 12px;
+    height: 12px;
     background: #000000;
     border-radius: 50%;
 }
 
 .metric-item {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
-.metric-item:last-child {
-    margin-bottom: 0;
-}
-
-.metric-header {
-    width: 100%;
+.metric-top {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 7px;
+    column-gap: 16px;
+    margin-bottom: 6px;
 }
 
-.metric-header h4 {
-    font-size: 18px;
+.metric-top h4 {
+    font-size: 15px;
     line-height: 1;
     font-weight: 900;
 }
 
 .metric-dots {
     display: flex;
+    justify-content: flex-end;
     gap: 5px;
-    justify-self: end;
 }
 
 .metric-dot {
-    width: 11px;
-    height: 11px;
-    border: 1.6px solid #000000;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid #000000;
     border-radius: 50%;
     background: #ffffff;
 }
 
 .metric-item p {
-    width: 100%;
-    max-width: 350px;
-    font-size: 10px;
-    line-height: 1.18;
+    max-width: 330px;
+    font-size: 8.8px;
+    line-height: 1.15;
     font-weight: 400;
 }
 

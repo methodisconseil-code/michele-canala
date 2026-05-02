@@ -427,75 +427,79 @@ a {
 
 .program-metrics {
     position: relative;
-    width: 760px;
-    margin-top: 26px;
-    padding-left: 170px;
+    width: 360px;
+    margin-top: 22px;
+    padding-left: 56px;
     color: #000000;
 }
 
 .program-metrics.metric-under-left {
-    margin-left: 60px;
+    margin-left: 58px;
 }
 
 .program-metrics.metric-under-center {
-    margin-left: calc(33.333% + 72px);
+    margin-left: calc(33.333% + 58px);
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 72px);
+    margin-left: calc(66.666% + 58px);
 }
 
 .metric-line {
     position: absolute;
-    left: 58px;
-    top: -28px;
-    width: 4px;
-    height: 300px;
+    left: 0;
+    top: -22px;
+    width: 2.5px;
+    height: 220px;
     background: #000000;
 }
 
 .metric-pin {
     position: absolute;
-    top: -44px;
-    left: 42px;
-    width: 36px;
-    height: 36px;
+    top: -33px;
+    left: -9px;
+    width: 21px;
+    height: 21px;
     background: #000000;
     border-radius: 50%;
 }
 
 .metric-item {
     display: grid;
-    grid-template-columns: 1fr auto;
-    column-gap: 70px;
+    grid-template-columns: 205px 90px;
+    column-gap: 20px;
     align-items: start;
-    margin-bottom: 52px;
+    margin-bottom: 30px;
+}
+
+.metric-item:last-child {
+    margin-bottom: 0;
 }
 
 .metric-text h4 {
-    font-size: 34px;
-    line-height: 0.95;
+    font-size: 16px;
+    line-height: 1;
     font-weight: 900;
-    margin-bottom: 18px;
+    margin-bottom: 7px;
 }
 
 .metric-text p {
-    width: 520px;
-    font-size: 20px;
-    line-height: 1.05;
+    width: 205px;
+    font-size: 7.4px;
+    line-height: 1.15;
     font-weight: 400;
 }
 
 .metric-dots {
     display: flex;
-    gap: 12px;
-    padding-top: 4px;
+    gap: 5px;
+    padding-top: 1px;
 }
 
 .metric-dot {
-    width: 28px;
-    height: 28px;
-    border: 3px solid #000000;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid #000000;
     border-radius: 50%;
     background: #ffffff;
 }

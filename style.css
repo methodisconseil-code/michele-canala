@@ -427,49 +427,53 @@ a {
 
 .program-metrics {
     position: relative;
-    width: 360px;
+    width: 470px;
     margin-top: 22px;
-    padding-left: 56px;
+    padding-left: 92px;
     color: #000000;
 }
 
+/* Chaque métrique reste bien sous son bloc */
 .program-metrics.metric-under-left {
-    margin-left: 58px;
+    margin-left: 44px;
 }
 
 .program-metrics.metric-under-center {
-    margin-left: calc(33.333% + 58px);
+    margin-left: calc(33.333% + 44px);
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 58px);
+    margin-left: calc(66.666% + 44px);
 }
 
+/* Ligne verticale */
 .metric-line {
     position: absolute;
-    left: 0;
+    left: 26px;
     top: -22px;
-    width: 2.5px;
-    height: 220px;
+    width: 3px;
+    height: 260px;
     background: #000000;
 }
 
+/* Dot noir connecté au bloc */
 .metric-pin {
     position: absolute;
     top: -33px;
-    left: -9px;
-    width: 21px;
-    height: 21px;
+    left: 15px;
+    width: 24px;
+    height: 24px;
     background: #000000;
     border-radius: 50%;
 }
 
+/* Chaque ligne de métrique */
 .metric-item {
     display: grid;
-    grid-template-columns: 205px 90px;
-    column-gap: 20px;
+    grid-template-columns: 300px 96px;
+    column-gap: 22px;
     align-items: start;
-    margin-bottom: 30px;
+    margin-bottom: 42px;
 }
 
 .metric-item:last-child {
@@ -477,29 +481,29 @@ a {
 }
 
 .metric-text h4 {
-    font-size: 16px;
-    line-height: 1;
+    font-size: 24px;
+    line-height: 0.95;
     font-weight: 900;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 .metric-text p {
-    width: 205px;
-    font-size: 7.4px;
-    line-height: 1.15;
+    width: 300px;
+    font-size: 10.5px;
+    line-height: 1.12;
     font-weight: 400;
 }
 
 .metric-dots {
     display: flex;
-    gap: 5px;
-    padding-top: 1px;
+    gap: 7px;
+    padding-top: 3px;
 }
 
 .metric-dot {
-    width: 10px;
-    height: 10px;
-    border: 1.5px solid #000000;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #000000;
     border-radius: 50%;
     background: #ffffff;
 }

@@ -61,7 +61,7 @@ function showNutrition(type) {
             <img class="nutrition-image" src="${selectedNutrition.image}" alt="">
             <div class="nutrition-copy">
                 <h3>${selectedNutrition.title}</h3>
-                ${selectedNutrition.paragraphs.map(p => `<p>${p}</p>`).join("")}
+                ${selectedNutrition.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
                 <strong>${selectedNutrition.tagline}</strong>
             </div>
         </div>
@@ -75,21 +75,20 @@ function showNutrition(type) {
 const programData = {
     recomposition: {
         colorClass: "green",
-        positionClass: "metric-under-left",
         difficulty: 1,
         duration: 5,
         frequency: 3
     },
+
     weightloss: {
         colorClass: "pink",
-        positionClass: "metric-under-center",
         difficulty: 3,
         duration: 4,
         frequency: 3
     },
+
     mass: {
         colorClass: "blue",
-        positionClass: "metric-under-right",
         difficulty: 2,
         duration: 4,
         frequency: 4
@@ -98,9 +97,11 @@ const programData = {
 
 function createDots(activeDots) {
     let dots = "";
+
     for (let i = 1; i <= 5; i++) {
         dots += `<span class="metric-dot ${i <= activeDots ? "active" : ""}"></span>`;
     }
+
     return dots;
 }
 
@@ -109,43 +110,65 @@ function showProgram(programType) {
     const programCards = document.querySelectorAll(".program-card");
     const metricsContainer = document.getElementById("program-metrics");
 
+    let activeCard = null;
+
     programCards.forEach((card) => {
         card.classList.remove("active", "green", "pink", "blue");
+
         if (card.dataset.program === programType) {
             card.classList.add("active", selectedProgram.colorClass);
+            activeCard = card;
         }
     });
 
-    metricsContainer.className = `program-metrics ${selectedProgram.colorClass} ${selectedProgram.positionClass}`;
+    metricsContainer.className = `program-metrics ${selectedProgram.colorClass}`;
 
     metricsContainer.innerHTML = `
         <div class="metric-line"></div>
         <div class="metric-pin"></div>
 
         <div class="metric-item">
-            <div class="metric-header">
+            <div class="metric-top">
                 <h4>Difficulty level</h4>
                 <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
             </div>
-            <p>Indicates how demanding the program is in terms of intensity, consistency, and overall effort required to achieve results.</p>
+            <p>
+                Indicates how demanding the program is in terms of intensity,
+                consistency, and overall effort required to achieve results.
+            </p>
         </div>
 
         <div class="metric-item">
-            <div class="metric-header">
+            <div class="metric-top">
                 <h4>Program duration</h4>
                 <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
             </div>
-            <p>Represents the typical time needed to see meaningful results, depending on your starting point and level of commitment.</p>
+            <p>
+                Represents the typical time needed to see meaningful results,
+                depending on your starting point and level of commitment.
+            </p>
         </div>
 
         <div class="metric-item">
-            <div class="metric-header">
+            <div class="metric-top">
                 <h4>Session frequency</h4>
                 <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
             </div>
-            <p>Shows how many training sessions per week are recommended to follow the program effectively and maximize progress.</p>
+            <p>
+                Shows how many training sessions per week are recommended to
+                follow the program effectively and maximize progress.
+            </p>
         </div>
     `;
+
+    /* 
+       IMPORTANT :
+       On déplace physiquement le bloc metrics juste après la card active.
+       Comme ça, il reste contraint par la même colonne que le bloc au-dessus.
+    */
+    if (activeCard) {
+        activeCard.insertAdjacentElement("afterend", metricsContainer);
+    }
 }
 
 /* =========================

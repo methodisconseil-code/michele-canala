@@ -1,185 +1,185 @@
 // =========================
-// SCROLL VERS SECTION
-// Permet de cliquer sur les boutons du hero
+// SCROLL DOUX VERS LES SECTIONS
+// Utilisé par les boutons du header
 // =========================
 
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({
         behavior: "smooth"
     });
 }
 
 
 // =========================
-// SECTION NUTRITION
-// Change le contenu selon le bouton cliqué
+// DONNÉES NUTRITION
+// Chaque choix change :
+// - le bouton actif
+// - l’image
+// - le titre
+// - le texte
+// =========================
+
+const nutritionData = {
+    flexitarian: {
+        image: "static/takedahrs-japanese-food-7187313.jpg",
+        title: "Flexitarian Nutrition",
+        paragraphs: [
+            "You mainly follow a plant-based diet while still including animal products occasionally. This flexible approach allows you to enjoy a wide variety of foods while building a nutrition strategy that supports your training and long-term progress.",
+            "We help you structure your meals with a balanced mix of plant-based proteins, complex carbohydrates, and healthy fats, adapted to your workout intensity and recovery needs. Small adjustments can make a real difference in how you perform and recover.",
+            "Whether your goal is fat loss, muscle gain, or body recomposition, your nutrition becomes a powerful tool to support consistent results."
+        ],
+        tagline: "Balance without restriction."
+    },
+
+    vegetarian: {
+        image: "static/pen_ash-smashed-avocado-on-toast-4488463.jpg",
+        title: "Vegetarian Nutrition",
+        paragraphs: [
+            "You follow a vegetarian diet, excluding meat and fish while still including eggs and/or dairy. With the right structure, this approach can fully support strength development, recovery, and overall performance.",
+            "We guide you in building balanced meals that provide enough protein, essential nutrients, and energy to match your training routine. Understanding how to combine different food sources is key to maintaining consistency and progress.",
+            "With a clear and practical approach, your nutrition supports your goals: whether it’s fat loss, muscle gain, or improving overall fitness."
+        ],
+        tagline: "Complete nutrition, consistent results."
+    },
+
+    vegan: {
+        image: "static/joannawielgosz-pasta-7209002.jpg",
+        title: "Vegan Nutrition",
+        paragraphs: [
+            "You follow a fully plant-based diet, excluding all animal products. With the right structure and food combinations, this approach can effectively support performance, recovery, and muscle development.",
+            "We help you understand how to meet your protein needs, balance your meals, and fuel your body around your workouts using plant-based foods. The focus is on making your nutrition both efficient and easy to follow daily.",
+            "With the right guidance, your diet becomes a strong foundation for fat loss, muscle gain, or body recomposition."
+        ],
+        tagline: "Plant-fueled, performance-ready."
+    }
+};
+
+
+// =========================
+// AFFICHAGE NUTRITION
+// Met à jour le contenu et l’état du bouton actif
 // =========================
 
 function showNutrition(type) {
+    const selectedNutrition = nutritionData[type];
+    const nutritionContent = document.getElementById("nutrition-content");
+    const nutritionButtons = document.querySelectorAll(".nutrition-tab");
 
-    const content = document.getElementById("nutrition-content");
+    nutritionButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.nutrition === type);
+    });
 
-    let html = "";
-
-    // FLEXITARIAN
-    if (type === "flexitarian") {
-        html = `
+    nutritionContent.innerHTML = `
         <div class="nutrition-layout">
 
-            <img class="nutrition-image" src="https://images.unsplash.com/photo-1546069901-eacef0df6022">
+            <img
+                class="nutrition-image"
+                src="${selectedNutrition.image}"
+                alt="${selectedNutrition.title}"
+            >
 
-            <div class="nutrition-text">
-                <h3>Flexitarian Nutrition</h3>
+            <div class="nutrition-copy">
 
-                <p>
-                You mainly follow a plant-based diet while still including animal products occasionally.
-                </p>
+                <h3>${selectedNutrition.title}</h3>
 
-                <p>
-                We help you structure your meals with a balanced mix of proteins,
-                carbs and healthy fats.
-                </p>
+                ${selectedNutrition.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
 
-                <strong>Balance without restriction.</strong>
+                <strong>${selectedNutrition.tagline}</strong>
+
             </div>
 
         </div>
-        `;
-    }
-
-    // VEGETARIAN
-    if (type === "vegetarian") {
-        html = `
-        <div class="nutrition-layout">
-
-            <img class="nutrition-image" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
-
-            <div class="nutrition-text">
-                <h3>Vegetarian Nutrition</h3>
-
-                <p>
-                You follow a vegetarian diet, excluding meat and fish.
-                </p>
-
-                <p>
-                We guide you in building balanced meals with enough protein and nutrients.
-                </p>
-
-                <strong>Complete nutrition, consistent results.</strong>
-            </div>
-
-        </div>
-        `;
-    }
-
-    // VEGAN
-    if (type === "vegan") {
-        html = `
-        <div class="nutrition-layout">
-
-            <img class="nutrition-image" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
-
-            <div class="nutrition-text">
-                <h3>Vegan Nutrition</h3>
-
-                <p>
-                Fully plant-based diet, excluding all animal products.
-                </p>
-
-                <p>
-                We help you meet your protein needs and fuel your workouts effectively.
-                </p>
-
-                <strong>Plant-fueled, performance-ready.</strong>
-            </div>
-
-        </div>
-        `;
-    }
-
-    content.innerHTML = html;
+    `;
 }
 
 
 // =========================
-// SECTION PROGRAMS
-// Affiche le détail du programme sélectionné
+// DONNÉES PROGRAMS
+// Chaque programme possède une couleur et des métriques
 // =========================
 
-function showProgram(type) {
+const programData = {
+    recomposition: {
+        colorClass: "green",
+        metricsClass: "recomposition",
+        difficulty: "●●●○○",
+        duration: "8–16 weeks",
+        frequency: "3–5 sessions / week"
+    },
 
-    const container = document.getElementById("program-content");
+    weightloss: {
+        colorClass: "pink",
+        metricsClass: "weightloss",
+        difficulty: "●●●●○",
+        duration: "6–12 weeks",
+        frequency: "4–6 sessions / week"
+    },
 
-    let html = "";
+    mass: {
+        colorClass: "blue",
+        metricsClass: "mass",
+        difficulty: "●●●●●",
+        duration: "12–24 weeks",
+        frequency: "4–5 sessions / week"
+    }
+};
 
-    if (type === "recomposition") {
-        html = `
-        <div class="program-details">
 
-            <div class="program-details-row">
-                <span>Difficulty level</span>
-                <span class="dots">●●●○○</span>
+// =========================
+// AFFICHAGE PROGRAMS
+// Fonction appelée au survol des cartes
+// =========================
+
+function showProgram(programType) {
+    const selectedProgram = programData[programType];
+    const programCards = document.querySelectorAll(".program-card");
+    const metricsContainer = document.getElementById("program-metrics");
+
+    programCards.forEach((card) => {
+        const isActive = card.dataset.program === programType;
+
+        card.classList.remove("active", "green", "pink", "blue");
+
+        if (isActive) {
+            card.classList.add("active", selectedProgram.colorClass);
+        }
+    });
+
+    metricsContainer.innerHTML = `
+        <div class="program-metrics ${selectedProgram.metricsClass}">
+
+            <div class="metric-row">
+                <strong>Difficulty level</strong>
+                <span class="metric-dots">${selectedProgram.difficulty}</span>
             </div>
 
-            <div class="program-details-row">
-                <span>Program duration</span>
-                <span>8–16 weeks</span>
+            <div class="metric-row">
+                <strong>Program duration</strong>
+                <span>${selectedProgram.duration}</span>
             </div>
 
-            <div class="program-details-row">
-                <span>Session frequency</span>
-                <span>3–5 per week</span>
+            <div class="metric-row">
+                <strong>Session frequency</strong>
+                <span>${selectedProgram.frequency}</span>
             </div>
 
         </div>
-        `;
-    }
-
-    if (type === "weightloss") {
-        html = `
-        <div class="program-details">
-
-            <div class="program-details-row">
-                <span>Difficulty level</span>
-                <span class="dots">●●●●○</span>
-            </div>
-
-            <div class="program-details-row">
-                <span>Program duration</span>
-                <span>6–12 weeks</span>
-            </div>
-
-            <div class="program-details-row">
-                <span>Session frequency</span>
-                <span>4–6 per week</span>
-            </div>
-
-        </div>
-        `;
-    }
-
-    if (type === "mass") {
-        html = `
-        <div class="program-details">
-
-            <div class="program-details-row">
-                <span>Difficulty level</span>
-                <span class="dots">●●●●●</span>
-            </div>
-
-            <div class="program-details-row">
-                <span>Program duration</span>
-                <span>12–24 weeks</span>
-            </div>
-
-            <div class="program-details-row">
-                <span>Session frequency</span>
-                <span>4–5 per week</span>
-            </div>
-
-        </div>
-        `;
-    }
-
-    container.innerHTML = html;
+    `;
 }
+
+
+// =========================
+// INITIALISATION AU CHARGEMENT
+// Par défaut : Flexitarian + Body Recomposition
+// =========================
+
+document.addEventListener("DOMContentLoaded", () => {
+    showNutrition("flexitarian");
+    showProgram("recomposition");
+
+    document.querySelectorAll(".program-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            showProgram(card.dataset.program);
+        });
+    });
+});

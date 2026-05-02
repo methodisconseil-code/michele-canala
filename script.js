@@ -1,6 +1,5 @@
 // =========================
 // SCROLL DOUX VERS LES SECTIONS
-// Utilisé par les boutons du header
 // =========================
 
 function scrollToSection(sectionId) {
@@ -12,16 +11,12 @@ function scrollToSection(sectionId) {
 
 // =========================
 // DONNÉES NUTRITION
-// Chaque choix change :
-// - le bouton actif
-// - l’image
-// - le titre
-// - le texte
+// Les images sont à la racine du repo GitHub
 // =========================
 
 const nutritionData = {
     flexitarian: {
-        image: "static/takedahrs-japanese-food-7187313.jpg",
+        image: "takedahrs-japanese-food-7187313.jpg",
         title: "Flexitarian Nutrition",
         paragraphs: [
             "You mainly follow a plant-based diet while still including animal products occasionally. This flexible approach allows you to enjoy a wide variety of foods while building a nutrition strategy that supports your training and long-term progress.",
@@ -32,7 +27,7 @@ const nutritionData = {
     },
 
     vegetarian: {
-        image: "static/pen_ash-smashed-avocado-on-toast-4488463.jpg",
+        image: "pen_ash-smashed-avocado-on-toast-4488463.jpg",
         title: "Vegetarian Nutrition",
         paragraphs: [
             "You follow a vegetarian diet, excluding meat and fish while still including eggs and/or dairy. With the right structure, this approach can fully support strength development, recovery, and overall performance.",
@@ -43,7 +38,7 @@ const nutritionData = {
     },
 
     vegan: {
-        image: "static/joannawielgosz-pasta-7209002.jpg",
+        image: "joannawielgosz-pasta-7209002.jpg",
         title: "Vegan Nutrition",
         paragraphs: [
             "You follow a fully plant-based diet, excluding all animal products. With the right structure and food combinations, this approach can effectively support performance, recovery, and muscle development.",
@@ -57,7 +52,6 @@ const nutritionData = {
 
 // =========================
 // AFFICHAGE NUTRITION
-// Met à jour le contenu et l’état du bouton actif
 // =========================
 
 function showNutrition(type) {
@@ -95,7 +89,6 @@ function showNutrition(type) {
 
 // =========================
 // DONNÉES PROGRAMS
-// Chaque programme possède une couleur et des métriques
 // =========================
 
 const programData = {
@@ -126,8 +119,7 @@ const programData = {
 
 
 // =========================
-// AFFICHAGE PROGRAMS
-// Fonction appelée au survol des cartes
+// AFFICHAGE PROGRAMS AU SURVOL
 // =========================
 
 function showProgram(programType) {
@@ -169,13 +161,18 @@ function showProgram(programType) {
 
 
 // =========================
-// INITIALISATION AU CHARGEMENT
-// Par défaut : Flexitarian + Body Recomposition
+// INITIALISATION
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
     showNutrition("flexitarian");
     showProgram("recomposition");
+
+    document.querySelectorAll(".nutrition-tab").forEach((button) => {
+        button.addEventListener("click", () => {
+            showNutrition(button.dataset.nutrition);
+        });
+    });
 
     document.querySelectorAll(".program-card").forEach((card) => {
         card.addEventListener("mouseenter", () => {

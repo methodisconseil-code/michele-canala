@@ -1,0 +1,168 @@
+<!-- =========================
+     PAGE PRINCIPALE DU SITE
+     Michele Canala - Fitness & Nutrition
+========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Michele Canala - Personal Trainer</title>
+
+    <!-- Lien vers le CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HERO (image + titre principal)
+    ========================= -->
+    <section class="hero">
+        <div class="overlay">
+
+            <h1>
+                Transform your body with fitness <br>
+                and plant-based nutrition
+            </h1>
+
+            <p>
+                Discover the personal training and plant-based guidance in Paris,
+                built around your lifestyle
+            </p>
+
+            <!-- Navigation principale -->
+            <div class="nav-buttons">
+                <button onclick="scrollToSection('fitness')">Fitness</button>
+                <button onclick="scrollToSection('nutrition')">Plant-based nutrition</button>
+                <button onclick="scrollToSection('programs')">Programs</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         FITNESS SECTION
+    ========================= -->
+    <section id="fitness" class="section">
+
+        <h2>Fitness</h2>
+        <p>Choose your perfect set up!</p>
+
+        <div class="cards">
+
+            <!-- Carte -->
+            <div class="card">
+                <h3>One-on-One Coaching</h3>
+                <p>Personalized training sessions tailored to your goals.</p>
+            </div>
+
+            <div class="card">
+                <h3>Couple Training</h3>
+                <p>Train together and stay motivated.</p>
+            </div>
+
+            <div class="card">
+                <h3>Group Training</h3>
+                <p>Energy, accountability, progression.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NUTRITION SECTION
+    ========================= -->
+    <section id="nutrition" class="section">
+
+        <h2>Plant-based nutrition</h2>
+
+        <!-- Boutons choix -->
+        <div class="nutrition-buttons">
+            <button onclick="showNutrition('flexitarian')">Flexitarian</button>
+            <button onclick="showNutrition('vegetarian')">Vegetarian</button>
+            <button onclick="showNutrition('vegan')">Vegan</button>
+        </div>
+
+        <!-- Contenu dynamique -->
+        <div id="nutrition-content">
+
+            <p>Select a nutrition type to see details.</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROGRAMS SECTION
+    ========================= -->
+    <section id="programs" class="section">
+
+        <h2>Programs</h2>
+
+        <div class="cards">
+
+            <div class="card" onclick="showProgram('recomposition')">
+                <h3>Body Recomposition</h3>
+            </div>
+
+            <div class="card" onclick="showProgram('weightloss')">
+                <h3>Weight Loss</h3>
+            </div>
+
+            <div class="card" onclick="showProgram('mass')">
+                <h3>Mass Gaining</h3>
+            </div>
+
+        </div>
+
+        <!-- Zone dynamique -->
+        <div id="program-content"></div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA SECTION
+    ========================= -->
+    <section class="cta">
+
+        <h2>Let’s Get Started</h2>
+
+        <button>START MY EVALUATION</button>
+        <button>CONTACT MY FUTURE COACH</button>
+
+    </section>
+
+
+    <!-- =========================
+         COACH SECTION
+    ========================= -->
+    <section class="coach">
+
+        <h2>Meet Your Coach</h2>
+
+        <!-- REDIRECTION -->
+        <a href="coach.html" class="coach-button">
+            LEARN MORE ABOUT ME
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         SCRIPT JS
+    ========================= -->
+    <script src="script.js"></script>
+
+</body>
+</html>

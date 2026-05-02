@@ -6,7 +6,7 @@ function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({
         behavior: "smooth"
     });
-} 
+}
 
 /* =========================
    NUTRITION
@@ -61,7 +61,7 @@ function showNutrition(type) {
             <img class="nutrition-image" src="${selectedNutrition.image}" alt="">
             <div class="nutrition-copy">
                 <h3>${selectedNutrition.title}</h3>
-                ${selectedNutrition.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
+                ${selectedNutrition.paragraphs.map(p => `<p>${p}</p>`).join("")}
                 <strong>${selectedNutrition.tagline}</strong>
             </div>
         </div>
@@ -80,7 +80,6 @@ const programData = {
         duration: 5,
         frequency: 3
     },
-
     weightloss: {
         colorClass: "pink",
         positionClass: "metric-under-center",
@@ -88,7 +87,6 @@ const programData = {
         duration: 4,
         frequency: 3
     },
-
     mass: {
         colorClass: "blue",
         positionClass: "metric-under-right",
@@ -100,11 +98,9 @@ const programData = {
 
 function createDots(activeDots) {
     let dots = "";
-
     for (let i = 1; i <= 5; i++) {
         dots += `<span class="metric-dot ${i <= activeDots ? "active" : ""}"></span>`;
     }
-
     return dots;
 }
 
@@ -115,7 +111,6 @@ function showProgram(programType) {
 
     programCards.forEach((card) => {
         card.classList.remove("active", "green", "pink", "blue");
-
         if (card.dataset.program === programType) {
             card.classList.add("active", selectedProgram.colorClass);
         }
@@ -128,27 +123,27 @@ function showProgram(programType) {
         <div class="metric-pin"></div>
 
         <div class="metric-item">
-            <div class="metric-text">
+            <div class="metric-top">
                 <h4>Difficulty level</h4>
-                <p>Indicates how demanding the program is in terms of intensity, consistency, and overall effort required to achieve results.</p>
+                <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
             </div>
-            <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
+            <p>Indicates how demanding the program is in terms of intensity, consistency, and overall effort required to achieve results.</p>
         </div>
 
         <div class="metric-item">
-            <div class="metric-text">
+            <div class="metric-top">
                 <h4>Program duration</h4>
-                <p>Represents the typical time needed to see meaningful results, depending on your starting point and level of commitment.</p>
+                <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
             </div>
-            <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
+            <p>Represents the typical time needed to see meaningful results, depending on your starting point and level of commitment.</p>
         </div>
 
         <div class="metric-item">
-            <div class="metric-text">
+            <div class="metric-top">
                 <h4>Session frequency</h4>
-                <p>Shows how many training sessions per week are recommended to follow the program effectively and maximize progress.</p>
+                <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
             </div>
-            <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
+            <p>Shows how many training sessions per week are recommended to follow the program effectively and maximize progress.</p>
         </div>
     `;
 }

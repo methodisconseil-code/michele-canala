@@ -38,7 +38,7 @@ const nutritionData = {
 
     vegan: {
         image: "joannawielgosz-pasta-7209002.jpg",
-        title: "Vegan Nutrition",
+        title: "Vegan<br>Nutrition",
         paragraphs: [
             "You follow a fully plant-based diet, excluding all animal products. With the right structure and food combinations, this approach can effectively support performance, recovery, and muscle development.",
             "We help you understand how to meet your protein needs, balance your meals, and fuel your body around your workouts using plant-based foods. The focus is on making your nutrition both efficient and easy to follow daily.",

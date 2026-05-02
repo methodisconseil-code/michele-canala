@@ -1,17 +1,12 @@
-// =========================
-// SCROLL DOUX VERS LES SECTIONS
-// =========================
-
 function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({
         behavior: "smooth"
     });
 }
 
-
-// =========================
-// DONNÉES NUTRITION
-// =========================
+/* =========================
+   NUTRITION
+========================= */
 
 const nutritionData = {
     flexitarian: {
@@ -48,11 +43,6 @@ const nutritionData = {
     }
 };
 
-
-// =========================
-// AFFICHAGE NUTRITION
-// =========================
-
 function showNutrition(type) {
     const selectedNutrition = nutritionData[type];
     const nutritionContent = document.getElementById("nutrition-content");
@@ -74,18 +64,17 @@ function showNutrition(type) {
     `;
 }
 
-
-// =========================
-// DONNÉES PROGRAMS
-// =========================
+/* =========================
+   PROGRAMS
+========================= */
 
 const programData = {
     recomposition: {
         colorClass: "green",
         metricsClass: "recomposition",
-        difficulty: 3,
-        duration: 4,
-        frequency: 4
+        difficulty: 1,
+        duration: 5,
+        frequency: 3
     },
 
     weightloss: {
@@ -93,7 +82,7 @@ const programData = {
         metricsClass: "weightloss",
         difficulty: 3,
         duration: 4,
-        frequency: 4
+        frequency: 3
     },
 
     mass: {
@@ -105,11 +94,6 @@ const programData = {
     }
 };
 
-
-// =========================
-// CRÉATION DES DOTS
-// =========================
-
 function createDots(activeDots) {
     let dots = "";
 
@@ -119,11 +103,6 @@ function createDots(activeDots) {
 
     return dots;
 }
-
-
-// =========================
-// AFFICHAGE PROGRAMS
-// =========================
 
 function showProgram(programType) {
     const selectedProgram = programData[programType];
@@ -141,38 +120,35 @@ function showProgram(programType) {
     });
 
     metricsContainer.innerHTML = `
-        <div class="program-metrics ${selectedProgram.metricsClass}">
+        <div class="program-metrics ${selectedProgram.metricsClass} ${selectedProgram.colorClass}">
+
             <div class="metric-item">
-                <div class="metric-title-row">
+                <div class="metric-text">
                     <h4>Difficulty level</h4>
-                    <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
+                    <p>Indicates how demanding the program is in terms of intensity, consistency, and overall effort required to achieve results.</p>
                 </div>
-                <p>Indicates how demanding the program is in terms of intensity, consistency, and overall effort required to achieve results.</p>
+                <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
             </div>
 
             <div class="metric-item">
-                <div class="metric-title-row">
+                <div class="metric-text">
                     <h4>Program duration</h4>
-                    <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
+                    <p>Represents the typical time needed to see meaningful results, depending on your starting point and level of commitment.</p>
                 </div>
-                <p>Represents the typical time needed to see meaningful results, depending on your starting point and level of commitment.</p>
+                <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
             </div>
 
             <div class="metric-item">
-                <div class="metric-title-row">
+                <div class="metric-text">
                     <h4>Session frequency</h4>
-                    <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
+                    <p>Shows how many training sessions per week are recommended to follow the program effectively and maximize progress.</p>
                 </div>
-                <p>Shows how many training sessions per week are recommended to follow the program effectively and maximize progress.</p>
+                <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
             </div>
+
         </div>
     `;
 }
-
-
-// =========================
-// INITIALISATION
-// =========================
 
 document.addEventListener("DOMContentLoaded", () => {
     showNutrition("flexitarian");

@@ -229,11 +229,6 @@ a {
 
 /* =========================
    FITNESS
-   Ajusté pour coller à la capture 1 :
-   - cartes moins hautes
-   - texte plus petit
-   - coins arrondis
-   - rythme plus proche de la maquette
 ========================= */
 
 .fitness-card {
@@ -266,23 +261,32 @@ a {
 
 /* =========================
    NUTRITION
+   Ajusté selon la capture cible
 ========================= */
 
+.nutrition-section {
+    justify-content: center;
+}
+
+.nutrition-section .section-heading {
+    margin-bottom: 48px;
+}
+
 .nutrition-tabs {
-    width: 560px;
+    width: 700px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 13px;
-    margin-bottom: 16px;
+    gap: 34px;
+    margin-bottom: 38px;
 }
 
 .nutrition-tab {
-    height: 27px;
-    border: 1.8px solid #000000;
+    height: 40px;
+    border: 2.2px solid #000000;
     border-radius: 999px;
     background: #ffffff;
     color: #000000;
-    font-size: 10px;
+    font-size: 17px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -294,47 +298,52 @@ a {
 
 .nutrition-layout {
     display: grid;
-    grid-template-columns: 0.9fr 1fr;
-    gap: 50px;
-    align-items: center;
+    grid-template-columns: 735px 1fr;
+    gap: 42px;
+    align-items: start;
 }
 
 .nutrition-image {
     width: 100%;
-    aspect-ratio: 1.35 / 1;
+    height: 470px;
     object-fit: cover;
+    object-position: center center;
     display: block;
 }
 
 .nutrition-copy {
-    max-width: 620px;
+    max-width: 600px;
+    padding-top: 8px;
 }
 
 .nutrition-copy h3 {
-    font-size: 32px;
-    line-height: 0.82;
+    max-width: 360px;
+    font-size: 38px;
+    line-height: 0.9;
     font-weight: 900;
     letter-spacing: -0.8px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .nutrition-copy p {
-    font-size: 12.1px;
-    line-height: 1.15;
+    font-size: 18px;
+    line-height: 1.08;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 28px;
 }
 
 .nutrition-copy strong {
     display: block;
-    margin-top: 9px;
-    font-size: 12.1px;
+    margin-top: 22px;
+    font-size: 20px;
+    line-height: 1.05;
     font-weight: 900;
 }
 
 .nutrition-footer-text {
-    margin-top: 20px;
-    font-size: 11.8px;
+    margin-top: 34px;
+    font-size: 18px;
+    line-height: 1.08;
     font-weight: 400;
 }
 
@@ -689,6 +698,17 @@ a {
 
     .nutrition-tabs {
         width: 100%;
+        gap: 12px;
+    }
+
+    .nutrition-tab {
+        font-size: 11px;
+        height: 32px;
+    }
+
+    .nutrition-image {
+        height: auto;
+        aspect-ratio: 1.25 / 1;
     }
 
     .program-metrics,

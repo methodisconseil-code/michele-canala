@@ -471,7 +471,10 @@ a {
 }
 
 .metric-item {
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto; /* texte / dots */
+    align-items: start;
+    column-gap: 16px;
     margin-bottom: 28px;
 }
 
@@ -479,24 +482,21 @@ a {
     font-size: 18px;
     line-height: 1;
     font-weight: 900;
-    margin-bottom: 8px;
-    padding-right: 105px;
+    margin-bottom: 6px;
 }
 
 .metric-text p {
-    width: 100%;
-    max-width: 330px;
-    font-size: 8.8px;
-    line-height: 1.15;
+    font-size: 10.5px; /* + lisible */
+    line-height: 1.2;
     font-weight: 400;
+    max-width: 100%;
 }
 
 .metric-dots {
-    position: absolute;
-    top: 0;
-    right: -60px; /* ← LA CLÉ : on les pousse jusqu’au bord de la card */
     display: flex;
-    gap: 5px;
+    gap: 6px;
+    justify-self: end; /* ← colle à droite du bloc */
+    margin-top: 2px;   /* aligné avec le titre */
 }
 
 .metric-dot {

@@ -1,5 +1,6 @@
 // =========================
 // SCROLL DOUX VERS LES SECTIONS
+// Utilisé par les boutons du header
 // =========================
 
 function scrollToSection(sectionId) {
@@ -11,7 +12,8 @@ function scrollToSection(sectionId) {
 
 // =========================
 // DONNÉES NUTRITION
-// Les images sont à la racine du repo GitHub
+// Textes issus de la maquette :
+// Flexitarian / Vegetarian / Vegan
 // =========================
 
 const nutritionData = {
@@ -52,6 +54,10 @@ const nutritionData = {
 
 // =========================
 // AFFICHAGE NUTRITION
+// Au clic :
+// - le bouton sélectionné devient noir
+// - les autres redeviennent blancs
+// - l’image et le texte changent
 // =========================
 
 function showNutrition(type) {
@@ -89,6 +95,8 @@ function showNutrition(type) {
 
 // =========================
 // DONNÉES PROGRAMS
+// Les métriques reprennent uniquement les libellés visibles dans la maquette.
+// Les niveaux sont indiqués par pastilles, sans inventer de durée en semaines.
 // =========================
 
 const programData = {
@@ -96,30 +104,35 @@ const programData = {
         colorClass: "green",
         metricsClass: "recomposition",
         difficulty: "●●●○○",
-        duration: "8–16 weeks",
-        frequency: "3–5 sessions / week"
+        duration: "●●●○○",
+        frequency: "●●●○○"
     },
 
     weightloss: {
         colorClass: "pink",
         metricsClass: "weightloss",
         difficulty: "●●●●○",
-        duration: "6–12 weeks",
-        frequency: "4–6 sessions / week"
+        duration: "●●●○○",
+        frequency: "●●●●○"
     },
 
     mass: {
         colorClass: "blue",
         metricsClass: "mass",
-        difficulty: "●●●●●",
-        duration: "12–24 weeks",
-        frequency: "4–5 sessions / week"
+        difficulty: "●●●●○",
+        duration: "●●●●○",
+        frequency: "●●●○○"
     }
 };
 
 
 // =========================
 // AFFICHAGE PROGRAMS AU SURVOL
+// Par défaut : Body Recomposition est actif.
+// Au survol d’un autre bloc :
+// - le bloc survolé prend sa couleur
+// - les autres redeviennent gris
+// - les métriques se déplacent sous le bloc actif
 // =========================
 
 function showProgram(programType) {
@@ -147,12 +160,12 @@ function showProgram(programType) {
 
             <div class="metric-row">
                 <strong>Program duration</strong>
-                <span>${selectedProgram.duration}</span>
+                <span class="metric-dots">${selectedProgram.duration}</span>
             </div>
 
             <div class="metric-row">
                 <strong>Session frequency</strong>
-                <span>${selectedProgram.frequency}</span>
+                <span class="metric-dots">${selectedProgram.frequency}</span>
             </div>
 
         </div>
@@ -162,6 +175,7 @@ function showProgram(programType) {
 
 // =========================
 // INITIALISATION
+// Lance l’état par défaut du site au chargement
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {

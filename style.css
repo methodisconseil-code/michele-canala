@@ -471,8 +471,6 @@ a {
 }
 
 .metric-item {
-    display: grid;
-    grid-template-columns: 1fr;
     position: relative;
     margin-bottom: 28px;
 }
@@ -496,12 +494,9 @@ a {
 .metric-dots {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -60px; /* ← LA CLÉ : on les pousse jusqu’au bord de la card */
     display: flex;
-    justify-content: flex-end;
     gap: 5px;
-    padding-top: 0;
-    width: 90px;
 }
 
 .metric-dot {

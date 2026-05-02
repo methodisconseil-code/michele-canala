@@ -121,10 +121,14 @@ a {
     padding-top: 35vh;
     text-align: center;
 }
-
 .hero-logo {
-    width: 90px;          /* ajuste selon ton goût */
-    margin-bottom: 20px;  /* espace avec le titre */
+    width: 55px;            /* ≈ -60% par rapport à avant */
+    margin-bottom: 18px;
+    
+    /* position plus haute */
+    position: relative;
+    top: -40px;
+
     display: block;
     margin-left: auto;
     margin-right: auto;

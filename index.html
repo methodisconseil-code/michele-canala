@@ -1,33 +1,48 @@
 <!-- =========================
-     PAGE PRINCIPALE DU SITE
-     Michele Canala - Fitness & Nutrition
+     PAGE PRINCIPALE
+     MICHELE CANALA - FITNESS / PLANT-BASED NUTRITION / PROGRAMS
+     Cette page reproduit la maquette principale avec :
+     - Hero
+     - Fitness
+     - Plant-based nutrition avec choix interactifs
+     - Programs avec choix interactifs
+     - CTA
+     - Redirection vers la page coach
 ========================= -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- =========================
+         PARAMÈTRES DE BASE
+    ========================= -->
     <meta charset="UTF-8">
-
-    <!-- Responsive mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michele Canala - Personal Trainer & Wellness Coach</title>
 
-    <title>Michele Canala - Personal Trainer</title>
-
-    <!-- Lien vers le CSS -->
+    <!-- Fichier CSS principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- =========================
-         HERO (image + titre principal)
+         HERO / HEADER VISUEL
     ========================= -->
-    <section class="hero">
-        <div class="overlay">
+    <header class="hero">
+
+        <!-- Sélecteur langues -->
+        <div class="language-switcher">
+            <a href="#">FR</a>
+            <a href="#">EN</a>
+            <a href="#">IT</a>
+        </div>
+
+        <div class="hero-overlay">
 
             <h1>
-                Transform your body with fitness <br>
+                Transform your body with fitness<br>
                 and plant-based nutrition
             </h1>
 
@@ -36,133 +51,296 @@
                 built around your lifestyle
             </p>
 
-            <!-- Navigation principale -->
-            <div class="nav-buttons">
-                <button onclick="scrollToSection('fitness')">Fitness</button>
-                <button onclick="scrollToSection('nutrition')">Plant-based nutrition</button>
-                <button onclick="scrollToSection('programs')">Programs</button>
-            </div>
+            <!-- Navigation interne -->
+            <nav class="hero-nav">
+                <button onclick="scrollToSection('fitness')">FITNESS</button>
+                <button onclick="scrollToSection('nutrition')">PLANT-BASED NUTRITION</button>
+                <button onclick="scrollToSection('programs')">PROGRAMS</button>
+            </nav>
 
         </div>
-    </section>
+    </header>
 
 
     <!-- =========================
-         FITNESS SECTION
+         SECTION FITNESS
     ========================= -->
-    <section id="fitness" class="section">
+    <main>
 
-        <h2>Fitness</h2>
-        <p>Choose your perfect set up!</p>
+        <section id="fitness" class="section fitness-section">
 
-        <div class="cards">
+            <h2>Fitness</h2>
+            <p class="section-subtitle">Choose your perfect set up!</p>
 
-            <!-- Carte -->
-            <div class="card">
-                <h3>One-on-One Coaching</h3>
-                <p>Personalized training sessions tailored to your goals.</p>
+            <!-- Sous-section composition des cours -->
+            <p class="small-title">CLASS COMPOSITION</p>
+
+            <div class="card-grid">
+
+                <article class="info-card">
+                    <h3>One-on-One Coaching</h3>
+                    <p>
+                        Personalized training sessions tailored to your goals, your pace,
+                        and your level. A fully dedicated approach to maximize efficiency
+                        and long-term progress.
+                    </p>
+                    <strong>Full attention, maximum results.</strong>
+                </article>
+
+                <article class="info-card">
+                    <h3>Couple Training (2 people)</h3>
+                    <p>
+                        Train with a partner and stay motivated together while still
+                        benefiting from structured and personalized guidance.
+                        Perfect for consistency and shared progress.
+                    </p>
+                    <strong>Stronger together, better results.</strong>
+                </article>
+
+                <article class="info-card">
+                    <h3>Group Training (3–10 people)</h3>
+                    <p>
+                        Dynamic small-group sessions designed to challenge you, boost
+                        motivation, and create a strong team energy while keeping
+                        individual progression in focus.
+                    </p>
+                    <strong>Energy, accountability, progression.</strong>
+                </article>
+
             </div>
 
-            <div class="card">
-                <h3>Couple Training</h3>
-                <p>Train together and stay motivated.</p>
+            <!-- Sous-section lieu d'entraînement -->
+            <p class="small-title second-small-title">SPOT SITUATION</p>
+
+            <div class="card-grid">
+
+                <article class="info-card">
+                    <h3>Gym Training (On-site)</h3>
+                    <p>
+                        Train in a fully equipped environment with access to professional
+                        machines and structured workout setups for optimal performance
+                        and progression.
+                    </p>
+                    <strong>Structure, equipment, performance.</strong>
+                </article>
+
+                <article class="info-card">
+                    <h3>Outdoor Training</h3>
+                    <p>
+                        Enjoy refreshing sessions in the open air, bringing variety to
+                        your workouts while reconnecting with your environment and
+                        boosting your energy levels.
+                    </p>
+                    <strong>Fresh air, freedom, intensity.</strong>
+                </article>
+
+                <article class="info-card">
+                    <h3>Home & Online Training</h3>
+                    <p>
+                        Train from the comfort of your home or remotely with live coaching
+                        sessions adapted to your space, schedule, and lifestyle.
+                    </p>
+                    <strong>Flexibility, comfort, efficiency.</strong>
+                </article>
+
             </div>
 
-            <div class="card">
-                <h3>Group Training</h3>
-                <p>Energy, accountability, progression.</p>
+        </section>
+
+
+        <!-- =========================
+             SECTION PLANT-BASED NUTRITION
+        ========================= -->
+        <section id="nutrition" class="section nutrition-section">
+
+            <h2>Plant-based nutrition</h2>
+
+            <p class="section-subtitle">
+                Flexitarian, vegetarian or vegan: your nutrition, aligned with your training
+            </p>
+
+            <!-- Boutons de choix nutrition -->
+            <div class="pill-buttons" id="nutrition-buttons">
+                <button class="active" onclick="showNutrition('flexitarian')">FLEXITARIAN</button>
+                <button onclick="showNutrition('vegetarian')">VEGETARIAN</button>
+                <button onclick="showNutrition('vegan')">VEGAN</button>
             </div>
 
+            <!-- Contenu injecté par script.js -->
+            <div id="nutrition-content"></div>
+
+            <p class="nutrition-bottom-note">
+                Whether you reduce, exclude, or fully embrace plant-based eating,
+                we help you structure your meals to support your workouts, your recovery, and your results.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SECTION PROGRAMS
+        ========================= -->
+        <section id="programs" class="section programs-section">
+
+            <h2>Programs</h2>
+
+            <p class="section-subtitle">
+                Choose your goal. Follow a structured path. Get real results.
+            </p>
+
+            <!-- Cartes programmes -->
+            <div class="program-grid" id="program-buttons">
+
+                <article class="program-card active green" onclick="showProgram('recomposition')">
+                    <h3>BODY RECOMPOSITION</h3>
+                    <p>
+                        Lose fat while building muscle at the same time. This method focuses
+                        on improving your body composition rather than just your weight,
+                        making it the most balanced and sustainable approach over time.
+                    </p>
+                    <p>
+                        It combines strength training, progressive overload and adequate
+                        protein intake with controlled nutrition to help your body burn fat
+                        while developing lean muscle efficiently.
+                    </p>
+                    <p>
+                        Ideal if you want long-term results without extreme dieting or strict phases.
+                    </p>
+                    <strong>Slow, steady, sustainable transformation.</strong>
+                </article>
+
+                <article class="program-card" onclick="showProgram('weightloss')">
+                    <h3>WEIGHT LOSS</h3>
+                    <p>
+                        Lose body fat by creating a controlled calorie deficit while maintaining
+                        an active training routine. This approach focuses on reducing fat while
+                        preserving muscle mass and supporting overall energy levels.
+                    </p>
+                    <p>
+                        It combines efficient workouts, consistent habits, and structured eating
+                        patterns to help you stay on track without feeling restricted.
+                    </p>
+                    <p>
+                        Ideal if your priority is to lose weight and feel lighter every day.
+                    </p>
+                    <strong>Burn fat, keep your energy.</strong>
+                </article>
+
+                <article class="program-card" onclick="showProgram('mass')">
+                    <h3>MASS GAINING</h3>
+                    <p>
+                        Build muscle by providing your body with the right training stimulus
+                        and enough fuel to grow consistently over time. This approach focuses
+                        on increasing strength, size, and overall physical performance.
+                    </p>
+                    <p>
+                        It combines progressive strength training, structured workouts, and a
+                        slight calorie surplus with protein intake to support muscle growth.
+                    </p>
+                    <p>
+                        Ideal if your goal is to gain muscle and improve overall strength.
+                    </p>
+                    <strong>Build strength, gain muscle.</strong>
+                </article>
+
+            </div>
+
+            <!-- Détails du programme actif -->
+            <div id="program-content"></div>
+
+        </section>
+
+
+        <!-- =========================
+             SECTION LET'S GET STARTED
+        ========================= -->
+        <section class="section start-section">
+
+            <h2>Let’s Get Started</h2>
+
+            <p class="section-subtitle start-subtitle">
+                Ready to take the first step? Schedule your initial evaluation and let’s
+                define the right path based on your goals, your level, and your lifestyle.
+            </p>
+
+            <div class="start-layout">
+
+                <!-- Bloc image gauche -->
+                <div class="start-image">
+                    <span>
+                        TAKE<br>
+                        THE<br>
+                        FIRST<br>
+                        STEP
+                    </span>
+                </div>
+
+                <!-- Bloc actions droite -->
+                <div class="start-actions">
+
+                    <a class="main-button" href="mailto:hello@michelecanala.com">
+                        START MY EVALUATION
+                    </a>
+
+                    <a class="secondary-button" href="mailto:hello@michelecanala.com">
+                        CONTACT MY FUTURE COACH
+                    </a>
+
+                    <p>
+                        Whether you’re looking to lose fat, build muscle, or simply feel better,
+                        we’ll guide you with a clear and structured approach.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SECTION MEET YOUR COACH
+             Le bouton redirige vers coach.html
+        ========================= -->
+        <section class="section coach-strip">
+
+            <div>
+                <h2>Meet Your Coach</h2>
+                <p>
+                    Coaching is not just about programs.<br>
+                    It’s about connection, trust, and understanding what you need to move forward.
+                </p>
+            </div>
+
+            <a href="coach.html" class="main-button">
+                LEARN MORE ABOUT ME
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+    <footer class="footer">
+
+        <p>2026 - MICHELE CANALA: PERSONNAL TRAINER & WELLNESS COACH</p>
+
+        <div>
+            <a href="#">LEGAL MENTIONS</a>
+            <a href="#">PRIVACY POLICY</a>
         </div>
 
-    </section>
+    </footer>
 
 
     <!-- =========================
-         NUTRITION SECTION
-    ========================= -->
-    <section id="nutrition" class="section">
-
-        <h2>Plant-based nutrition</h2>
-
-        <!-- Boutons choix -->
-        <div class="nutrition-buttons">
-            <button onclick="showNutrition('flexitarian')">Flexitarian</button>
-            <button onclick="showNutrition('vegetarian')">Vegetarian</button>
-            <button onclick="showNutrition('vegan')">Vegan</button>
-        </div>
-
-        <!-- Contenu dynamique -->
-        <div id="nutrition-content">
-
-            <p>Select a nutrition type to see details.</p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PROGRAMS SECTION
-    ========================= -->
-    <section id="programs" class="section">
-
-        <h2>Programs</h2>
-
-        <div class="cards">
-
-            <div class="card" onclick="showProgram('recomposition')">
-                <h3>Body Recomposition</h3>
-            </div>
-
-            <div class="card" onclick="showProgram('weightloss')">
-                <h3>Weight Loss</h3>
-            </div>
-
-            <div class="card" onclick="showProgram('mass')">
-                <h3>Mass Gaining</h3>
-            </div>
-
-        </div>
-
-        <!-- Zone dynamique -->
-        <div id="program-content"></div>
-
-    </section>
-
-
-    <!-- =========================
-         CTA SECTION
-    ========================= -->
-    <section class="cta">
-
-        <h2>Let’s Get Started</h2>
-
-        <button>START MY EVALUATION</button>
-        <button>CONTACT MY FUTURE COACH</button>
-
-    </section>
-
-
-    <!-- =========================
-         COACH SECTION
-    ========================= -->
-    <section class="coach">
-
-        <h2>Meet Your Coach</h2>
-
-        <!-- REDIRECTION -->
-        <a href="coach.html" class="coach-button">
-            LEARN MORE ABOUT ME
-        </a>
-
-    </section>
-
-
-    <!-- =========================
-         SCRIPT JS
+         FICHIER JAVASCRIPT
     ========================= -->
     <script src="script.js"></script>
 
 </body>
+
 </html>

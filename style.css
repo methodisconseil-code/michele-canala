@@ -122,10 +122,10 @@ a {
     text-align: center;
 }
 .hero-logo {
-    width: 140px;          /* ← taille équilibrée */
+    width: 180px;          
     
     position: absolute;
-    top: 18%;              /* ← au-dessus du titre */
+    top: 22%;              
     left: 50%;
     transform: translateX(-50%);
 }

@@ -32,9 +32,8 @@
     font-weight: 900;
 }
 
-
 /* =========================
-   RESET GLOBAL
+   RESET
 ========================= */
 
 * {
@@ -60,9 +59,8 @@ a {
     cursor: pointer;
 }
 
-
 /* =========================
-   HEADER VIDÉO
+   HEADER
 ========================= */
 
 .hero {
@@ -163,7 +161,6 @@ a {
     text-transform: uppercase;
 }
 
-
 /* =========================
    STRUCTURE GLOBALE
 ========================= */
@@ -226,7 +223,6 @@ a {
     gap: 52px;
 }
 
-
 /* =========================
    FITNESS
 ========================= */
@@ -258,35 +254,30 @@ a {
     font-weight: 900;
 }
 
-
 /* =========================
    NUTRITION
-   Ajusté selon la capture cible
+   Version recalée sur ta capture 1
 ========================= */
 
-.nutrition-section {
-    justify-content: center;
-}
-
 .nutrition-section .section-heading {
-    margin-bottom: 48px;
+    margin-bottom: 44px;
 }
 
 .nutrition-tabs {
-    width: 700px;
+    width: 680px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 34px;
+    gap: 28px;
     margin-bottom: 38px;
 }
 
 .nutrition-tab {
-    height: 40px;
-    border: 2.2px solid #000000;
+    height: 39px;
+    border: 2px solid #000000;
     border-radius: 999px;
     background: #ffffff;
     color: #000000;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -298,55 +289,54 @@ a {
 
 .nutrition-layout {
     display: grid;
-    grid-template-columns: 735px 1fr;
-    gap: 42px;
+    grid-template-columns: 710px 1fr;
+    gap: 44px;
     align-items: start;
 }
 
 .nutrition-image {
     width: 100%;
-    height: 470px;
+    height: 450px;
     object-fit: cover;
-    object-position: center center;
+    object-position: center 58%;
     display: block;
 }
 
 .nutrition-copy {
-    max-width: 600px;
-    padding-top: 8px;
+    max-width: 610px;
+    padding-top: 6px;
 }
 
 .nutrition-copy h3 {
-    max-width: 360px;
-    font-size: 38px;
+    max-width: 420px;
+    font-size: 34px;
     line-height: 0.9;
     font-weight: 900;
     letter-spacing: -0.8px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .nutrition-copy p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.08;
     font-weight: 400;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 .nutrition-copy strong {
     display: block;
-    margin-top: 22px;
-    font-size: 20px;
+    margin-top: 18px;
+    font-size: 17px;
     line-height: 1.05;
     font-weight: 900;
 }
 
 .nutrition-footer-text {
-    margin-top: 34px;
-    font-size: 18px;
+    margin-top: 30px;
+    font-size: 16px;
     line-height: 1.08;
     font-weight: 400;
 }
-
 
 /* =========================
    PROGRAMS
@@ -439,7 +429,6 @@ a {
     font-size: 14px;
 }
 
-
 /* =========================
    LET'S GET STARTED
 ========================= */
@@ -503,7 +492,6 @@ a {
     font-weight: 400;
 }
 
-
 /* =========================
    MEET YOUR COACH
 ========================= */
@@ -536,7 +524,6 @@ a {
     justify-self: end;
 }
 
-
 /* =========================
    FOOTER
 ========================= */
@@ -562,7 +549,6 @@ a {
     color: #000000;
     text-decoration: underline;
 }
-
 
 /* =========================
    PAGE COACH
@@ -642,7 +628,6 @@ a {
     font-weight: 900;
 }
 
-
 /* =========================
    RESPONSIVE
 ========================= */
@@ -707,6 +692,7 @@ a {
     }
 
     .nutrition-image {
+        width: 100%;
         height: auto;
         aspect-ratio: 1.25 / 1;
     }

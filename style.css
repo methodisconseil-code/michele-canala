@@ -1,6 +1,15 @@
 /* =========================
+   CSS COMPLET - MICHELE CANALA
+   Version ajustée :
+   - Sections en hauteur écran
+   - Contenus plus aérés
+   - Décalage du contenu après les titres
+   - Ratios images améliorés
+   - Header corrigé
+========================= */
+
+/* =========================
    FONT - ZALANDO SANS SEMIEXPANDED
-   Les fichiers sont à la racine du repo GitHub
 ========================= */
 
 @font-face {
@@ -112,30 +121,30 @@ a {
     position: relative;
     z-index: 3;
     width: 100%;
-    max-width: 1180px;
+    max-width: 1320px;
     height: 100%;
     margin: 0 auto;
-    padding-top: 34vh;
+    padding-top: 36vh;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: clamp(46px, 5vw, 78px);
+    font-size: clamp(50px, 5.5vw, 86px);
     line-height: 0.88;
     font-weight: 900;
-    letter-spacing: -1.9px;
+    letter-spacing: -2.2px;
     margin-bottom: 26px;
 }
 
 .hero p {
     font-size: 19px;
     font-weight: 500;
-    margin-bottom: 160px;
+    margin-bottom: 150px;
 }
 
 .hero-nav {
-    width: 88%;
-    max-width: 1020px;
+    width: 86%;
+    max-width: 1060px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -155,41 +164,56 @@ a {
 
 
 /* =========================
-   STRUCTURE GLOBALE DES SECTIONS
+   STRUCTURE GLOBALE DES BLOCS ÉCRAN
 ========================= */
 
-.site-section {
-    width: 96%;
-    max-width: 1360px;
+.screen-section {
+    width: 94.5%;
+    max-width: 1500px;
+    min-height: 100vh;
     margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section-heading {
-    margin-bottom: 36px;
+    margin-bottom: 48px;
 }
 
 .section-heading h2,
 .coach-strip h2 {
-    font-size: clamp(44px, 4.2vw, 72px);
+    font-size: clamp(46px, 4.7vw, 82px);
     line-height: 0.82;
     font-weight: 900;
-    letter-spacing: -1.7px;
+    letter-spacing: -2px;
 }
 
 .section-heading p {
-    margin-top: 9px;
-    font-size: clamp(17px, 1.35vw, 23px);
+    margin-top: 10px;
+    font-size: clamp(18px, 1.45vw, 25px);
     font-weight: 500;
     line-height: 1;
 }
 
+/* Décale le contenu sous les titres pour dissocier visuellement les parties */
+.section-content-offset {
+    width: 94%;
+    margin-left: auto;
+}
+
 .content-block {
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 56px;
+}
+
+.content-block:last-child {
+    margin-bottom: 0;
 }
 
 .block-label {
-    margin-bottom: 13px;
+    margin-bottom: 16px;
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
@@ -198,7 +222,7 @@ a {
 .three-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 58px;
+    gap: 62px;
 }
 
 
@@ -207,8 +231,7 @@ a {
 ========================= */
 
 .fitness-section {
-    padding-top: 34px;
-    padding-bottom: 30px;
+    min-height: 100vh;
 }
 
 .grey-card,
@@ -218,27 +241,27 @@ a {
 }
 
 .fitness-card {
-    min-height: 126px;
-    padding: 18px 24px;
+    min-height: 145px;
+    padding: 21px 25px 18px;
 }
 
 .fitness-card h3 {
     font-size: 15px;
     font-weight: 900;
-    margin-bottom: 11px;
+    margin-bottom: 13px;
 }
 
 .fitness-card p {
-    max-width: 92%;
-    font-size: 12px;
-    line-height: 1.13;
+    max-width: 95%;
+    font-size: 12.2px;
+    line-height: 1.16;
     font-weight: 400;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
 
 .fitness-card strong {
     display: block;
-    font-size: 12px;
+    font-size: 12.2px;
     line-height: 1.1;
     font-weight: 900;
 }
@@ -249,8 +272,7 @@ a {
 ========================= */
 
 .nutrition-section {
-    padding-top: 8px;
-    padding-bottom: 32px;
+    min-height: 100vh;
 }
 
 .nutrition-tabs {
@@ -258,8 +280,7 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 13px;
-    margin-top: -18px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 .nutrition-tab {
@@ -280,43 +301,47 @@ a {
 
 .nutrition-layout {
     display: grid;
-    grid-template-columns: 0.98fr 1fr;
-    gap: 36px;
+    grid-template-columns: 1.02fr 1fr;
+    gap: 48px;
     align-items: center;
 }
 
 .nutrition-image {
     width: 100%;
-    height: 258px;
+    aspect-ratio: 1.72 / 1;
     object-fit: cover;
     display: block;
 }
 
+.nutrition-copy {
+    max-width: 620px;
+}
+
 .nutrition-copy h3 {
-    font-size: 31px;
+    font-size: 32px;
     line-height: 0.82;
     font-weight: 900;
     letter-spacing: -0.8px;
-    margin-bottom: 13px;
+    margin-bottom: 16px;
 }
 
 .nutrition-copy p {
-    font-size: 12px;
-    line-height: 1.14;
+    font-size: 12.2px;
+    line-height: 1.16;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
 }
 
 .nutrition-copy strong {
     display: block;
-    margin-top: 8px;
-    font-size: 12px;
+    margin-top: 10px;
+    font-size: 12.2px;
     font-weight: 900;
 }
 
 .nutrition-footer-text {
-    margin-top: 17px;
-    font-size: 11.5px;
+    margin-top: 24px;
+    font-size: 11.8px;
     font-weight: 400;
 }
 
@@ -326,8 +351,7 @@ a {
 ========================= */
 
 .programs-section {
-    padding-top: 12px;
-    padding-bottom: 30px;
+    min-height: 100vh;
 }
 
 .programs-wrapper {
@@ -335,8 +359,8 @@ a {
 }
 
 .program-card {
-    min-height: 238px;
-    padding: 18px 22px;
+    min-height: 250px;
+    padding: 22px 24px;
     background: #eeeeee;
     border-radius: 12px;
     color: #000000;
@@ -346,20 +370,20 @@ a {
 .program-card h3 {
     font-size: 15px;
     font-weight: 900;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .program-card p {
-    font-size: 10.8px;
-    line-height: 1.12;
+    font-size: 10.9px;
+    line-height: 1.14;
     font-weight: 400;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
 
 .program-card strong {
     display: block;
     margin-top: 8px;
-    font-size: 10.8px;
+    font-size: 10.9px;
     line-height: 1.1;
     font-weight: 900;
 }
@@ -381,9 +405,8 @@ a {
 }
 
 .program-metrics {
-    width: 360px;
+    width: 390px;
     margin-top: 0;
-    margin-left: 72px;
     padding-left: 22px;
     border-left: 2px solid #000000;
 }
@@ -393,18 +416,18 @@ a {
 }
 
 .program-metrics.weightloss {
-    margin-left: calc(33.333% + 92px);
+    margin-left: calc(33.333% + 96px);
 }
 
 .program-metrics.mass {
-    margin-left: calc(66.666% + 112px);
+    margin-left: calc(66.666% + 118px);
 }
 
 .metric-row {
     display: grid;
-    grid-template-columns: 145px 1fr;
+    grid-template-columns: 160px 1fr;
     gap: 18px;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     font-size: 10.5px;
     line-height: 1.08;
 }
@@ -424,24 +447,23 @@ a {
 ========================= */
 
 .start-section {
-    padding-top: 20px;
-    padding-bottom: 36px;
+    min-height: 100vh;
 }
 
 .start-section .section-heading {
-    margin-bottom: 20px;
+    margin-bottom: 34px;
 }
 
 .start-layout {
     display: grid;
-    grid-template-columns: 0.98fr 1fr;
-    gap: 72px;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 78px;
     align-items: center;
 }
 
 .start-image {
     width: 100%;
-    aspect-ratio: 1.88 / 1;
+    aspect-ratio: 1.9 / 1;
     object-fit: cover;
     display: block;
 }
@@ -493,7 +515,7 @@ a {
 ========================= */
 
 .coach-strip {
-    width: 88%;
+    width: 84%;
     max-width: 1220px;
     margin: 0 auto 42px;
     padding: 26px 70px 24px;
@@ -641,6 +663,10 @@ a {
         padding: 30vh 24px 0;
     }
 
+    .hero h1 {
+        font-size: 46px;
+    }
+
     .hero p {
         margin-bottom: 80px;
     }
@@ -659,9 +685,17 @@ a {
         gap: 14px;
     }
 
-    .site-section,
+    .screen-section,
     .coach-strip {
         width: 90%;
+        min-height: auto;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .section-content-offset {
+        width: 100%;
+        margin-left: 0;
     }
 
     .nutrition-tabs {

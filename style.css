@@ -1,193 +1,830 @@
 /* =========================
-   SCROLL
+   FONT - ZALANDO SANS SEMIEXPANDED
 ========================= */
 
-function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({
-        behavior: "smooth"
-    });
+@font-face {
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Zalando SemiExpanded";
+    src: url("ZalandoSansSemiExpanded-Black.ttf") format("truetype");
+    font-weight: 900;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Zalando SemiExpanded", Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.05;
+}
+
+button,
+a {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 720px;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-filter {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.34);
+    z-index: 2;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    display: flex;
+    gap: 13px;
+    z-index: 4;
+}
+
+.language-switcher a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 24px;
+    border: 1.6px solid #ffffff;
+    border-radius: 999px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 35vh;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 5vw, 78px);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 26px;
+}
+
+.hero h1 span {
+    display: block;
+    white-space: nowrap;
+}
+
+.hero p {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 145px;
+}
+
+.hero-nav {
+    width: 86%;
+    max-width: 1060px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 96px;
+}
+
+.hero-nav button {
+    height: 31px;
+    border: 1.8px solid #ffffff;
+    border-radius: 999px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* =========================
+   STRUCTURE GLOBALE
+========================= */
+
+.screen-section {
+    width: 96%;
+    max-width: 1540px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-heading {
+    margin-bottom: 42px;
+}
+
+.section-heading h2,
+.coach-strip h2 {
+    font-size: clamp(46px, 4.5vw, 76px);
+    line-height: 0.82;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.section-heading p {
+    margin-top: 10px;
+    font-size: clamp(18px, 1.35vw, 24px);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.section-content-offset {
+    width: calc(100% - 120px);
+    margin-left: 60px;
+}
+
+.content-block {
+    margin-bottom: 68px;
+}
+
+.content-block:last-child {
+    margin-bottom: 0;
+}
+
+.block-label {
+    margin-bottom: 26px;
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 430px));
+    justify-content: space-between;
+    gap: 52px;
+}
+
+/* =========================
+   FITNESS
+========================= */
+
+.fitness-card {
+    min-height: 196px;
+    padding: 24px 30px 22px;
+    background: #eeeeee;
+    border-radius: 30px;
+}
+
+.fitness-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 22px;
+}
+
+.fitness-card p {
+    font-size: 14.6px;
+    line-height: 1.12;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.fitness-card strong {
+    display: block;
+    font-size: 14.6px;
+    line-height: 1.1;
+    font-weight: 900;
 }
 
 /* =========================
    NUTRITION
 ========================= */
 
-const nutritionData = {
-    flexitarian: {
-        image: "takedahrs-japanese-food-7187313.jpg",
-        title: "Flexitarian<br>Nutrition",
-        paragraphs: [
-            "You mainly follow a plant-based diet while still including animal products occasionally. This flexible approach allows you to enjoy a wide variety of foods while building a nutrition strategy that supports your training and long-term progress.",
-            "We help you structure your meals with a balanced mix of plant-based proteins, complex carbohydrates, and healthy fats, adapted to your workout intensity and recovery needs. Small adjustments can make a real difference in how you perform and recover.",
-            "Whether your goal is fat loss, muscle gain, or body recomposition, your nutrition becomes a powerful tool to support consistent results."
-        ],
-        tagline: "Balance without restriction."
-    },
+.nutrition-section {
+    justify-content: center;
+}
 
-    vegetarian: {
-        image: "pen_ash-smashed-avocado-on-toast-4488463.png",
-        title: "Vegetarian<br>Nutrition",
-        paragraphs: [
-            "You follow a vegetarian diet, excluding meat and fish while still including eggs and/or dairy. With the right structure, this approach can fully support strength development, recovery, and overall performance.",
-            "We guide you in building balanced meals that provide enough protein, essential nutrients, and energy to match your training routine. Understanding how to combine different food sources is key to maintaining consistency and progress.",
-            "With a clear and practical approach, your nutrition supports your goals: whether it’s fat loss, muscle gain, or improving overall fitness."
-        ],
-        tagline: "Complete nutrition, consistent results."
-    },
+.nutrition-section .section-heading {
+    margin-bottom: 44px;
+}
 
-    vegan: {
-        image: "joannawielgosz-pasta-7209002.jpg",
-        title: "Vegan<br>Nutrition",
-        paragraphs: [
-            "You follow a fully plant-based diet, excluding all animal products. With the right structure and food combinations, this approach can effectively support performance, recovery, and muscle development.",
-            "We help you understand how to meet your protein needs, balance your meals, and fuel your body around your workouts using plant-based foods. The focus is on making your nutrition both efficient and easy to follow daily.",
-            "With the right guidance, your diet becomes a strong foundation for fat loss, muscle gain, or body recomposition."
-        ],
-        tagline: "Plant-fueled, performance-ready."
-    }
-};
+.nutrition-tabs {
+    width: 680px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 38px;
+}
 
-function showNutrition(type) {
-    const selectedNutrition = nutritionData[type];
-    const nutritionContent = document.getElementById("nutrition-content");
-    const nutritionButtons = document.querySelectorAll(".nutrition-tab");
+.nutrition-tab {
+    height: 39px;
+    border: 2px solid #000000;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
 
-    nutritionButtons.forEach((button) => {
-        button.classList.toggle("active", button.dataset.nutrition === type);
-    });
+.nutrition-tab.active {
+    background: #000000;
+    color: #ffffff;
+}
 
-    nutritionContent.innerHTML = `
-        <div class="nutrition-layout">
-            <img class="nutrition-image" src="${selectedNutrition.image}" alt="">
-            <div class="nutrition-copy">
-                <h3>${selectedNutrition.title}</h3>
-                ${selectedNutrition.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
-                <strong>${selectedNutrition.tagline}</strong>
-            </div>
-        </div>
-    `;
+.nutrition-layout {
+    display: grid;
+    grid-template-columns: 735px 1fr;
+    gap: 44px;
+    align-items: start;
+    overflow: visible;
+}
+
+.nutrition-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.nutrition-image[src*="takedahrs"] {
+    object-position: center 62%;
+}
+
+.nutrition-image[src*="pen_ash"] {
+    object-position: center 78%;
+}
+
+.nutrition-image[src*="joannawielgosz"] {
+    object-position: center 54%;
+}
+
+.nutrition-copy {
+    max-width: 610px;
+    padding-top: 6px;
+}
+
+.nutrition-copy h3 {
+    max-width: 330px;
+    font-size: 34px;
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    margin-bottom: 28px;
+}
+
+.nutrition-copy p {
+    font-size: 14.6px;
+    line-height: 1.12;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.nutrition-copy strong {
+    display: block;
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 1.08;
+    font-weight: 900;
+}
+
+.nutrition-footer-text {
+    margin-top: 30px;
+    font-size: 14.6px;
+    line-height: 1.12;
+    font-weight: 400;
 }
 
 /* =========================
    PROGRAMS
 ========================= */
 
-const programData = {
-    recomposition: {
-        colorClass: "green",
-        difficulty: 1,
-        duration: 5,
-        frequency: 3
-    },
-
-    weightloss: {
-        colorClass: "pink",
-        difficulty: 3,
-        duration: 4,
-        frequency: 3
-    },
-
-    mass: {
-        colorClass: "blue",
-        difficulty: 2,
-        duration: 4,
-        frequency: 4
-    }
-};
-
-function createDots(activeDots) {
-    let dots = "";
-
-    for (let i = 1; i <= 5; i++) {
-        dots += `<span class="metric-dot ${i <= activeDots ? "active" : ""}"></span>`;
-    }
-
-    return dots;
+.programs-section {
+    justify-content: center;
 }
 
-function showProgram(programType) {
-    const selectedProgram = programData[programType];
-    const programCards = document.querySelectorAll(".program-card");
-    const metricsContainer = document.getElementById("program-metrics");
+.programs-wrapper {
+    position: relative;
+    width: 100%;
+}
 
-    let activeCard = null;
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 430px));
+    justify-content: space-between;
+    gap: 52px;
+    align-items: start;
+}
 
-    programCards.forEach((card) => {
-        card.classList.remove("active", "green", "pink", "blue");
+.program-card {
+    min-height: 410px;
+    padding: 34px 32px 30px;
+    background: #eeeeee;
+    border-radius: 32px;
+    color: #000000;
+    transition: background 0.2s ease, color 0.2s ease;
+}
 
-        if (card.dataset.program === programType) {
-            card.classList.add("active", selectedProgram.colorClass);
-            activeCard = card;
-        }
-    });
+.program-card h3 {
+    font-size: 18px;
+    line-height: 1.05;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 22px;
+}
 
-    metricsContainer.className = `program-metrics ${selectedProgram.colorClass}`;
+.program-card p {
+    font-size: 14.6px;
+    line-height: 1.12;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
 
-    metricsContainer.innerHTML = `
-        <div class="metric-line"></div>
-        <div class="metric-pin"></div>
+.program-card strong {
+    display: block;
+    margin-top: 24px;
+    font-size: 14.6px;
+    line-height: 1.08;
+    font-weight: 900;
+}
 
-        <div class="metric-item">
-            <div class="metric-top">
-                <h4>Difficulty level</h4>
-                <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
-            </div>
-            <p>
-                Indicates how demanding the program is in terms of intensity,
-                consistency, and overall effort required to achieve results.
-            </p>
-        </div>
+.program-card.active {
+    color: #ffffff;
+}
 
-        <div class="metric-item">
-            <div class="metric-top">
-                <h4>Program duration</h4>
-                <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
-            </div>
-            <p>
-                Represents the typical time needed to see meaningful results,
-                depending on your starting point and level of commitment.
-            </p>
-        </div>
+.program-card.green {
+    background: #198b08;
+}
 
-        <div class="metric-item">
-            <div class="metric-top">
-                <h4>Session frequency</h4>
-                <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
-            </div>
-            <p>
-                Shows how many training sessions per week are recommended to
-                follow the program effectively and maximize progress.
-            </p>
-        </div>
-    `;
+.program-card.pink {
+    background: #e7005a;
+}
 
-    /* 
-       IMPORTANT :
-       On déplace physiquement le bloc metrics juste après la card active.
-       Comme ça, il reste contraint par la même colonne que le bloc au-dessus.
-    */
-    if (activeCard) {
-        activeCard.insertAdjacentElement("afterend", metricsContainer);
-    }
+.program-card.blue {
+    background: #003bd8;
 }
 
 /* =========================
-   INIT
+   PROGRAM METRICS — VERSION STABLE
 ========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-    showNutrition("flexitarian");
-    showProgram("recomposition");
+#program-metrics {
+    display: block;
+}
 
-    document.querySelectorAll(".nutrition-tab").forEach((button) => {
-        button.addEventListener("click", () => {
-            showNutrition(button.dataset.nutrition);
-        });
-    });
+.program-metrics {
+    position: relative;
+    width: 430px;
+    margin-top: 18px;
+    padding-left: 58px;
+    padding-top: 16px;
+    color: #000000;
+}
 
-    document.querySelectorAll(".program-card").forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-            showProgram(card.dataset.program);
-        });
-    });
-});
+.program-metrics.metric-under-left {
+    margin-left: 0;
+}
+
+.program-metrics.metric-under-center {
+    margin-left: calc(50% - 215px);
+}
+
+.program-metrics.metric-under-right {
+    margin-left: calc(100% - 430px);
+}
+
+.metric-line {
+    position: absolute;
+    left: 22px;
+    top: -8px;
+    width: 2px;
+    height: 250px;
+    background: #000000;
+}
+
+.metric-pin {
+    position: absolute;
+    top: -15px;
+    left: 16px;
+    width: 13px;
+    height: 13px;
+    background: #000000;
+    border-radius: 50%;
+}
+
+.metric-item {
+    margin-bottom: 28px;
+}
+
+.metric-item:last-child {
+    margin-bottom: 0;
+}
+
+.metric-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 7px;
+}
+
+.metric-header h4 {
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.metric-dots {
+    display: flex;
+    gap: 5px;
+    justify-self: end;
+}
+
+.metric-dot {
+    width: 11px;
+    height: 11px;
+    border: 1.6px solid #000000;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.metric-item p {
+    width: 100%;
+    max-width: 350px;
+    font-size: 10px;
+    line-height: 1.18;
+    font-weight: 400;
+}
+
+.program-metrics.green .metric-dot.active {
+    background: #198b08;
+}
+
+.program-metrics.pink .metric-dot.active {
+    background: #e7005a;
+}
+
+.program-metrics.blue .metric-dot.active {
+    background: #003bd8;
+}
+
+/* =========================
+   LET'S GET STARTED
+========================= */
+
+.start-section .section-heading {
+    margin-bottom: 32px;
+}
+
+.start-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 0.9fr;
+    gap: 76px;
+    align-items: center;
+}
+
+.start-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.start-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 19px;
+}
+
+.button-primary,
+.button-secondary {
+    width: 352px;
+    height: 35px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.button-primary {
+    background: #000000;
+    color: #ffffff;
+    border: 1.7px solid #000000;
+}
+
+.button-secondary {
+    background: #ffffff;
+    color: #000000;
+    border: 1.7px solid #000000;
+}
+
+.start-content p {
+    margin-top: 22px;
+    width: 430px;
+    font-size: 13px;
+    line-height: 1.08;
+    font-weight: 400;
+}
+
+/* =========================
+   MEET YOUR COACH
+========================= */
+
+.coach-strip {
+    width: 84%;
+    max-width: 1220px;
+    margin: 0 auto 42px;
+    padding: 26px 70px 24px;
+    background: #eeeeee;
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 48px;
+    align-items: center;
+}
+
+.coach-strip h2 {
+    font-size: clamp(40px, 3.4vw, 58px);
+}
+
+.coach-strip p {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.08;
+    font-weight: 500;
+}
+
+.coach-button {
+    justify-self: end;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    border-top: 1px solid #000000;
+    min-height: 42px;
+    padding: 14px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 8.5px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: flex;
+    gap: 52px;
+}
+
+.footer a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* =========================
+   PAGE COACH
+========================= */
+
+.coach-page {
+    min-height: 100vh;
+}
+
+.coach-page-header {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 34px 0;
+}
+
+.back-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.coach-hero-page {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 70px 0 40px;
+}
+
+.coach-hero-page h1 {
+    font-size: clamp(56px, 6vw, 92px);
+    line-height: 0.85;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.coach-hero-page p {
+    max-width: 720px;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+.coach-bio-section {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.coach-bio-image {
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    object-fit: cover;
+}
+
+.coach-bio-text h2 {
+    font-size: clamp(44px, 4vw, 70px);
+    line-height: 0.85;
+    font-weight: 900;
+    margin-bottom: 22px;
+}
+
+.coach-bio-text p {
+    font-size: 16px;
+    line-height: 1.18;
+    margin-bottom: 14px;
+}
+
+.coach-bio-text strong {
+    font-size: 16px;
+    font-weight: 900;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-content {
+        padding: 30vh 24px 0;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h1 span {
+        white-space: normal;
+    }
+
+    .hero p {
+        margin-bottom: 80px;
+    }
+
+    .hero-nav,
+    .three-columns,
+    .nutrition-layout,
+    .start-layout,
+    .coach-strip,
+    .coach-bio-section,
+    .footer,
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-nav {
+        gap: 14px;
+    }
+
+    .screen-section,
+    .coach-strip {
+        width: 90%;
+        min-height: auto;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .section-content-offset {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .nutrition-tabs {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .nutrition-tab {
+        font-size: 11px;
+        height: 32px;
+    }
+
+    .nutrition-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.25 / 1;
+    }
+
+    .program-metrics,
+    .program-metrics.metric-under-left,
+    .program-metrics.metric-under-center,
+    .program-metrics.metric-under-right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 48px;
+    }
+
+    .metric-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .metric-text p {
+        width: 100%;
+    }
+
+    .button-primary,
+    .button-secondary,
+    .start-content p {
+        width: 100%;
+    }
+
+    .coach-button {
+        justify-self: start;
+    }
+
+    .footer-links {
+        gap: 18px;
+    }
+}

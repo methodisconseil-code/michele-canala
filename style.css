@@ -423,104 +423,96 @@ a {
 }
 
 /* =========================
-   PROGRAM METRICS — CLEAN GRID VERSION
+   PROGRAM METRICS — VERSION STABLE
 ========================= */
 
 #program-metrics {
     display: block;
 }
 
-/* bloc sous chaque card */
 .program-metrics {
     position: relative;
     width: 430px;
-    margin-top: 12px;
-    padding-left: 46px;
-    padding-top: 18px;
+    margin-top: 18px;
+    padding-left: 58px;
+    padding-top: 16px;
     color: #000000;
 }
 
-/* position sous chaque colonne */
 .program-metrics.metric-under-left {
     margin-left: 0;
 }
 
 .program-metrics.metric-under-center {
-    margin-left: calc(33.333% + 17px);
+    margin-left: calc(50% - 215px);
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 34px);
+    margin-left: calc(100% - 430px);
 }
 
-/* ligne verticale */
 .metric-line {
     position: absolute;
-    left: 20px;
-    top: -6px;
+    left: 22px;
+    top: -8px;
     width: 2px;
     height: 250px;
     background: #000000;
 }
 
-/* point noir */
 .metric-pin {
     position: absolute;
-    top: -14px;
-    left: 14px;
-    width: 12px;
-    height: 12px;
+    top: -15px;
+    left: 16px;
+    width: 13px;
+    height: 13px;
     background: #000000;
     border-radius: 50%;
 }
 
-/* chaque métrique */
 .metric-item {
-    margin-bottom: 26px;
+    margin-bottom: 28px;
 }
 
 .metric-item:last-child {
     margin-bottom: 0;
 }
 
-/* ligne titre + dots */
-.metric-top {
+.metric-header {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    column-gap: 16px;
-    margin-bottom: 6px;
+    gap: 14px;
+    margin-bottom: 7px;
 }
 
-/* titre metric */
-.metric-top h4 {
+.metric-header h4 {
     font-size: 18px;
     line-height: 1;
     font-weight: 900;
 }
 
-/* dots à droite du titre */
 .metric-dots {
     display: flex;
-    justify-content: flex-end;
-    gap: 6px;
+    gap: 5px;
+    justify-self: end;
 }
 
-/* légende sous titre + dots */
-.metric-item p {
-    font-size: 11px;
-    line-height: 1.2;
-    font-weight: 400;
-    max-width: 330px;
-}
-
-/* dot */
 .metric-dot {
     width: 11px;
     height: 11px;
     border: 1.6px solid #000000;
     border-radius: 50%;
     background: #ffffff;
+}
+
+.metric-item p {
+    width: 100%;
+    max-width: 350px;
+    font-size: 10px;
+    line-height: 1.18;
+    font-weight: 400;
 }
 
 .program-metrics.green .metric-dot.active {

@@ -300,16 +300,17 @@ a {
 
 .nutrition-image {
     width: 100%;
-    height: 450px;
+    height: 480px;
+
     object-fit: cover;
 
-    /* Zoom + recadrage plus bas pour matcher la maquette */
-    object-position: center 82%;
-    transform: scale(1.08);
-    transform-origin: center 82%;
+    /* recadrage plus bas + légèrement décalé gauche (comme la maquette) */
+    object-position: 40% 85%;
+
+    /* zoom plus fort pour remplir le cadre */
+    transform: scale(1.15);
 
     display: block;
-}
 
 .nutrition-layout {
     overflow: hidden;

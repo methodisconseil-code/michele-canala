@@ -122,16 +122,12 @@ a {
     text-align: center;
 }
 .hero-logo {
-    width: 55px;            /* ≈ -60% par rapport à avant */
-    margin-bottom: 18px;
+    width: 140px;          /* ← taille équilibrée */
     
-    /* position plus haute */
-    position: relative;
-    top: -40px;
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    top: 18%;              /* ← au-dessus du titre */
+    left: 50%;
+    transform: translateX(-50%);
 }
 .hero h1 {
     font-size: clamp(48px, 5vw, 78px);

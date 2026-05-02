@@ -1,168 +1,148 @@
-function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({
-        behavior: "smooth"
-    });
-}
-
-/* =========================
-   NUTRITION
-========================= */
-
-const nutritionData = {
-    flexitarian: {
-        image: "takedahrs-japanese-food-7187313.jpg",
-        title: "Flexitarian<br>Nutrition",
-        paragraphs: [
-            "You mainly follow a plant-based diet while still including animal products occasionally. This flexible approach allows you to enjoy a wide variety of foods while building a nutrition strategy that supports your training and long-term progress.",
-            "We help you structure your meals with a balanced mix of plant-based proteins, complex carbohydrates, and healthy fats, adapted to your workout intensity and recovery needs. Small adjustments can make a real difference in how you perform and recover.",
-            "Whether your goal is fat loss, muscle gain, or body recomposition, your nutrition becomes a powerful tool to support consistent results."
-        ],
-        tagline: "Balance without restriction."
-    },
-
-    vegetarian: {
-        image: "pen_ash-smashed-avocado-on-toast-4488463.png",
-        title: "Vegetarian<br>Nutrition",
-        paragraphs: [
-            "You follow a vegetarian diet, excluding meat and fish while still including eggs and/or dairy. With the right structure, this approach can fully support strength development, recovery, and overall performance.",
-            "We guide you in building balanced meals that provide enough protein, essential nutrients, and energy to match your training routine. Understanding how to combine different food sources is key to maintaining consistency and progress.",
-            "With a clear and practical approach, your nutrition supports your goals: whether it’s fat loss, muscle gain, or improving overall fitness."
-        ],
-        tagline: "Complete nutrition, consistent results."
-    },
-
-    vegan: {
-        image: "joannawielgosz-pasta-7209002.jpg",
-        title: "Vegan<br>Nutrition",
-        paragraphs: [
-            "You follow a fully plant-based diet, excluding all animal products. With the right structure and food combinations, this approach can effectively support performance, recovery, and muscle development.",
-            "We help you understand how to meet your protein needs, balance your meals, and fuel your body around your workouts using plant-based foods. The focus is on making your nutrition both efficient and easy to follow daily.",
-            "With the right guidance, your diet becomes a strong foundation for fat loss, muscle gain, or body recomposition."
-        ],
-        tagline: "Plant-fueled, performance-ready."
-    }
-};
-
-function showNutrition(type) {
-    const selectedNutrition = nutritionData[type];
-    const nutritionContent = document.getElementById("nutrition-content");
-    const nutritionButtons = document.querySelectorAll(".nutrition-tab");
-
-    nutritionButtons.forEach((button) => {
-        button.classList.toggle("active", button.dataset.nutrition === type);
-    });
-
-    nutritionContent.innerHTML = `
-        <div class="nutrition-layout">
-            <img class="nutrition-image" src="${selectedNutrition.image}" alt="${selectedNutrition.title}">
-            <div class="nutrition-copy">
-                <h3>${selectedNutrition.title}</h3>
-                ${selectedNutrition.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
-                <strong>${selectedNutrition.tagline}</strong>
-            </div>
-        </div>
-    `;
-}
-
 /* =========================
    PROGRAMS
 ========================= */
 
-const programData = {
-    recomposition: {
-        colorClass: "green",
-        metricsClass: "recomposition",
-        difficulty: 1,
-        duration: 5,
-        frequency: 3
-    },
-
-    weightloss: {
-        colorClass: "pink",
-        metricsClass: "weightloss",
-        difficulty: 3,
-        duration: 4,
-        frequency: 3
-    },
-
-    mass: {
-        colorClass: "blue",
-        metricsClass: "mass",
-        difficulty: 2,
-        duration: 5,
-        frequency: 4
-    }
-};
-
-function createDots(activeDots) {
-    let dots = "";
-
-    for (let i = 1; i <= 5; i++) {
-        dots += `<span class="metric-dot ${i <= activeDots ? "active" : ""}"></span>`;
-    }
-
-    return dots;
+.programs-wrapper {
+    position: relative;
 }
 
-function showProgram(programType) {
-    const selectedProgram = programData[programType];
-    const programCards = document.querySelectorAll(".program-card");
-    const metricsContainer = document.getElementById("program-metrics");
-
-    programCards.forEach((card) => {
-        const isActive = card.dataset.program === programType;
-
-        card.classList.remove("active", "green", "pink", "blue");
-
-        if (isActive) {
-            card.classList.add("active", selectedProgram.colorClass);
-        }
-    });
-
-    metricsContainer.innerHTML = `
-        <div class="program-metrics ${selectedProgram.metricsClass} ${selectedProgram.colorClass}">
-
-            <div class="metric-item">
-                <div class="metric-text">
-                    <h4>Difficulty level</h4>
-                    <p>Indicates how demanding the program is in terms of intensity, consistency, and overall effort required to achieve results.</p>
-                </div>
-                <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
-            </div>
-
-            <div class="metric-item">
-                <div class="metric-text">
-                    <h4>Program duration</h4>
-                    <p>Represents the typical time needed to see meaningful results, depending on your starting point and level of commitment.</p>
-                </div>
-                <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
-            </div>
-
-            <div class="metric-item">
-                <div class="metric-text">
-                    <h4>Session frequency</h4>
-                    <p>Shows how many training sessions per week are recommended to follow the program effectively and maximize progress.</p>
-                </div>
-                <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
-            </div>
-
-        </div>
-    `;
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 430px));
+    justify-content: space-between;
+    gap: 52px;
+    align-items: start;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    showNutrition("flexitarian");
-    showProgram("recomposition");
+.program-card {
+    min-height: 410px;
+    padding: 34px 32px 30px;
+    background: #eeeeee;
+    border-radius: 32px;
+    color: #000000;
+    transition: background 0.2s ease, color 0.2s ease;
+}
 
-    document.querySelectorAll(".nutrition-tab").forEach((button) => {
-        button.addEventListener("click", () => {
-            showNutrition(button.dataset.nutrition);
-        });
-    });
+.program-card h3 {
+    font-size: 18px;
+    line-height: 1.05;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 30px;
+}
 
-    document.querySelectorAll(".program-card").forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-            showProgram(card.dataset.program);
-        });
-    });
-});
+.program-card p {
+    font-size: 14.6px;
+    line-height: 1.12;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+
+.program-card strong {
+    display: block;
+    margin-top: 24px;
+    font-size: 14.6px;
+    line-height: 1.08;
+    font-weight: 900;
+}
+
+.program-card.active {
+    color: #ffffff;
+}
+
+.program-card.green {
+    background: #198b08;
+}
+
+.program-card.pink {
+    background: #e7005a;
+}
+
+.program-card.blue {
+    background: #003bd8;
+}
+
+/* =========================
+   MÉTRIQUES SOUS LE BLOC SURVOLÉ
+========================= */
+
+.program-metrics {
+    position: relative;
+    grid-row: 2;
+    width: 330px;
+    margin-top: -1px;
+    margin-left: 58px;
+    padding-left: 38px;
+    color: #000000;
+}
+
+.program-metrics .metric-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5px;
+    height: 230px;
+    background: #000000;
+}
+
+.program-metrics .metric-pin {
+    position: absolute;
+    top: -8px;
+    left: -6px;
+    width: 14px;
+    height: 14px;
+    background: #000000;
+    border-radius: 50%;
+}
+
+.metric-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 24px;
+    align-items: start;
+    margin-bottom: 26px;
+}
+
+.metric-item:last-child {
+    margin-bottom: 0;
+}
+
+.metric-text h4 {
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.metric-text p {
+    width: 230px;
+    font-size: 7.6px;
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+.metric-dots {
+    display: flex;
+    gap: 5px;
+    padding-top: 2px;
+}
+
+.metric-dot {
+    width: 11px;
+    height: 11px;
+    border: 1.6px solid #000000;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.program-metrics.green .metric-dot.active {
+    background: #198b08;
+}
+
+.program-metrics.pink .metric-dot.active {
+    background: #e7005a;
+}
+
+.program-metrics.blue .metric-dot.active {
+    background: #003bd8;
+}

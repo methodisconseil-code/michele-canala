@@ -1,21 +1,556 @@
 /* =========================
    FONT ZALANDO SANS
+   Les fichiers doivent être uploadés dans le dossier /static
 ========================= */
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-Regular.ttf') format('truetype');
+    font-family: "Zalando";
+    src: url("static/ZalandoSansSemiExpanded-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-Medium.ttf') format('truetype');
+    font-family: "Zalando";
+    src: url("static/ZalandoSansSemiExpanded-Medium.ttf") format("truetype");
     font-weight: 500;
 }
 
 @font-face {
-    font-family: 'Zalando';
-    src: url('ZalandoSansSemiExpanded-Bold.ttf') format('truetype');
+    font-family: "Zalando";
+    src: url("static/ZalandoSansSemiExpanded-Bold.ttf") format("truetype");
     font-weight: 700;
+}
+
+
+/* =========================
+   RESET GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Zalando", Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.15;
+}
+
+button,
+a {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    height: 360px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+        url("https://images.unsplash.com/photo-1490645935967-10de6ba17061");
+    background-size: cover;
+    background-position: center 45%;
+    color: white;
+}
+
+.language-switcher {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.language-switcher a {
+    color: white;
+    text-decoration: none;
+    border: 1.5px solid white;
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 10px;
+}
+
+.hero-overlay {
+    height: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-top: 120px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 0.92;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 14px;
+    margin-bottom: 64px;
+}
+
+.hero-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 72px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.hero-nav button {
+    height: 28px;
+    border: 1.5px solid white;
+    border-radius: 999px;
+    background: transparent;
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   SECTIONS GÉNÉRALES
+========================= */
+
+.section {
+    width: 88%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.section h2,
+.start-section h2,
+.coach-strip h2 {
+    font-size: 39px;
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    margin-top: 4px;
+    margin-bottom: 22px;
+}
+
+.small-title {
+    font-size: 11px;
+    font-weight: 500;
+    margin: 20px 0 8px;
+    text-transform: uppercase;
+}
+
+.second-small-title {
+    margin-top: 28px;
+}
+
+
+/* =========================
+   FITNESS
+========================= */
+
+.fitness-section {
+    padding-top: 24px;
+    padding-bottom: 28px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+
+.info-card {
+    min-height: 118px;
+    background: #eeeeee;
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+
+.info-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.info-card p {
+    font-size: 11.5px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.info-card strong {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   NUTRITION
+========================= */
+
+.nutrition-section {
+    padding-top: 20px;
+    padding-bottom: 32px;
+}
+
+.pill-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 500px;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.pill-buttons button {
+    height: 24px;
+    border: 1.6px solid black;
+    border-radius: 999px;
+    background: white;
+    color: black;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.pill-buttons button.active {
+    background: black;
+    color: white;
+}
+
+.nutrition-layout {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 36px;
+    align-items: center;
+}
+
+.nutrition-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.nutrition-text h3 {
+    font-size: 28px;
+    line-height: 0.88;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.nutrition-text p {
+    font-size: 11.5px;
+    line-height: 1.18;
+    margin-bottom: 9px;
+}
+
+.nutrition-text strong {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.nutrition-bottom-note {
+    margin-top: 16px;
+    font-size: 11.5px;
+    line-height: 1.2;
+}
+
+
+/* =========================
+   PROGRAMS
+========================= */
+
+.programs-section {
+    padding-top: 10px;
+    padding-bottom: 34px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.program-card {
+    min-height: 210px;
+    background: #eeeeee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: 0.2s ease;
+}
+
+.program-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.program-card p {
+    font-size: 10.8px;
+    line-height: 1.18;
+    margin-bottom: 8px;
+}
+
+.program-card strong {
+    display: block;
+    font-size: 10.8px;
+    font-weight: 700;
+}
+
+.program-card.active {
+    color: white;
+}
+
+.program-card.green {
+    background: #188a09;
+}
+
+.program-card.pink {
+    background: #e80058;
+}
+
+.program-card.blue {
+    background: #003bd6;
+}
+
+.program-details {
+    width: 440px;
+    margin-top: 0;
+    margin-left: 22px;
+    padding-left: 20px;
+    border-left: 2px solid black;
+}
+
+.program-details-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+    font-size: 10.5px;
+    line-height: 1.15;
+}
+
+.program-details-row strong {
+    font-weight: 700;
+}
+
+.dots {
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+
+/* =========================
+   LET'S GET STARTED
+========================= */
+
+.start-section {
+    padding-top: 22px;
+    padding-bottom: 34px;
+}
+
+.start-subtitle {
+    max-width: 760px;
+}
+
+.start-layout {
+    display: grid;
+    grid-template-columns: 1.06fr 0.94fr;
+    gap: 54px;
+    align-items: center;
+}
+
+.start-image {
+    height: 245px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+        url("https://images.unsplash.com/photo-1518611012118-696072aa579a");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 36px;
+}
+
+.start-image span {
+    color: white;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 0.76;
+    letter-spacing: -1px;
+}
+
+.start-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.main-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 10.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.main-button {
+    background: black;
+    color: white;
+    border: 1.5px solid black;
+}
+
+.secondary-button {
+    background: white;
+    color: black;
+    border: 1.5px solid black;
+}
+
+.start-actions p {
+    max-width: 360px;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.15;
+}
+
+
+/* =========================
+   MEET YOUR COACH
+========================= */
+
+.coach-strip {
+    margin-bottom: 36px;
+    padding: 24px 66px;
+    background: #eeeeee;
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: center;
+}
+
+.coach-strip p {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.1;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    border-top: 1px solid black;
+    padding: 14px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.footer a {
+    color: black;
+    margin-left: 34px;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   VERSION MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero {
+        height: 460px;
+    }
+
+    .hero-overlay {
+        padding: 120px 24px 0;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-nav,
+    .card-grid,
+    .nutrition-layout,
+    .program-grid,
+    .start-layout,
+    .coach-strip,
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-nav {
+        gap: 14px;
+    }
+
+    .section {
+        width: 90%;
+    }
+
+    .card-grid,
+    .program-grid {
+        gap: 18px;
+    }
+
+    .nutrition-image,
+    .start-image {
+        height: 220px;
+    }
+
+    .program-details {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 18px;
+    }
+
+    .coach-strip {
+        padding: 24px;
+    }
+
+    .main-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer a {
+        margin: 10px;
+    }
 }

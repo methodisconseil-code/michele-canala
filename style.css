@@ -415,89 +415,84 @@ a {
     background: #003bd8;
 }
 
+/* =========================
+   PROGRAM METRICS — FIX MAQUETTE
+========================= */
+
 .program-metrics {
     position: relative;
-    width: 360px;
-    margin-top: -1px;
+    width: 520px;
+    margin-top: 40px;
     padding-left: 36px;
-    border-left: 3px solid #000000;
 }
 
+/* ligne verticale */
 .program-metrics::before {
     content: "";
     position: absolute;
-    top: -8px;
-    left: -8.5px;
-    width: 15px;
-    height: 15px;
-    background: #000000;
-    border-radius: 50%;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: #000;
 }
 
-.program-metrics.recomposition {
-    margin-left: 64px;
-}
-
-.program-metrics.weightloss {
-    margin-left: calc(33.333% + 74px);
-}
-
-.program-metrics.mass {
-    margin-left: calc(66.666% + 76px);
-}
-
-.metric-item {
-    margin-bottom: 30px;
-}
-
-.metric-item:last-child {
-    margin-bottom: 0;
-}
-
-.metric-title-row {
+/* chaque bloc */
+.metric-row {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 8px;
+    gap: 40px;
+    margin-bottom: 28px;
 }
 
-.metric-title-row h4 {
-    font-size: 18px;
-    line-height: 1;
+/* point de départ (le rond noir en haut) */
+.metric-row:first-child::before {
+    content: "";
+    position: absolute;
+    left: -36px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+}
+
+/* TITRE */
+.metric-row strong {
+    display: block;
+    font-size: 16px;
     font-weight: 900;
+    margin-bottom: 6px;
 }
 
-.metric-item p {
-    max-width: 280px;
-    font-size: 8.8px;
-    line-height: 1.15;
+/* TEXTE */
+.metric-row span {
+    display: block;
+    font-size: 11.5px;
+    line-height: 1.2;
     font-weight: 400;
+    max-width: 280px;
 }
 
+/* DOTS */
 .metric-dots {
     display: flex;
+    align-items: flex-start;
     gap: 6px;
+    margin-top: 4px;
 }
 
-.metric-dot {
-    width: 12px;
-    height: 12px;
-    border: 1.7px solid #000000;
+.metric-dots span {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: #ffffff;
+    border: 1.5px solid #000;
 }
 
-.program-metrics.recomposition .metric-dot.active {
-    background: #198b08;
-}
-
-.program-metrics.weightloss .metric-dot.active {
-    background: #e7005a;
-}
-
-.program-metrics.mass .metric-dot.active {
-    background: #003bd8;
+/* DOT ACTIF (couleur dynamique déjà gérée côté JS normalement) */
+.metric-dots .active {
+    background: currentColor;
 }
 
 /* =========================

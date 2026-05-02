@@ -472,14 +472,9 @@ a {
 
 .metric-item {
     display: grid;
-    grid-template-columns: 1fr auto;
-    column-gap: 14px;
-    align-items: start;
+    grid-template-columns: 1fr;
+    position: relative;
     margin-bottom: 28px;
-}
-
-.metric-item:last-child {
-    margin-bottom: 0;
 }
 
 .metric-text h4 {
@@ -487,21 +482,26 @@ a {
     line-height: 1;
     font-weight: 900;
     margin-bottom: 8px;
+    padding-right: 105px;
 }
 
 .metric-text p {
-    width: 285px;
+    width: 100%;
+    max-width: 330px;
     font-size: 8.8px;
     line-height: 1.15;
     font-weight: 400;
 }
 
 .metric-dots {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: flex-end;
     gap: 5px;
-    padding-top: 1px;
-    min-width: 86px;
+    padding-top: 0;
+    width: 90px;
 }
 
 .metric-dot {

@@ -432,29 +432,25 @@ a {
 
 .program-metrics {
     position: relative;
-    width: 430px;
-    margin-top: 10px;
-    margin-left: 0;
-    padding-left: 58px;
-    padding-top: 20px;
-    padding-right: 0;
+    width: 430px !important;
+    margin-top: 8px !important;
+    padding-top: 22px !important;
+    padding-left: 58px !important;
     color: #000000;
 }
 
-/* Placement sous chaque bloc */
 .program-metrics.metric-under-left {
-    margin-left: 0;
+    margin-left: 0 !important;
 }
 
 .program-metrics.metric-under-center {
-    margin-left: calc(33.333% + 17px);
+    margin-left: calc(33.333% + 17px) !important;
 }
 
 .program-metrics.metric-under-right {
-    margin-left: calc(66.666% + 34px);
+    margin-left: calc(66.666% + 34px) !important;
 }
 
-/* Ligne verticale */
 .metric-line {
     position: absolute;
     left: 22px;
@@ -464,52 +460,54 @@ a {
     background: #000000;
 }
 
-/* Rond noir */
 .metric-pin {
     position: absolute;
-    top: -15px;
-    left: 16px;
-    width: 14px;
-    height: 14px;
+    top: -14px;
+    left: 17px;
+    width: 12px;
+    height: 12px;
     background: #000000;
     border-radius: 50%;
 }
 
-/* Une ligne de métrique */
 .metric-item {
-    display: grid;
-    grid-template-columns: 1fr 78px;
-    column-gap: 14px;
-    align-items: start;
-    margin-bottom: 30px;
+    position: relative;
+    display: block !important;
+    width: 330px !important;
+    margin-bottom: 28px;
 }
 
-/* Texte métrique */
 .metric-text h4 {
+    position: relative;
     font-size: 18px;
     line-height: 1;
     font-weight: 900;
     margin-bottom: 8px;
+    padding-right: 90px;
 }
 
 .metric-text p {
-    font-size: 10.5px;
+    width: 330px;
+    font-size: 9.6px;
     line-height: 1.15;
     font-weight: 400;
-    max-width: 270px;
 }
 
-/* Dots à droite DU SOUS-BLOC */
 .metric-dots {
-    display: flex;
-    justify-content: flex-end;
-    gap: 5px;
-    padding-top: 1px;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    gap: 5px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .metric-dot {
     width: 11px;
     height: 11px;
+    min-width: 11px;
     border: 1.6px solid #000000;
     border-radius: 50%;
     background: #ffffff;

@@ -1,13 +1,12 @@
 <!-- =========================
-     PAGE PRINCIPALE
-     MICHELE CANALA - FITNESS / PLANT-BASED NUTRITION / PROGRAMS
-     Cette page reproduit la maquette principale avec :
-     - Hero
+     PAGE PRINCIPALE - MICHELE CANALA
+     Structure complète fidèle à la maquette :
+     - Header vidéo plein écran
      - Fitness
-     - Plant-based nutrition avec choix interactifs
-     - Programs avec choix interactifs
-     - CTA
-     - Redirection vers la page coach
+     - Nutrition interactive
+     - Programs interactif au survol
+     - Let's Get Started
+     - Meet Your Coach
 ========================= -->
 
 <!DOCTYPE html>
@@ -21,25 +20,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michele Canala - Personal Trainer & Wellness Coach</title>
 
-    <!-- Fichier CSS principal -->
+    <!-- CSS principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- =========================
-         HERO / HEADER VISUEL
+         HEADER VIDÉO PLEIN ÉCRAN
     ========================= -->
-    <header class="hero">
+    <header class="hero" id="top">
 
-        <!-- Sélecteur langues -->
+        <!-- Vidéo de fond -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="static/Video-header-michele-canala.mp4" type="video/mp4">
+        </video>
+
+        <!-- Filtre sombre sur la vidéo -->
+        <div class="hero-filter"></div>
+
+        <!-- Sélecteur de langues -->
         <div class="language-switcher">
             <a href="#">FR</a>
             <a href="#">EN</a>
             <a href="#">IT</a>
         </div>
 
-        <div class="hero-overlay">
+        <!-- Contenu central du header -->
+        <div class="hero-content">
 
             <h1>
                 Transform your body with fitness<br>
@@ -59,89 +67,103 @@
             </nav>
 
         </div>
+
     </header>
 
 
     <!-- =========================
-         SECTION FITNESS
+         CONTENU PRINCIPAL DU SITE
     ========================= -->
     <main>
 
-        <section id="fitness" class="section fitness-section">
+        <!-- =========================
+             SECTION FITNESS
+        ========================= -->
+        <section id="fitness" class="site-section fitness-section">
 
-            <h2>Fitness</h2>
-            <p class="section-subtitle">Choose your perfect set up!</p>
+            <div class="section-heading">
+                <h2>Fitness</h2>
+                <p>Choose your perfect set up!</p>
+            </div>
 
-            <!-- Sous-section composition des cours -->
-            <p class="small-title">CLASS COMPOSITION</p>
+            <!-- Bloc 1 : composition des cours -->
+            <div class="content-block">
 
-            <div class="card-grid">
+                <p class="block-label">CLASS COMPOSITION</p>
 
-                <article class="info-card">
-                    <h3>One-on-One Coaching</h3>
-                    <p>
-                        Personalized training sessions tailored to your goals, your pace,
-                        and your level. A fully dedicated approach to maximize efficiency
-                        and long-term progress.
-                    </p>
-                    <strong>Full attention, maximum results.</strong>
-                </article>
+                <div class="three-columns">
 
-                <article class="info-card">
-                    <h3>Couple Training (2 people)</h3>
-                    <p>
-                        Train with a partner and stay motivated together while still
-                        benefiting from structured and personalized guidance.
-                        Perfect for consistency and shared progress.
-                    </p>
-                    <strong>Stronger together, better results.</strong>
-                </article>
+                    <article class="grey-card fitness-card">
+                        <h3>One-on-One Coaching</h3>
+                        <p>
+                            Personalized training sessions tailored to your goals, your pace,
+                            and your level. A fully dedicated approach to maximize efficiency
+                            and long-term progress.
+                        </p>
+                        <strong>Full attention, maximum results.</strong>
+                    </article>
 
-                <article class="info-card">
-                    <h3>Group Training (3–10 people)</h3>
-                    <p>
-                        Dynamic small-group sessions designed to challenge you, boost
-                        motivation, and create a strong team energy while keeping
-                        individual progression in focus.
-                    </p>
-                    <strong>Energy, accountability, progression.</strong>
-                </article>
+                    <article class="grey-card fitness-card">
+                        <h3>Couple Training (2 people)</h3>
+                        <p>
+                            Train with a partner and stay motivated together while still
+                            benefiting from structured and personalized guidance. Perfect for
+                            consistency and shared progress.
+                        </p>
+                        <strong>Stronger together, better results.</strong>
+                    </article>
+
+                    <article class="grey-card fitness-card">
+                        <h3>Group Training (3–10 people)</h3>
+                        <p>
+                            Dynamic small-group sessions designed to challenge you, boost
+                            motivation, and create a strong team energy while keeping
+                            individual progression in focus.
+                        </p>
+                        <strong>Energy, accountability, progression.</strong>
+                    </article>
+
+                </div>
 
             </div>
 
-            <!-- Sous-section lieu d'entraînement -->
-            <p class="small-title second-small-title">SPOT SITUATION</p>
+            <!-- Bloc 2 : lieux d'entraînement -->
+            <div class="content-block">
 
-            <div class="card-grid">
+                <p class="block-label">SPOT SITUATION</p>
 
-                <article class="info-card">
-                    <h3>Gym Training (On-site)</h3>
-                    <p>
-                        Train in a fully equipped environment with access to professional
-                        machines and structured workout setups for optimal performance
-                        and progression.
-                    </p>
-                    <strong>Structure, equipment, performance.</strong>
-                </article>
+                <div class="three-columns">
 
-                <article class="info-card">
-                    <h3>Outdoor Training</h3>
-                    <p>
-                        Enjoy refreshing sessions in the open air, bringing variety to
-                        your workouts while reconnecting with your environment and
-                        boosting your energy levels.
-                    </p>
-                    <strong>Fresh air, freedom, intensity.</strong>
-                </article>
+                    <article class="grey-card fitness-card">
+                        <h3>Gym Training (On-site)</h3>
+                        <p>
+                            Train in a fully equipped environment with access to professional
+                            machines and structured workout setups for optimal performance
+                            and progression.
+                        </p>
+                        <strong>Structure, equipment, performance.</strong>
+                    </article>
 
-                <article class="info-card">
-                    <h3>Home & Online Training</h3>
-                    <p>
-                        Train from the comfort of your home or remotely with live coaching
-                        sessions adapted to your space, schedule, and lifestyle.
-                    </p>
-                    <strong>Flexibility, comfort, efficiency.</strong>
-                </article>
+                    <article class="grey-card fitness-card">
+                        <h3>Outdoor Training</h3>
+                        <p>
+                            Enjoy refreshing sessions in the open air, bringing variety to your
+                            workouts while reconnecting with your environment and boosting
+                            your energy levels.
+                        </p>
+                        <strong>Fresh air, freedom, intensity.</strong>
+                    </article>
+
+                    <article class="grey-card fitness-card">
+                        <h3>Home & Online Training</h3>
+                        <p>
+                            Train from the comfort of your home or remotely with live coaching
+                            sessions adapted to your space, schedule, and lifestyle.
+                        </p>
+                        <strong>Flexibility, comfort, efficiency.</strong>
+                    </article>
+
+                </div>
 
             </div>
 
@@ -149,29 +171,28 @@
 
 
         <!-- =========================
-             SECTION PLANT-BASED NUTRITION
+             SECTION NUTRITION
         ========================= -->
-        <section id="nutrition" class="section nutrition-section">
+        <section id="nutrition" class="site-section nutrition-section">
 
-            <h2>Plant-based nutrition</h2>
-
-            <p class="section-subtitle">
-                Flexitarian, vegetarian or vegan: your nutrition, aligned with your training
-            </p>
-
-            <!-- Boutons de choix nutrition -->
-            <div class="pill-buttons" id="nutrition-buttons">
-                <button class="active" onclick="showNutrition('flexitarian')">FLEXITARIAN</button>
-                <button onclick="showNutrition('vegetarian')">VEGETARIAN</button>
-                <button onclick="showNutrition('vegan')">VEGAN</button>
+            <div class="section-heading">
+                <h2>Plant-based nutrition</h2>
+                <p>Flexitarian, vegetarian or vegan: your nutrition, aligned with your training</p>
             </div>
 
-            <!-- Contenu injecté par script.js -->
+            <!-- Boutons interactifs -->
+            <div class="nutrition-tabs">
+                <button class="nutrition-tab active" data-nutrition="flexitarian">FLEXITARIAN</button>
+                <button class="nutrition-tab" data-nutrition="vegetarian">VEGETARIAN</button>
+                <button class="nutrition-tab" data-nutrition="vegan">VEGAN</button>
+            </div>
+
+            <!-- Contenu dynamique injecté par JS -->
             <div id="nutrition-content"></div>
 
-            <p class="nutrition-bottom-note">
-                Whether you reduce, exclude, or fully embrace plant-based eating,
-                we help you structure your meals to support your workouts, your recovery, and your results.
+            <p class="nutrition-footer-text">
+                Whether you reduce, exclude, or fully embrace plant-based eating, we help you structure your meals
+                to support your workouts, your recovery, and your results.
             </p>
 
         </section>
@@ -180,73 +201,75 @@
         <!-- =========================
              SECTION PROGRAMS
         ========================= -->
-        <section id="programs" class="section programs-section">
+        <section id="programs" class="site-section programs-section">
 
-            <h2>Programs</h2>
-
-            <p class="section-subtitle">
-                Choose your goal. Follow a structured path. Get real results.
-            </p>
-
-            <!-- Cartes programmes -->
-            <div class="program-grid" id="program-buttons">
-
-                <article class="program-card active green" onclick="showProgram('recomposition')">
-                    <h3>BODY RECOMPOSITION</h3>
-                    <p>
-                        Lose fat while building muscle at the same time. This method focuses
-                        on improving your body composition rather than just your weight,
-                        making it the most balanced and sustainable approach over time.
-                    </p>
-                    <p>
-                        It combines strength training, progressive overload and adequate
-                        protein intake with controlled nutrition to help your body burn fat
-                        while developing lean muscle efficiently.
-                    </p>
-                    <p>
-                        Ideal if you want long-term results without extreme dieting or strict phases.
-                    </p>
-                    <strong>Slow, steady, sustainable transformation.</strong>
-                </article>
-
-                <article class="program-card" onclick="showProgram('weightloss')">
-                    <h3>WEIGHT LOSS</h3>
-                    <p>
-                        Lose body fat by creating a controlled calorie deficit while maintaining
-                        an active training routine. This approach focuses on reducing fat while
-                        preserving muscle mass and supporting overall energy levels.
-                    </p>
-                    <p>
-                        It combines efficient workouts, consistent habits, and structured eating
-                        patterns to help you stay on track without feeling restricted.
-                    </p>
-                    <p>
-                        Ideal if your priority is to lose weight and feel lighter every day.
-                    </p>
-                    <strong>Burn fat, keep your energy.</strong>
-                </article>
-
-                <article class="program-card" onclick="showProgram('mass')">
-                    <h3>MASS GAINING</h3>
-                    <p>
-                        Build muscle by providing your body with the right training stimulus
-                        and enough fuel to grow consistently over time. This approach focuses
-                        on increasing strength, size, and overall physical performance.
-                    </p>
-                    <p>
-                        It combines progressive strength training, structured workouts, and a
-                        slight calorie surplus with protein intake to support muscle growth.
-                    </p>
-                    <p>
-                        Ideal if your goal is to gain muscle and improve overall strength.
-                    </p>
-                    <strong>Build strength, gain muscle.</strong>
-                </article>
-
+            <div class="section-heading">
+                <h2>Programs</h2>
+                <p>Choose your goal. Follow a structured path. Get real results.</p>
             </div>
 
-            <!-- Détails du programme actif -->
-            <div id="program-content"></div>
+            <!-- Cartes programmes interactives -->
+            <div class="programs-wrapper">
+
+                <div class="three-columns programs-grid">
+
+                    <article class="program-card active green" data-program="recomposition">
+                        <h3>BODY RECOMPOSITION</h3>
+                        <p>
+                            Lose fat while building muscle at the same time. This method focuses on improving your
+                            body composition rather than just your weight, making it the most balanced and sustainable
+                            approach over time.
+                        </p>
+                        <p>
+                            It combines strength training, progressive overload and adequate protein intake with
+                            controlled nutrition to help your body burn fat while developing lean muscle efficiently.
+                        </p>
+                        <p>
+                            Ideal if you want long-term results without extreme dieting or strict phases.
+                        </p>
+                        <strong>Slow, steady, sustainable transformation.</strong>
+                    </article>
+
+                    <article class="program-card" data-program="weightloss">
+                        <h3>WEIGHT LOSS</h3>
+                        <p>
+                            Lose body fat by creating a controlled calorie deficit while maintaining an active training
+                            routine. This approach focuses on reducing fat while preserving muscle mass and supporting
+                            overall energy levels.
+                        </p>
+                        <p>
+                            It combines efficient workouts, consistent habits, and structured eating patterns to help
+                            you stay on track without feeling restricted or overwhelmed during the process.
+                        </p>
+                        <p>
+                            Ideal if your priority is to lose weight and feel lighter every day.
+                        </p>
+                        <strong>Burn fat, keep your energy.</strong>
+                    </article>
+
+                    <article class="program-card" data-program="mass">
+                        <h3>MASS GAINING</h3>
+                        <p>
+                            Build muscle by providing your body with the right training stimulus and enough fuel to
+                            grow consistently over time. This approach focuses on increasing strength, size, and
+                            overall physical performance.
+                        </p>
+                        <p>
+                            It combines progressive strength training, structured workouts, and a slight calorie
+                            surplus with protein intake to support muscle growth and recovery effectively.
+                        </p>
+                        <p>
+                            Ideal if your goal is to gain muscle and improve overall strength.
+                        </p>
+                        <strong>Build strength, gain muscle.</strong>
+                    </article>
+
+                </div>
+
+                <!-- Métriques visibles selon le programme actif -->
+                <div id="program-metrics"></div>
+
+            </div>
 
         </section>
 
@@ -254,35 +277,28 @@
         <!-- =========================
              SECTION LET'S GET STARTED
         ========================= -->
-        <section class="section start-section">
+        <section class="site-section start-section">
 
-            <h2>Let’s Get Started</h2>
-
-            <p class="section-subtitle start-subtitle">
-                Ready to take the first step? Schedule your initial evaluation and let’s
-                define the right path based on your goals, your level, and your lifestyle.
-            </p>
+            <div class="section-heading">
+                <h2>Let’s Get Started</h2>
+                <p>
+                    Ready to take the first step? Schedule your initial evaluation and let’s<br>
+                    define the right path based on your goals, your level, and your lifestyle.
+                </p>
+            </div>
 
             <div class="start-layout">
 
-                <!-- Bloc image gauche -->
-                <div class="start-image">
-                    <span>
-                        TAKE<br>
-                        THE<br>
-                        FIRST<br>
-                        STEP
-                    </span>
-                </div>
+                <!-- Image déjà typographiée -->
+                <img class="start-image" src="static/the-first-step.png" alt="Take the first step">
 
-                <!-- Bloc actions droite -->
-                <div class="start-actions">
+                <div class="start-content">
 
-                    <a class="main-button" href="mailto:hello@michelecanala.com">
+                    <a class="button-primary" href="mailto:hello@michelecanala.com">
                         START MY EVALUATION
                     </a>
 
-                    <a class="secondary-button" href="mailto:hello@michelecanala.com">
+                    <a class="button-secondary" href="mailto:hello@michelecanala.com">
                         CONTACT MY FUTURE COACH
                     </a>
 
@@ -300,11 +316,10 @@
 
         <!-- =========================
              SECTION MEET YOUR COACH
-             Le bouton redirige vers coach.html
         ========================= -->
-        <section class="section coach-strip">
+        <section class="coach-strip">
 
-            <div>
+            <div class="coach-text">
                 <h2>Meet Your Coach</h2>
                 <p>
                     Coaching is not just about programs.<br>
@@ -312,7 +327,7 @@
                 </p>
             </div>
 
-            <a href="coach.html" class="main-button">
+            <a href="coach.html" class="button-primary coach-button">
                 LEARN MORE ABOUT ME
             </a>
 
@@ -328,7 +343,7 @@
 
         <p>2026 - MICHELE CANALA: PERSONNAL TRAINER & WELLNESS COACH</p>
 
-        <div>
+        <div class="footer-links">
             <a href="#">LEGAL MENTIONS</a>
             <a href="#">PRIVACY POLICY</a>
         </div>
@@ -336,9 +351,7 @@
     </footer>
 
 
-    <!-- =========================
-         FICHIER JAVASCRIPT
-    ========================= -->
+    <!-- JS principal -->
     <script src="script.js"></script>
 
 </body>

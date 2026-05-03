@@ -69,12 +69,19 @@ function showNutrition(type) {
 }
 
 /* =========================
-   PROGRAMS
+   PROGRAMS - NOUVELLE VERSION
 ========================= */
 
 const programData = {
     recomposition: {
         colorClass: "green",
+        title: "BODY RECOMPOSITION",
+        paragraphs: [
+            "Lose fat while building muscle at the same time. This method focuses on improving your body composition rather than just your weight, making it the most balanced and sustainable approach over time.",
+            "It combines strength training, progressive overload and adequate protein intake with controlled nutrition to help your body burn fat while developing lean muscle efficiently.",
+            "Ideal if you want long-term results without extreme dieting or strict phases."
+        ],
+        tagline: "Slow, steady, sustainable transformation.",
         difficulty: 1,
         duration: 5,
         frequency: 3
@@ -82,6 +89,13 @@ const programData = {
 
     weightloss: {
         colorClass: "pink",
+        title: "WEIGHT LOSS",
+        paragraphs: [
+            "Lose body fat by creating a controlled calorie deficit while maintaining an active training routine. This approach focuses on reducing fat while preserving muscle mass and supporting overall energy levels.",
+            "It combines efficient workouts, consistent habits, and structured eating patterns to help you stay on track without feeling restricted or overwhelmed during the process.",
+            "Ideal if your priority is to lose weight and feel lighter every day."
+        ],
+        tagline: "Burn fat, keep your energy.",
         difficulty: 3,
         duration: 4,
         frequency: 3
@@ -89,17 +103,24 @@ const programData = {
 
     mass: {
         colorClass: "blue",
+        title: "MASS GAINING",
+        paragraphs: [
+            "Build muscle by providing your body with the right training stimulus and enough fuel to grow consistently over time. This approach focuses on increasing strength, size, and overall physical performance.",
+            "It combines progressive strength training, structured workouts, and a slight calorie surplus with protein intake to support muscle growth and recovery effectively.",
+            "Ideal if your goal is to gain muscle and improve overall strength."
+        ],
+        tagline: "Build strength, gain muscle.",
         difficulty: 2,
         duration: 4,
         frequency: 4
     }
 };
 
-function createDots(activeDots) {
+function createProgramDots(activeDots) {
     let dots = "";
 
     for (let i = 1; i <= 5; i++) {
-        dots += `<span class="metric-dot ${i <= activeDots ? "active" : ""}"></span>`;
+        dots += `<span class="program-detail-dot ${i <= activeDots ? "active" : ""}"></span>`;
     }
 
     return dots;
@@ -107,68 +128,53 @@ function createDots(activeDots) {
 
 function showProgram(programType) {
     const selectedProgram = programData[programType];
-    const programCards = document.querySelectorAll(".program-card");
-    const metricsContainer = document.getElementById("program-metrics");
+    const programButtons = document.querySelectorAll(".program-choice");
+    const programDetailCard = document.getElementById("program-detail-card");
 
-    let activeCard = null;
+    programButtons.forEach((button) => {
+        button.classList.remove("active", "green", "pink", "blue");
 
-    programCards.forEach((card) => {
-        card.classList.remove("active", "green", "pink", "blue");
-
-        if (card.dataset.program === programType) {
-            card.classList.add("active", selectedProgram.colorClass);
-            activeCard = card;
+        if (button.dataset.program === programType) {
+            button.classList.add("active", selectedProgram.colorClass);
         }
     });
 
-    metricsContainer.className = `program-metrics ${selectedProgram.colorClass}`;
+    programDetailCard.className = `program-detail-card ${selectedProgram.colorClass}`;
 
-    metricsContainer.innerHTML = `
-        <div class="metric-line"></div>
-        <div class="metric-pin"></div>
+    programDetailCard.innerHTML = `
+        <h3>${selectedProgram.title}</h3>
 
-        <div class="metric-item">
-            <div class="metric-top">
+        ${selectedProgram.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("")}
+
+        <strong>${selectedProgram.tagline}</strong>
+
+        <div class="program-detail-separator"></div>
+
+        <div class="program-detail-metrics">
+
+            <div class="program-detail-metric">
                 <h4>Difficulty level</h4>
-                <div class="metric-dots">${createDots(selectedProgram.difficulty)}</div>
+                <div class="program-detail-dots">
+                    ${createProgramDots(selectedProgram.difficulty)}
+                </div>
             </div>
-            <p>
-                Indicates how demanding the program is in terms of intensity,
-                consistency, and overall effort required to achieve results.
-            </p>
-        </div>
 
-        <div class="metric-item">
-            <div class="metric-top">
+            <div class="program-detail-metric">
                 <h4>Program duration</h4>
-                <div class="metric-dots">${createDots(selectedProgram.duration)}</div>
+                <div class="program-detail-dots">
+                    ${createProgramDots(selectedProgram.duration)}
+                </div>
             </div>
-            <p>
-                Represents the typical time needed to see meaningful results,
-                depending on your starting point and level of commitment.
-            </p>
-        </div>
 
-        <div class="metric-item">
-            <div class="metric-top">
+            <div class="program-detail-metric">
                 <h4>Session frequency</h4>
-                <div class="metric-dots">${createDots(selectedProgram.frequency)}</div>
+                <div class="program-detail-dots">
+                    ${createProgramDots(selectedProgram.frequency)}
+                </div>
             </div>
-            <p>
-                Shows how many training sessions per week are recommended to
-                follow the program effectively and maximize progress.
-            </p>
+
         </div>
     `;
-
-    /* 
-       IMPORTANT :
-       On déplace physiquement le bloc metrics juste après la card active.
-       Comme ça, il reste contraint par la même colonne que le bloc au-dessus.
-    */
-    if (activeCard) {
-        activeCard.insertAdjacentElement("afterend", metricsContainer);
-    }
 }
 
 /* =========================
@@ -185,9 +191,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.querySelectorAll(".program-card").forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-            showProgram(card.dataset.program);
+    document.querySelectorAll(".program-choice").forEach((button) => {
+        button.addEventListener("mouseenter", () => {
+            showProgram(button.dataset.program);
+        });
+
+        button.addEventListener("click", () => {
+            showProgram(button.dataset.program);
         });
     });
 });

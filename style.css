@@ -793,3 +793,61 @@ a {
         gap: 18px;
     }
 }
+/* =========================
+   FIX DISCOVER FICO FINAL
+========================= */
+
+.discover-strip {
+    width: calc(100% - 160px) !important;
+    margin: 100px auto 80px !important;
+    background: #eeeeee !important;
+    border-radius: 36px !important;
+    padding: 70px 80px 68px !important;
+}
+
+.discover-content {
+    display: grid !important;
+    grid-template-columns: 1fr 430px !important;
+    gap: 70px !important;
+    align-items: center !important;
+}
+
+/* Titre = même taille que les titres de section */
+.discover-strip h2,
+.discover-content h2,
+.discover-left h2 {
+    font-size: clamp(46px, 4.5vw, 76px) !important;
+    line-height: 0.82 !important;
+    font-weight: 900 !important;
+    letter-spacing: -2px !important;
+    margin-bottom: 16px !important;
+}
+
+/* Texte = même taille que les sous-titres de section */
+.discover-strip p,
+.discover-content p,
+.discover-left p {
+    font-size: clamp(18px, 1.35vw, 24px) !important;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+    max-width: 900px !important;
+}
+
+/* Bouton blanc */
+.discover-button {
+    width: 100% !important;
+    height: 74px !important;
+    border: 2.5px solid #000000 !important;
+    border-radius: 999px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-decoration: none !important;
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+}

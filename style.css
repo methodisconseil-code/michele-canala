@@ -517,10 +517,10 @@ a {
 .start-layout {
     display: grid;
     grid-template-columns: 550px 490px;
-    gap: 45px; 
-    align-items: center;
+    gap: 45px;
+    align-items: start;
     justify-content: start;
-    margin-left: 60px; 
+    margin-left: 0;
 }
 
 .start-image {
@@ -536,13 +536,13 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 34px;
 }
 
 .start-content .button-primary {
     width: 490px;
     height: 58px;
-    margin: 0 0 30px;
+    margin: 0 0 34px;
     border-radius: 999px;
     background: #000000;
     color: #ffffff;

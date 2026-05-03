@@ -5,54 +5,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
-    <!-- =========================
-         PARAMÈTRES DE BASE
-    ========================= -->
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michele Canala - Personal Trainer & Wellness Coach</title>
-
-    <!-- CSS principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER VIDÉO PLEIN ÉCRAN
-    ========================= -->
     <header class="hero" id="top">
 
-        <!-- Vidéo de fond -->
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="Video-header-michele-canala.mp4" type="video/mp4">
         </video>
 
-        <!-- Filtre sombre -->
         <div class="hero-filter"></div>
 
-        <!-- Sélecteur langues -->
         <div class="language-switcher">
             <a href="#">FR</a>
             <a href="#">EN</a>
             <a href="#">IT</a>
         </div>
-<div class="hero-content">
 
-    <!-- LOGO -->
-    <img src="limone-w.png" alt="Logo" class="hero-logo">
+        <div class="hero-content">
 
-    <h1>
-        <span>Transform your body with fitness</span>
-        <span>and plant-based nutrition</span>
-    </h1>
+            <img class="hero-logo" src="limone-w.png" alt="Limone">
 
-    <p>
-        Discover the personal training and plant-based guidance in Paris,
-        built around your lifestyle
-    </p>
-       
+            <h1>
+                <span>Transform your body with fitness</span>
+                <span>and plant-based nutrition</span>
+            </h1>
+
+            <p>
+                Discover the personal training and plant-based guidance in Paris,
+                built around your lifestyle
+            </p>
+
             <nav class="hero-nav">
                 <button onclick="scrollToSection('fitness')">FITNESS</button>
                 <button onclick="scrollToSection('nutrition')">PLANT-BASED NUTRITION</button>
@@ -63,10 +52,6 @@
 
     </header>
 
-
-    <!-- =========================
-         CONTENU PRINCIPAL
-    ========================= -->
     <main>
 
         <!-- =========================
@@ -160,7 +145,6 @@
 
         </section>
 
-
         <!-- =========================
              PLANT-BASED NUTRITION
         ========================= -->
@@ -190,9 +174,8 @@
 
         </section>
 
-
         <!-- =========================
-             PROGRAMS
+             PROGRAMS - NOUVELLE VERSION
         ========================= -->
         <section id="programs" class="screen-section programs-section">
 
@@ -201,73 +184,28 @@
                 <p>Choose your goal. Follow a structured path. Get real results.</p>
             </div>
 
-            <div class="section-content-offset">
+            <div class="programs-new-layout">
 
-                <div class="programs-wrapper">
-
-                    <div class="three-columns programs-grid">
-
-                        <article class="program-card active green" data-program="recomposition">
-                            <h3>BODY RECOMPOSITION</h3>
-                            <p>
-                                Lose fat while building muscle at the same time. This method focuses on improving your
-                                body composition rather than just your weight, making it the most balanced and sustainable
-                                approach over time.
-                            </p>
-                            <p>
-                                It combines strength training, progressive overload and adequate protein intake with
-                                controlled nutrition to help your body burn fat while developing lean muscle efficiently.
-                            </p>
-                            <p>
-                                Ideal if you want long-term results without extreme dieting or strict phases.
-                            </p>
-                            <strong>Slow, steady, sustainable transformation.</strong>
-                        </article>
-
-                        <article class="program-card" data-program="weightloss">
-                            <h3>WEIGHT LOSS</h3>
-                            <p>
-                                Lose body fat by creating a controlled calorie deficit while maintaining an active training
-                                routine. This approach focuses on reducing fat while preserving muscle mass and supporting
-                                overall energy levels.
-                            </p>
-                            <p>
-                                It combines efficient workouts, consistent habits, and structured eating patterns to help
-                                you stay on track without feeling restricted or overwhelmed during the process.
-                            </p>
-                            <p>
-                                Ideal if your priority is to lose weight and feel lighter every day.
-                            </p>
-                            <strong>Burn fat, keep your energy.</strong>
-                        </article>
-
-                        <article class="program-card" data-program="mass">
-                            <h3>MASS GAINING</h3>
-                            <p>
-                                Build muscle by providing your body with the right training stimulus and enough fuel to
-                                grow consistently over time. This approach focuses on increasing strength, size, and
-                                overall physical performance.
-                            </p>
-                            <p>
-                                It combines progressive strength training, structured workouts, and a slight calorie
-                                surplus with protein intake to support muscle growth and recovery effectively.
-                            </p>
-                            <p>
-                                Ideal if your goal is to gain muscle and improve overall strength.
-                            </p>
-                            <strong>Build strength, gain muscle.</strong>
-                        </article>
-
-                    </div>
-
-                    <div id="program-metrics"></div>
-
+                <div class="program-selector">
+                    <button class="program-choice active" data-program="recomposition">BODY RECOMPOSITION</button>
+                    <button class="program-choice" data-program="weightloss">WEIGHT LOSS</button>
+                    <button class="program-choice" data-program="mass">MASS GAINING</button>
                 </div>
+
+                <article class="program-detail-card" id="program-detail-card"></article>
 
             </div>
 
-        </section>
+            <p class="programs-metrics-legend">
+                <strong>Difficulty level :</strong> Indicates how demanding the program is on your lifestyle, in terms of intensity,
+                consistency, and overall effort required to achieve results.<br>
+                <strong>Program duration :</strong> Represents the typical time needed (in months) to see meaningful results,
+                depending on your starting point and level of commitment.<br>
+                <strong>Session frequency :</strong> Shows how many training sessions per week are recommended to follow the program
+                effectively and maximize progress.
+            </p>
 
+        </section>
 
         <!-- =========================
              LET'S GET STARTED
@@ -311,10 +249,6 @@
 
         </section>
 
-
-        <!-- =========================
-             MEET YOUR COACH
-        ========================= -->
         <section class="coach-strip">
 
             <div class="coach-text">
@@ -333,10 +267,6 @@
 
     </main>
 
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
     <footer class="footer">
 
         <p>2026 - MICHELE CANALA: PERSONNAL TRAINER & WELLNESS COACH</p>

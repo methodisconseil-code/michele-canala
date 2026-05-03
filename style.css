@@ -510,69 +510,95 @@ a {
    LET'S GET STARTED
 ========================= */
 
-.start-section .section-heading {
-    margin-bottom: 62px;
+.start-section {
+    justify-content: center;
 }
 
+.start-heading {
+    margin-bottom: 70px;
+}
+
+/* Grille strictement alignée :
+   colonne 1 = image
+   colonne 2 = espace central
+   colonne 3 = bloc droit */
 .start-layout {
+    width: calc(100% - 120px);
+    margin-left: 60px;
+
     display: grid;
-    grid-template-columns: 550px 1fr;
-    gap: 90px;
+    grid-template-columns: 630px 80px 1fr;
     align-items: start;
 }
 
-/* IMAGE */
+/* Image ferrée à gauche, taille inchangée */
 .start-image {
-    width: 550px;
-    max-width: 550px;
-    height: auto;
+    grid-column: 1;
+    width: 630px;
+    height: 440px;
+    object-fit: cover;
     display: block;
 }
 
-/* BLOC DROIT */
+/* Bloc droit ferré sur sa colonne */
 .start-content {
+    grid-column: 3;
     width: 100%;
-    min-height: 365px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px; 
+    height: 440px;
+
+    display: grid;
+    grid-template-rows: 74px 1fr auto;
+    align-items: start;
 }
 
-/* BOUTON */
-.start-content .button-primary {
+/* Bouton : commence au même niveau que le haut de l’image */
+.start-button {
     width: 100%;
-    height: 58px;
-    margin: 0 0 28px;
+    height: 62px;
+
     border-radius: 999px;
     background: #000000;
     color: #ffffff;
     border: 2px solid #000000;
-    text-decoration: none;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    text-decoration: none;
     font-size: 18px;
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase;
 }
 
-/* GIF */
+/* GIF centré entre bouton et texte */
 .start-gif {
+    justify-self: center;
+    align-self: center;
+
     width: 210px;
     height: 210px;
     object-fit: contain;
-    margin: 10px auto 28px;
+    display: block;
 }
 
-/* TEXTE */
-.start-content p {
+/* Texte ferré comme le bouton, dans la limite basse */
+.start-text {
+    width: 100%;
+    align-self: end;
+}
+
+.start-text p {
     width: 100%;
     font-size: 14.6px;
     line-height: 1.12;
     font-weight: 400;
-    margin: 0 0 16px;
+    margin-bottom: 18px;
+}
+
+.start-text p:last-child {
+    margin-bottom: 0;
 }
 
 /* =========================

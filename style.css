@@ -517,12 +517,11 @@ a {
 .start-layout {
     display: grid;
     grid-template-columns: 550px 1fr;
-    gap: 59px; /* +30% vs 45px */
+    gap: 90px;
     align-items: start;
-    justify-content: start;
-    margin-left: 0;
 }
 
+/* IMAGE */
 .start-image {
     width: 550px;
     max-width: 550px;
@@ -530,19 +529,21 @@ a {
     display: block;
 }
 
+/* BLOC DROIT */
 .start-content {
     width: 100%;
     min-height: 365px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 34px;
+    padding-top: 10px; 
 }
 
+/* BOUTON */
 .start-content .button-primary {
     width: 100%;
     height: 58px;
-    margin: 0 0 34px;
+    margin: 0 0 28px;
     border-radius: 999px;
     background: #000000;
     color: #ffffff;
@@ -557,19 +558,21 @@ a {
     text-transform: uppercase;
 }
 
+/* GIF */
 .start-gif {
     width: 210px;
     height: 210px;
     object-fit: contain;
-    margin: 0 auto 24px;
+    margin: 10px auto 28px;
 }
 
+/* TEXTE */
 .start-content p {
     width: 100%;
     font-size: 14.6px;
     line-height: 1.12;
     font-weight: 400;
-    margin: 0 0 18px;
+    margin: 0 0 16px;
 }
 
 /* =========================

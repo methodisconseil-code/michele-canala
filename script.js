@@ -78,7 +78,7 @@ const programData = {
         title: "BODY RECOMPOSITION",
         paragraphs: [
             "Lose fat while building muscle. This method focuses on improving your body composition rather than just your weight, making it the most balanced and sustainable approach over time.",
-            "It combines strength training, progressive overload and adequate protein intake with controlled nutrition to help your body burn fat while developing muscle efficiently.",
+            "It combines strength training, progressive overload and adequate protein intake with controlled nutrition to help your body burn fat while developing lean muscle efficiently.",
             "Ideal if you want long-term results without extreme dieting or strict phases."
         ],
         tagline: "Slow, steady, sustainable transformation.",

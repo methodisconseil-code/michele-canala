@@ -118,17 +118,17 @@ a {
     max-width: 1320px;
     height: 100%;
     margin: 0 auto;
-    padding-top: 35vh;
+    padding-top: 24vh;
     text-align: center;
 }
+
 .hero-logo {
-    width: 300px;          
-    
-    position: absolute;
-    top: 22%;              
-    left: 50%;
-    transform: translateX(-50%);
+    width: 260px;
+    height: auto;
+    display: block;
+    margin: 0 auto 42px;
 }
+
 .hero h1 {
     font-size: clamp(48px, 5vw, 78px);
     line-height: 0.9;
@@ -361,171 +361,149 @@ a {
 }
 
 /* =========================
-   PROGRAMS
+   PROGRAMS - NOUVELLE MAQUETTE
 ========================= */
 
 .programs-section {
     justify-content: center;
 }
 
-.programs-wrapper {
-    width: 100%;
+.programs-section .section-heading {
+    margin-bottom: 60px;
+}
+
+.programs-new-layout {
+    width: calc(100% - 120px);
+    margin-left: 60px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 430px));
-    justify-content: space-between;
-    gap: 52px;
-    align-items: start;
+    grid-template-columns: 365px 1fr;
+    gap: 62px;
+    align-items: center;
 }
 
-.programs-grid {
-    display: contents;
+.program-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
 }
 
-.program-card {
-    min-height: 410px;
-    padding: 34px 32px 30px;
-    background: #eeeeee;
-    border-radius: 32px;
+.program-choice {
+    width: 365px;
+    height: 64px;
+    border: 2px solid #000000;
+    border-radius: 999px;
+    background: #ffffff;
     color: #000000;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-.program-card h3 {
-    font-size: 18px;
-    line-height: 1.05;
+    font-size: 22px;
+    line-height: 1;
     font-weight: 900;
     font-style: italic;
-    margin-bottom: 22px;
+    text-transform: uppercase;
 }
 
-.program-card p {
-    font-size: 14.6px;
-    line-height: 1.12;
-    font-weight: 400;
-    margin-bottom: 28px;
-}
-
-.program-card strong {
-    display: block;
-    margin-top: 24px;
-    font-size: 14.6px;
-    line-height: 1.08;
-    font-weight: 900;
-}
-
-.program-card.active {
+.program-choice.active {
     color: #ffffff;
+    border-color: transparent;
 }
 
-.program-card.green {
+.program-choice.green {
     background: #198b08;
 }
 
-.program-card.pink {
+.program-choice.pink {
     background: #e7005a;
 }
 
-.program-card.blue {
+.program-choice.blue {
     background: #003bd8;
 }
 
-/* =========================
-   PROGRAM METRICS
-========================= */
-
-#program-metrics {
-    grid-row: 2;
-    width: 430px;
-    margin-top: 8px;
+.program-detail-card {
+    min-height: 405px;
+    padding: 38px 36px 34px;
+    background: #eeeeee;
+    border-radius: 28px;
 }
 
-.program-metrics.metric-under-left {
-    grid-column: 1;
-}
-
-.program-metrics.metric-under-center {
-    grid-column: 2;
-}
-
-.program-metrics.metric-under-right {
-    grid-column: 3;
-}
-
-.program-metrics {
-    position: relative;
-    padding-left: 48px;
-    padding-top: 16px;
-    color: #000000;
-}
-
-.metric-line {
-    position: absolute;
-    left: 18px;
-    top: -8px;
-    width: 2px;
-    height: 230px;
-    background: #000000;
-}
-
-.metric-pin {
-    position: absolute;
-    top: -14px;
-    left: 13px;
-    width: 12px;
-    height: 12px;
-    background: #000000;
-    border-radius: 50%;
-}
-
-.metric-item {
-    margin-bottom: 24px;
-}
-
-.metric-top {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    column-gap: 16px;
-    margin-bottom: 6px;
-}
-
-.metric-top h4 {
-    font-size: 15px;
+.program-detail-card h3 {
+    font-size: 23px;
     line-height: 1;
     font-weight: 900;
+    font-style: italic;
+    margin-bottom: 30px;
 }
 
-.metric-dots {
+.program-detail-card p {
+    font-size: 14.6px;
+    line-height: 1.12;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.program-detail-card strong {
+    display: block;
+    font-size: 14.6px;
+    line-height: 1.08;
+    font-weight: 900;
+    margin-top: 22px;
+}
+
+.program-detail-separator {
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    margin: 36px 0 28px;
+}
+
+.program-detail-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 46px;
+}
+
+.program-detail-metric h4 {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 14px;
+}
+
+.program-detail-dots {
     display: flex;
-    justify-content: flex-end;
-    gap: 5px;
+    gap: 6px;
 }
 
-.metric-dot {
-    width: 10px;
-    height: 10px;
+.program-detail-dot {
+    width: 14px;
+    height: 14px;
     border: 1.5px solid #000000;
     border-radius: 50%;
     background: #ffffff;
 }
 
-.metric-item p {
-    max-width: 330px;
-    font-size: 8.8px;
+.program-detail-card.green .program-detail-dot.active {
+    background: #198b08;
+}
+
+.program-detail-card.pink .program-detail-dot.active {
+    background: #e7005a;
+}
+
+.program-detail-card.blue .program-detail-dot.active {
+    background: #003bd8;
+}
+
+.programs-metrics-legend {
+    width: calc(100% - 120px);
+    margin-left: 60px;
+    margin-top: 58px;
+    font-size: 13.5px;
     line-height: 1.15;
     font-weight: 400;
 }
 
-.program-metrics.green .metric-dot.active {
-    background: #198b08;
-}
-
-.program-metrics.pink .metric-dot.active {
-    background: #e7005a;
-}
-
-.program-metrics.blue .metric-dot.active {
-    background: #003bd8;
+.programs-metrics-legend strong {
+    font-weight: 700;
 }
 
 /* =========================
@@ -650,84 +628,6 @@ a {
 }
 
 /* =========================
-   PAGE COACH
-========================= */
-
-.coach-page {
-    min-height: 100vh;
-}
-
-.coach-page-header {
-    width: 92%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 34px 0;
-}
-
-.back-link {
-    color: #000000;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.coach-hero-page {
-    width: 92%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 70px 0 40px;
-}
-
-.coach-hero-page h1 {
-    font-size: clamp(56px, 6vw, 92px);
-    line-height: 0.85;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 22px;
-}
-
-.coach-hero-page p {
-    max-width: 720px;
-    font-size: 20px;
-    line-height: 1.1;
-}
-
-.coach-bio-section {
-    width: 92%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 40px 0 80px;
-    display: grid;
-    grid-template-columns: 0.9fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.coach-bio-image {
-    width: 100%;
-    aspect-ratio: 1 / 1.1;
-    object-fit: cover;
-}
-
-.coach-bio-text h2 {
-    font-size: clamp(44px, 4vw, 70px);
-    line-height: 0.85;
-    font-weight: 900;
-    margin-bottom: 22px;
-}
-
-.coach-bio-text p {
-    font-size: 16px;
-    line-height: 1.18;
-    margin-bottom: 14px;
-}
-
-.coach-bio-text strong {
-    font-size: 16px;
-    font-weight: 900;
-}
-
-/* =========================
    RESPONSIVE
 ========================= */
 
@@ -738,7 +638,12 @@ a {
     }
 
     .hero-content {
-        padding: 30vh 24px 0;
+        padding: 24vh 24px 0;
+    }
+
+    .hero-logo {
+        width: 180px;
+        margin-bottom: 28px;
     }
 
     .hero h1 {
@@ -758,9 +663,8 @@ a {
     .nutrition-layout,
     .start-layout,
     .coach-strip,
-    .coach-bio-section,
     .footer,
-    .programs-grid {
+    .programs-new-layout {
         grid-template-columns: 1fr;
     }
 
@@ -776,13 +680,19 @@ a {
         padding-bottom: 64px;
     }
 
-    .section-content-offset {
+    .section-content-offset,
+    .programs-new-layout,
+    .programs-metrics-legend {
         width: 100%;
         margin-left: 0;
     }
 
-    .nutrition-tabs {
+    .nutrition-tabs,
+    .program-choice {
         width: 100%;
+    }
+
+    .nutrition-tabs {
         gap: 12px;
     }
 
@@ -797,22 +707,13 @@ a {
         aspect-ratio: 1.25 / 1;
     }
 
-    .program-metrics,
-    .program-metrics.metric-under-left,
-    .program-metrics.metric-under-center,
-    .program-metrics.metric-under-right {
-        width: 100%;
-        margin-left: 0;
-        padding-left: 48px;
+    .program-selector {
+        gap: 18px;
     }
 
-    .metric-item {
+    .program-detail-metrics {
         grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .metric-text p {
-        width: 100%;
+        gap: 24px;
     }
 
     .button-primary,

@@ -606,55 +606,53 @@ a {
 ========================= */
 
 .discover-strip {
-    width: calc(100% - 160px); /* aligné avec ton site */
+    width: calc(100% - 160px);
     margin: 100px auto 80px;
     background: #eeeeee;
     border-radius: 36px;
-
-    padding: 60px 80px 55px; /* plus compact comme maquette */
+    padding: 70px 80px 68px;
 }
 
 .discover-content {
     display: grid;
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 430px;
+    gap: 70px;
     align-items: start;
-    gap: 60px; /* espace réel observé */
 }
 
 .discover-left h2 {
-    font-size: 72px;
-    line-height: 0.9;
+    font-size: clamp(46px, 4.5vw, 76px);
+    line-height: 0.82;
     font-weight: 900;
     letter-spacing: -2px;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
 }
 
 .discover-left p {
-    max-width: 720px; /* IMPORTANT → limite comme maquette */
-    font-size: 28px;
-    line-height: 1.1;
-    font-weight: 400;
+    max-width: 1180px;
+    font-size: clamp(18px, 1.35vw, 24px);
+    line-height: 1;
+    font-weight: 500;
 }
 
 .discover-button {
     width: 100%;
     height: 74px;
-
-    border: 2.5px solid #000;
+    border: 2.5px solid #000000;
     border-radius: 999px;
+    background: #ffffff;
+    color: #000000;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    text-decoration: none;
     font-size: 22px;
     font-weight: 500;
     text-transform: uppercase;
 
-    text-decoration: none;
-    color: #000;
-
-    margin-top: 10px; /* aligne verticalement avec le titre */
+    margin-top: 8px;
 }
 
 
@@ -675,7 +673,7 @@ a {
 }
 
 .footer-logo {
-    width: 140px; /* beaucoup plus petit = fidèle maquette */
+    width: 140px; 
     display: block;
     margin: 0 auto;
 }

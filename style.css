@@ -851,3 +851,297 @@ a {
     font-weight: 500 !important;
     text-transform: uppercase !important;
 }
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page {
+    background: #ffffff;
+}
+
+/* HERO */
+
+.about-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 760px;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.about-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.38);
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 3;
+
+    width: 92%;
+    max-width: 1400px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.about-logo {
+    width: 180px;
+    margin-bottom: 36px;
+}
+
+.about-hero h1 {
+    font-size: clamp(58px, 7vw, 110px);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -3px;
+    margin-bottom: 22px;
+}
+
+.about-hero p {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 80px;
+}
+
+.about-nav {
+    width: 100%;
+    max-width: 920px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.about-nav a {
+    height: 48px;
+
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* GLOBAL */
+
+.about-section {
+    width: 92%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 110px 0;
+}
+
+/* TWO COLS */
+
+.about-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.about-card {
+    border: 2px solid #000;
+    border-radius: 26px;
+    padding: 36px;
+}
+
+.about-card h3,
+.about-copy h3,
+.fico-banner-card h3,
+.coach-copy h3 {
+    font-size: 28px;
+    line-height: 0.95;
+    margin-bottom: 24px;
+    font-weight: 900;
+}
+
+.about-card p,
+.about-copy p,
+.fico-banner-card p,
+.coach-copy p {
+    font-size: 15px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+/* BANNER */
+
+.fico-banner {
+    position: relative;
+    margin-top: 80px;
+}
+
+.fico-banner img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.fico-banner-card {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+
+    width: 420px;
+
+    background: #ffffff;
+    border-radius: 30px;
+
+    padding: 36px;
+}
+
+/* COACH */
+
+.coach-layout {
+    display: grid;
+    grid-template-columns: 560px 1fr;
+    gap: 70px;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.coach-photo {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.coach-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 34px;
+
+    border: 1.8px solid #000;
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    margin-bottom: 26px;
+}
+
+.coach-copy strong {
+    display: block;
+    margin-top: 30px;
+
+    font-size: 22px;
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+/* CTA */
+
+.about-cta {
+    width: calc(100% - 160px);
+    margin: 40px auto 100px;
+
+    background: #eeeeee;
+    border-radius: 36px;
+
+    padding: 70px 80px;
+}
+
+.about-cta-content {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-cta h2 {
+    font-size: clamp(42px, 5vw, 76px);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+.about-cta p {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.about-cta-button {
+    width: 100%;
+    height: 74px;
+
+    border-radius: 999px;
+
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .about-nav,
+    .about-two-columns,
+    .coach-layout,
+    .about-cta-content {
+        grid-template-columns: 1fr;
+    }
+
+    .fico-banner-card {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .coach-photo {
+        height: auto;
+    }
+
+    .about-cta,
+    .about-section {
+        width: 90%;
+    }
+}

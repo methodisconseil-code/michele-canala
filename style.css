@@ -859,42 +859,42 @@ a {
 }
 
 .about-page .about-hero-content {
-    padding-top: 22vh;
+    padding-top: 24vh;
 }
 
-.hero-logo {
+.about-page .about-hero-logo {
     width: 350px;
-    height: auto;
-    display: block;
     margin: 0 auto 42px;
 }
 
 .about-page .about-hero h1 {
-    font-size: clamp(52px, 5vw, 78px);
+    font-size: clamp(48px, 5vw, 78px);
     line-height: 0.9;
+    font-weight: 900;
     letter-spacing: -2px;
-    margin-bottom: 20px;
+    margin-bottom: 26px;
 }
 
 .about-page .about-hero p {
     font-size: 19px;
     font-weight: 500;
-    margin-bottom: 110px;
+    margin-bottom: 145px;
 }
 
 .about-page .about-hero-nav {
-    width: 76%;
-    max-width: 980px;
-    gap: 84px;
+    width: 86%;
+    max-width: 1060px;
+    gap: 96px;
 }
 
 .about-page .about-hero-translation {
-    margin-top: 10px;
+    margin-top: -128px;
     margin-bottom: 0;
     font-size: 11px;
     line-height: 1;
     font-style: italic;
-    font-weight: 200;
+    font-weight: 400;
+    opacity: 0.9;
 }
 
 /* WHAT IS FICO */

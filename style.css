@@ -907,11 +907,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 70px;
-    align-items: start;
-}
-
-.about-text-block {
-    padding-top: 70px;
+    align-items: center;
 }
 
 .about-definition-card {

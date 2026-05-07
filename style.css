@@ -60,7 +60,7 @@ a {
 }
 
 /* =========================
-   HEADER
+   HEADER GLOBAL
 ========================= */
 
 .hero {
@@ -231,33 +231,34 @@ a {
 }
 
 /* =========================
-   FITNESS
+   FITNESS HOME
 ========================= */
 
 .fitness-card {
-    min-height: 520px;
-    padding: 34px 36px 32px;
+    min-height: 196px;
+    padding: 24px 30px 22px;
     background: #eeeeee;
     border-radius: 30px;
+}
+
+.fitness-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 22px;
 }
 
 .fitness-card p {
     font-size: 14.6px;
     line-height: 1.12;
     font-weight: 400;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 .fitness-card strong {
     display: block;
     font-size: 14.6px;
-    line-height: 1.08;
+    line-height: 1.1;
     font-weight: 900;
-    margin-bottom: 24px;
-}
-
-.fitness-card strong:last-child {
-    margin-bottom: 0;
 }
 
 /* =========================
@@ -360,7 +361,7 @@ a {
 }
 
 /* =========================
-   PROGRAMS 
+   PROGRAMS
 ========================= */
 
 .programs-section {
@@ -517,20 +518,14 @@ a {
     margin-bottom: 70px;
 }
 
-/* Grille strictement alignée :
-   colonne 1 = image
-   colonne 2 = espace central
-   colonne 3 = bloc droit */
 .start-layout {
     width: calc(100% - 120px);
     margin-left: 60px;
-
     display: grid;
     grid-template-columns: 630px 80px 1fr;
     align-items: start;
 }
 
-/* Image ferrée à gauche, taille inchangée */
 .start-image {
     grid-column: 1;
     width: 630px;
@@ -539,31 +534,25 @@ a {
     display: block;
 }
 
-/* Bloc droit ferré sur sa colonne */
 .start-content {
     grid-column: 3;
     width: 100%;
     height: 440px;
-
     display: grid;
     grid-template-rows: 74px 1fr auto;
     align-items: start;
 }
 
-/* Bouton : commence au même niveau que le haut de l’image */
 .start-button {
     width: 100%;
     height: 62px;
-
     border-radius: 999px;
     background: #000000;
     color: #ffffff;
     border: 2px solid #000000;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
     font-size: 18px;
     line-height: 1;
@@ -571,11 +560,9 @@ a {
     text-transform: uppercase;
 }
 
-/* GIF centré entre bouton et texte */
 .start-gif {
     justify-self: center;
     align-self: center;
-
     width: 210px;
     height: 210px;
     object-fit: contain;
@@ -615,19 +602,23 @@ a {
     display: grid;
     grid-template-columns: 1fr 430px;
     gap: 70px;
-    align-items: start;
+    align-items: center;
 }
 
+.discover-strip h2,
+.discover-content h2,
 .discover-left h2 {
     font-size: clamp(46px, 4.5vw, 76px);
     line-height: 0.82;
     font-weight: 900;
     letter-spacing: -2px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
+.discover-strip p,
+.discover-content p,
 .discover-left p {
-    max-width: 1180px;
+    max-width: 900px;
     font-size: clamp(18px, 1.35vw, 24px);
     line-height: 1;
     font-weight: 500;
@@ -640,19 +631,15 @@ a {
     border-radius: 999px;
     background: #ffffff;
     color: #000000;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
     font-size: 22px;
     font-weight: 500;
     text-transform: uppercase;
-
     margin-top: 8px;
 }
-
 
 /* =========================
    FOOTER
@@ -661,17 +648,15 @@ a {
 .footer {
     border-top: 2px solid #000;
     padding: 28px 80px;
-
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-
     font-size: 16px;
     text-transform: uppercase;
 }
 
 .footer-logo {
-    width: 140px; 
+    width: 140px;
     display: block;
     margin: 0 auto;
 }
@@ -689,6 +674,259 @@ a {
 }
 
 /* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page {
+    background: #ffffff;
+}
+
+/* Header about = même base que home */
+
+.about-page .about-hero-content {
+    padding-top: 24vh;
+}
+
+.about-page .about-hero-logo {
+    width: 350px;
+    margin: 0 auto 42px;
+}
+
+.about-page .about-hero h1 {
+    font-size: clamp(48px, 5vw, 78px);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 26px;
+}
+
+.about-page .about-hero p {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 135px;
+}
+
+.about-page .about-hero-nav {
+    width: 86%;
+    max-width: 1060px;
+    gap: 96px;
+}
+
+.about-page .about-hero-translation {
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-size: 8px;
+    line-height: 1;
+    font-style: italic;
+    font-weight: 400;
+    opacity: 0.78;
+}
+
+/* What is Fico */
+
+.about-intro-section {
+    justify-content: center;
+}
+
+.about-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-definition-card {
+    border: 2px solid #000000;
+    border-radius: 22px;
+    padding: 28px 34px;
+}
+
+.about-definition-card h3,
+.about-text-block h3,
+.fico-banner-card h3 {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.definition-light,
+.definition-phonetic {
+    font-weight: 400;
+}
+
+.about-definition-card p,
+.about-text-block p,
+.fico-banner-card p,
+.about-section-intro,
+.about-balance-text {
+    font-size: 14.6px;
+    line-height: 1.12;
+    margin-bottom: 18px;
+}
+
+.fico-banner {
+    position: relative;
+    margin-top: 52px;
+    min-height: 430px;
+}
+
+.fico-banner img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+.fico-banner-card {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    min-height: 300px;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 34px 38px 32px;
+}
+
+.fico-banner-card h3 {
+    max-width: 390px;
+    font-size: 24px;
+    line-height: 0.95;
+    margin-bottom: 22px;
+}
+
+.fico-banner-card p {
+    font-size: 14px;
+    line-height: 1.12;
+    margin-bottom: 15px;
+}
+
+/* Fico as fitness */
+
+.about-fitness-section .block-label {
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: none;
+    margin-bottom: 2px;
+}
+
+.about-fitness-section .about-section-intro {
+    font-size: 14.6px;
+    line-height: 1.1;
+    margin-bottom: 56px;
+}
+
+.about-program-card {
+    min-height: 455px;
+    padding: 32px 30px 30px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.about-program-card h3 {
+    font-size: 22px;
+    line-height: 0.95;
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.about-program-card p {
+    font-size: 13.6px;
+    line-height: 1.07;
+    margin-bottom: 18px;
+}
+
+.about-program-card strong {
+    font-size: 13.6px;
+    line-height: 1.08;
+    margin-bottom: 18px;
+}
+
+.about-program-card strong:last-child {
+    margin-bottom: 0;
+}
+
+.about-program-card.green-hover:hover {
+    background: #198b08;
+    color: #ffffff;
+}
+
+.about-program-card.pink-hover:hover {
+    background: #e7005a;
+    color: #ffffff;
+}
+
+.about-program-card.blue-hover:hover {
+    background: #003bd8;
+    color: #ffffff;
+}
+
+.about-balance-text {
+    margin-top: 34px;
+}
+
+/* Coach about */
+
+.about-coach-layout {
+    align-items: start;
+}
+
+.coach-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 24px;
+    border: 1.6px solid #000000;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.about-coach-image {
+    object-position: center center;
+}
+
+.about-coach-copy h3 {
+    max-width: none;
+}
+
+/* Final CTA about */
+
+.about-final-section {
+    min-height: auto;
+    padding-top: 70px;
+}
+
+.about-final-card {
+    width: calc(100% - 120px);
+    margin-left: 60px;
+    background: #eeeeee;
+    border-radius: 24px;
+    padding: 32px 42px;
+    display: grid;
+    grid-template-columns: 1fr 360px 150px;
+    gap: 52px;
+    align-items: center;
+}
+
+.about-final-card p {
+    font-size: 14.6px;
+    line-height: 1.12;
+}
+
+.about-final-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    justify-self: end;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -702,12 +940,14 @@ a {
         padding: 24vh 24px 0;
     }
 
-    .hero-logo {
+    .hero-logo,
+    .about-page .about-hero-logo {
         width: 180px;
         margin-bottom: 28px;
     }
 
-    .hero h1 {
+    .hero h1,
+    .about-page .about-hero h1 {
         font-size: 42px;
     }
 
@@ -715,7 +955,8 @@ a {
         white-space: normal;
     }
 
-    .hero p {
+    .hero p,
+    .about-page .about-hero p {
         margin-bottom: 80px;
     }
 
@@ -723,18 +964,19 @@ a {
     .three-columns,
     .nutrition-layout,
     .start-layout,
-    .coach-strip,
     .footer,
-    .programs-new-layout {
+    .programs-new-layout,
+    .about-two-columns,
+    .about-final-card {
         grid-template-columns: 1fr;
     }
 
-    .hero-nav {
+    .hero-nav,
+    .about-page .about-hero-nav {
         gap: 14px;
     }
 
-    .screen-section,
-    .coach-strip {
+    .screen-section {
         width: 90%;
         min-height: auto;
         padding-top: 64px;
@@ -743,7 +985,8 @@ a {
 
     .section-content-offset,
     .programs-new-layout,
-    .programs-metrics-legend {
+    .programs-metrics-legend,
+    .about-final-card {
         width: 100%;
         margin-left: 0;
     }
@@ -777,302 +1020,6 @@ a {
         gap: 24px;
     }
 
-    .button-primary,
-    .button-secondary,
-    .start-content p {
-        width: 100%;
-    }
-
-    .coach-button {
-        justify-self: start;
-    }
-
-    .footer-links {
-        gap: 18px;
-    }
-}
-/* =========================
-   FIX DISCOVER FICO FINAL
-========================= */
-
-.discover-strip {
-    width: calc(100% - 160px) !important;
-    margin: 100px auto 80px !important;
-    background: #eeeeee !important;
-    border-radius: 36px !important;
-    padding: 70px 80px 68px !important;
-}
-
-.discover-content {
-    display: grid !important;
-    grid-template-columns: 1fr 430px !important;
-    gap: 70px !important;
-    align-items: center !important;
-}
-
-/* Titre = même taille que les titres de section */
-.discover-strip h2,
-.discover-content h2,
-.discover-left h2 {
-    font-size: clamp(46px, 4.5vw, 76px) !important;
-    line-height: 0.82 !important;
-    font-weight: 900 !important;
-    letter-spacing: -2px !important;
-    margin-bottom: 16px !important;
-}
-
-/* Texte = même taille que les sous-titres de section */
-.discover-strip p,
-.discover-content p,
-.discover-left p {
-    font-size: clamp(18px, 1.35vw, 24px) !important;
-    line-height: 1 !important;
-    font-weight: 500 !important;
-    max-width: 900px !important;
-}
-
-/* Bouton blanc */
-.discover-button {
-    width: 100% !important;
-    height: 74px !important;
-    border: 2.5px solid #000000 !important;
-    border-radius: 999px !important;
-    background: #ffffff !important;
-    color: #000000 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    text-decoration: none !important;
-    font-size: 22px !important;
-    font-weight: 500 !important;
-    text-transform: uppercase !important;
-}
-/* =========================
-   ABOUT PAGE
-========================= */
-
-.about-page {
-    background: #ffffff;
-}
-
-.about-page .about-hero-content {
-    padding-top: 24vh;
-}
-
-.about-page .about-hero-logo {
-    width: 350px;
-    margin: 0 auto 42px;
-}
-
-.about-page .about-hero h1 {
-    font-size: clamp(48px, 5vw, 78px);
-    line-height: 0.9;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 26px;
-}
-
-.about-page .about-hero p {
-    font-size: 19px;
-    font-weight: 500;
-    margin-bottom: 135px;
-}
-
-.about-page .about-hero-nav {
-    width: 86%;
-    max-width: 1060px;
-    gap: 96px;
-}
-
-.about-page .about-hero-translation {
-    margin-top: 14px;
-    margin-bottom: 0;
-    font-size: 9px;
-    line-height: 1;
-    font-style: italic;
-    font-weight: 400;
-    opacity: 0.85;
-}
-
-/* WHAT IS FICO */
-
-.about-intro-section {
-    justify-content: center;
-}
-
-.about-two-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.about-definition-card {
-    border: 2px solid #000000;
-    border-radius: 22px;
-    padding: 28px 34px;
-}
-
-.about-definition-card h3,
-.about-text-block h3,
-.fico-banner-card h3 {
-    font-size: 24px;
-    line-height: 1;
-    font-weight: 900;
-    margin-bottom: 20px;
-}
-
-.about-definition-card p,
-.about-text-block p,
-.fico-banner-card p,
-.about-section-intro,
-.about-balance-text {
-    font-size: 14.6px;
-    line-height: 1.12;
-    margin-bottom: 18px;
-}
-
-.fico-banner {
-    position: relative;
-    margin-top: 52px;
-    min-height: 430px;
-}
-
-.fico-banner img {
-    width: 100%;
-    height: 430px;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-}
-
-.fico-banner-card {
-    position: absolute;
-    right: 80px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 500px;
-    min-height: 300px;
-
-    background: #ffffff;
-    border-radius: 28px;
-
-    padding: 34px 38px 32px;
-}
-
-.fico-banner-card h3 {
-    max-width: 390px;
-    font-size: 24px;
-    line-height: 0.95;
-    margin-bottom: 22px;
-}
-
-.fico-banner-card p {
-    font-size: 14px;
-    line-height: 1.12;
-    margin-bottom: 15px;
-}
-
-/* FITNESS ABOUT */
-
-.about-section-intro {
-    margin-bottom: 30px;
-}
-
-.about-program-card {
-    transition: background 0.25s ease, color 0.25s ease;
-}
-
-.about-program-card.green-hover:hover {
-    background: #198b08;
-    color: #ffffff;
-}
-
-.about-program-card.pink-hover:hover {
-    background: #e7005a;
-    color: #ffffff;
-}
-
-.about-program-card.blue-hover:hover {
-    background: #003bd8;
-    color: #ffffff;
-}
-
-.about-balance-text {
-    margin-top: 34px;
-}
-
-/* COACH ISO NUTRITION */
-
-.about-coach-layout {
-    align-items: start;
-}
-
-.coach-tag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    height: 24px;
-    border: 1.6px solid #000000;
-    border-radius: 999px;
-    font-size: 10px;
-    font-weight: 500;
-    margin-bottom: 18px;
-}
-
-.about-coach-image {
-    object-position: center center;
-}
-
-.about-coach-copy h3 {
-    max-width: none;
-}
-
-/* FINAL CTA */
-
-.about-final-section {
-    min-height: auto;
-    padding-top: 70px;
-}
-
-.about-final-card {
-    width: calc(100% - 120px);
-    margin-left: 60px;
-    background: #eeeeee;
-    border-radius: 24px;
-    padding: 32px 42px;
-
-    display: grid;
-    grid-template-columns: 1fr 360px 150px;
-    gap: 52px;
-    align-items: center;
-}
-
-.about-final-card p {
-    font-size: 14.6px;
-    line-height: 1.12;
-}
-
-.about-final-card img {
-    width: 130px;
-    height: 130px;
-    object-fit: contain;
-    justify-self: end;
-}
-
-/* RESPONSIVE ABOUT */
-
-@media (max-width: 900px) {
-
-    .about-two-columns,
-    .about-final-card {
-        grid-template-columns: 1fr;
-    }
-
     .fico-banner-card {
         position: relative;
         top: auto;
@@ -1082,8 +1029,11 @@ a {
         margin-top: 20px;
     }
 
-    .about-final-card {
-        width: 100%;
-        margin-left: 0;
+    .about-program-card {
+        min-height: auto;
+    }
+
+    .footer-links {
+        gap: 18px;
     }
 }

@@ -878,7 +878,7 @@ a {
 .about-page .about-hero p {
     font-size: 19px;
     font-weight: 500;
-    margin-bottom: 145px;
+    margin-bottom: 135px;
 }
 
 .about-page .about-hero-nav {
@@ -888,13 +888,13 @@ a {
 }
 
 .about-page .about-hero-translation {
-    margin-top: -128px;
+    margin-top: 14px;
     margin-bottom: 0;
-    font-size: 11px;
+    font-size: 9px;
     line-height: 1;
     font-style: italic;
     font-weight: 400;
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 /* WHAT IS FICO */

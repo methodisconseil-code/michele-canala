@@ -235,30 +235,29 @@ a {
 ========================= */
 
 .fitness-card {
-    min-height: 196px;
-    padding: 24px 30px 22px;
+    min-height: 520px;
+    padding: 34px 36px 32px;
     background: #eeeeee;
     border-radius: 30px;
-}
-
-.fitness-card h3 {
-    font-size: 18px;
-    font-weight: 900;
-    margin-bottom: 22px;
 }
 
 .fitness-card p {
     font-size: 14.6px;
     line-height: 1.12;
     font-weight: 400;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 }
 
 .fitness-card strong {
     display: block;
     font-size: 14.6px;
-    line-height: 1.1;
+    line-height: 1.08;
     font-weight: 900;
+    margin-bottom: 24px;
+}
+
+.fitness-card strong:last-child {
+    margin-bottom: 0;
 }
 
 /* =========================

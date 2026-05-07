@@ -583,7 +583,6 @@ a {
     display: block;
 }
 
-/* Texte ferré comme le bouton, dans la limite basse */
 .start-text {
     width: 100%;
     align-self: end;
@@ -859,15 +858,15 @@ a {
     background: #ffffff;
 }
 
-/* HEADER ISO HOME */
-
 .about-page .about-hero-content {
     padding-top: 22vh;
 }
 
-.about-page .about-hero-logo {
-    width: 180px;
-    margin-bottom: 34px;
+.hero-logo {
+    width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto 42px;
 }
 
 .about-page .about-hero h1 {
@@ -890,12 +889,12 @@ a {
 }
 
 .about-page .about-hero-translation {
-    margin-top: 14px;
+    margin-top: 10px;
     margin-bottom: 0;
     font-size: 11px;
     line-height: 1;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 /* WHAT IS FICO */

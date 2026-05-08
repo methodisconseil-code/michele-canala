@@ -818,24 +818,14 @@ a {
     margin-bottom: 44px;
 }
 
-.about-program-card,
-.fitness-card {
-    min-height: 410px;
-    padding: 28px 30px 24px;
+.about-program-columns {
+    align-items: stretch;
 }
 
-.about-balance-text {
-    margin-top: 42px;
-    font-size: 14.6px;
-    line-height: 1.1;
-}
-
-.about-balance-text strong {
-    display: block;
-    font-size: 22px;
-    line-height: 1;
-    font-weight: 900;
-    margin-bottom: 10px;
+.about-fitness-section .fitness-card {
+    min-height: 390px;
+    padding: 26px 30px 22px;
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
 .about-fitness-section .fitness-card h3 {
@@ -848,13 +838,13 @@ a {
 .about-fitness-section .fitness-card p {
     font-size: 13.2px;
     line-height: 1.05;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .about-fitness-section .fitness-card strong {
     font-size: 13.2px;
     line-height: 1.06;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .about-fitness-section .fitness-card strong:last-child {
@@ -879,7 +869,7 @@ a {
 .about-balance-text {
     width: 100%;
     max-width: none;
-    margin-top: 54px;
+    margin-top: 42px;
     font-size: 14.6px;
     line-height: 1.12;
 }
@@ -889,7 +879,7 @@ a {
     font-size: 22px;
     line-height: 1;
     font-weight: 900;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 /* COACH ABOUT */

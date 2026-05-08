@@ -809,23 +809,33 @@ a {
     line-height: 1;
     font-weight: 900;
     text-transform: none;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 .about-fitness-section .about-section-intro {
     font-size: 14.6px;
     line-height: 1.1;
-    margin-bottom: 56px;
+    margin-bottom: 44px;
 }
 
-.about-program-columns {
-    align-items: stretch;
+.about-program-card,
+.fitness-card {
+    min-height: 410px;
+    padding: 28px 30px 24px;
 }
 
-.about-fitness-section .fitness-card {
-    min-height: 405px;
-    padding: 30px 30px 26px;
-    transition: background 0.25s ease, color 0.25s ease;
+.about-balance-text {
+    margin-top: 42px;
+    font-size: 14.6px;
+    line-height: 1.1;
+}
+
+.about-balance-text strong {
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
 
 .about-fitness-section .fitness-card h3 {

@@ -805,11 +805,11 @@ a {
 /* FICO AS FITNESS */
 
 .about-fitness-section .block-label {
-    font-size: 26px;
+    font-size: 22px;
     line-height: 1;
     font-weight: 900;
     text-transform: none;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .about-fitness-section .about-section-intro {
@@ -823,8 +823,8 @@ a {
 }
 
 .about-fitness-section .fitness-card {
-    min-height: 455px;
-    padding: 32px 30px 30px;
+    min-height: 405px;
+    padding: 30px 30px 26px;
     transition: background 0.25s ease, color 0.25s ease;
 }
 
@@ -836,34 +836,31 @@ a {
 }
 
 .about-fitness-section .fitness-card p {
-    font-size: 13.6px;
-    line-height: 1.07;
-    margin-bottom: 18px;
+    font-size: 13.2px;
+    line-height: 1.05;
+    margin-bottom: 15px;
 }
 
 .about-fitness-section .fitness-card strong {
-    font-size: 13.6px;
-    line-height: 1.08;
-    margin-bottom: 18px;
+    font-size: 13.2px;
+    line-height: 1.06;
+    margin-bottom: 15px;
 }
 
 .about-fitness-section .fitness-card strong:last-child {
     margin-bottom: 0;
 }
 
-.about-program-card.green-hover:hover,
 .about-fitness-section .fitness-card:nth-child(1):hover {
     background: #198b08;
     color: #ffffff;
 }
 
-.about-program-card.pink-hover:hover,
 .about-fitness-section .fitness-card:nth-child(2):hover {
     background: #e7005a;
     color: #ffffff;
 }
 
-.about-program-card.blue-hover:hover,
 .about-fitness-section .fitness-card:nth-child(3):hover {
     background: #003bd8;
     color: #ffffff;

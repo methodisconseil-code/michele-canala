@@ -681,7 +681,7 @@ a {
     background: #ffffff;
 }
 
-/* Header about = même base que home */
+/* HEADER ABOUT */
 
 .about-page .about-hero-content {
     padding-top: 24vh;
@@ -722,7 +722,7 @@ a {
     opacity: 0.78;
 }
 
-/* What is Fico */
+/* WHAT IS FICO */
 
 .about-intro-section {
     justify-content: center;
@@ -757,9 +757,7 @@ a {
 
 .about-definition-card p,
 .about-text-block p,
-.fico-banner-card p,
-.about-section-intro,
-.about-balance-text {
+.fico-banner-card p {
     font-size: 14.6px;
     line-height: 1.12;
     margin-bottom: 18px;
@@ -804,7 +802,7 @@ a {
     margin-bottom: 15px;
 }
 
-/* Fico as fitness */
+/* FICO AS FITNESS */
 
 .about-fitness-section .block-label {
     font-size: 26px;
@@ -820,55 +818,74 @@ a {
     margin-bottom: 56px;
 }
 
-.about-program-card {
+.about-program-columns {
+    align-items: stretch;
+}
+
+.about-fitness-section .fitness-card {
     min-height: 455px;
     padding: 32px 30px 30px;
     transition: background 0.25s ease, color 0.25s ease;
 }
 
-.about-program-card h3 {
+.about-fitness-section .fitness-card h3 {
     font-size: 22px;
     line-height: 0.95;
     font-style: italic;
     margin-bottom: 4px;
 }
 
-.about-program-card p {
+.about-fitness-section .fitness-card p {
     font-size: 13.6px;
     line-height: 1.07;
     margin-bottom: 18px;
 }
 
-.about-program-card strong {
+.about-fitness-section .fitness-card strong {
     font-size: 13.6px;
     line-height: 1.08;
     margin-bottom: 18px;
 }
 
-.about-program-card strong:last-child {
+.about-fitness-section .fitness-card strong:last-child {
     margin-bottom: 0;
 }
 
-.about-program-card.green-hover:hover {
+.about-program-card.green-hover:hover,
+.about-fitness-section .fitness-card:nth-child(1):hover {
     background: #198b08;
     color: #ffffff;
 }
 
-.about-program-card.pink-hover:hover {
+.about-program-card.pink-hover:hover,
+.about-fitness-section .fitness-card:nth-child(2):hover {
     background: #e7005a;
     color: #ffffff;
 }
 
-.about-program-card.blue-hover:hover {
+.about-program-card.blue-hover:hover,
+.about-fitness-section .fitness-card:nth-child(3):hover {
     background: #003bd8;
     color: #ffffff;
 }
 
 .about-balance-text {
-    margin-top: 34px;
+    width: 100%;
+    max-width: none;
+    margin-top: 54px;
+    font-size: 14.6px;
+    line-height: 1.12;
 }
 
-/* Coach about */
+.about-balance-text strong {
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+/* COACH ABOUT */
 
 .about-coach-layout {
     align-items: start;
@@ -895,7 +912,7 @@ a {
     max-width: none;
 }
 
-/* Final CTA about */
+/* FINAL CTA ABOUT */
 
 .about-final-section {
     min-height: auto;
